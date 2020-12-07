@@ -1,0 +1,42 @@
+---
+title: 'Work'
+layout: 'raw'
+---
+
+<article>
+  <div class="wrap">
+    <div class="flow">
+      <div class="[ flow ][ measure-long ][ gap-bot-900 ]">
+        <h1>My Work and Projects</h1>
+        <p>A Wolf had been feasting too greedily, and a bone had stuck crosswise in his throat. He could get it neither up nor down, and of course he could not eat a thing. Naturally that was an awful state of affairs for a greedy Wolf.</p>
+      </div>
+      <ul class="[ b-workGrid ][ auto-grid ]" style="--auto-grid-min-size:32rem">
+        {% for work in collections.work %}
+          <li class="[ b-workGrid__item ][ flow ]">
+
+            <a class="b-workGrid__link" href="{{ work.url }}">
+              <h2>{{ work.data.title }}</h2>
+            </a>
+
+            <div class="[ b-workGrid__img ][ u-radius ][ img-auto ]" aria-hidden="true">
+              {% plaiceholder work.data.images[0].src %}
+              <img
+                src="{{ work.data.images[0].src }}"
+                alt="{{ work.data.images[0].alt }}"
+                width="1200"
+                height="600"
+                loading="lazy"
+              >
+            </div>
+
+            {% if work.data.summary %}
+              <p class="measure-short">{{ work.data.summary }}</p>
+            {% endif %}
+
+            <a href="{{ work.url }}" class="[ color-inherit ][ d-ib ]">See More &#129042;</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</article>

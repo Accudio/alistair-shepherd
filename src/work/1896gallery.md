@@ -2,6 +2,8 @@
 layout: work
 title: 1896 Gallery
 
+summary: 'A website built with Eleventy to showcase artwork online.'
+
 intro: '
   <h1>1896 Gallery Website</h1>
   <p>A Fox and a Leopard, resting lazily after a generous dinner, amused themselves by disputing about their good looks. The Leopard was very proud of his glossy, spotted coat and made disdainful remarks about the Fox, whose appearance he declared was quite ordinary.</p>

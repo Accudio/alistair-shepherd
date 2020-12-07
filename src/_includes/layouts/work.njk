@@ -52,7 +52,7 @@
       {% divider 'color-dark' %}
       <div class="[ wrap ][ flow ]">
         <h2>Gallery</h2>
-          <ul class="auto-grid" style="--auto-grid-min-size:24rem">
+        <ul class="auto-grid" style="--auto-grid-min-size:24rem">
           {% for image in images %}
             <li class="[ u-radius ][ img-auto ]">
               {% plaiceholder image.src %}
@@ -68,6 +68,6 @@
         </ul>
       </div>
     </article>
-    {% endif %}
+  {% endif %}
 
 {% endblock %}

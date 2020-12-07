@@ -1,0 +1,37 @@
+.b-workGrid {
+  $self: &;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__link {
+    color: inherit;
+    display: inline-block;
+
+    &:hover {
+      + #{$self}__img {
+        transform: scale(1.05);
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      z-index: 1;
+    }
+  }
+
+  &__img {
+    margin-top: 0;
+    margin-bottom: var(--flow-space);
+    order: -1;
+    transition: all .2s;
+  }
+}

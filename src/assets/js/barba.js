@@ -6,7 +6,10 @@ window.barba = barba
 // initialise
 window.barba.use(prefetch)
 window.barba.init({
-  prevent: ({ el }) => el.hasAttribute('data-lightbox')
+  prevent: ({ el }) => {
+    if (el.getAttribute('href').endsWith('.xml')) return true
+    return false
+  }
 })
 
 // fire initialisation event

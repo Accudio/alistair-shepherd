@@ -15,19 +15,20 @@
         {% if date %}
           <time datetime="{{ date | htmlDate }}">{{ date | date }}</time>
         {% endif %}
+
         <h1>{{ title }}</h1>
-        <article class="flow">
-          {{ content | safe }}
-        </article>
-        <hr />
+
         {% if tags.length %}
-          <h5>Tags</h5>
-          <nav>
-          {% for tag in tags %}
-            <a href="/blog/tag/{{tag}}/">{{tag}}</a>
-          {% endfor %}
+          <nav class="[ text-400 ][ flow-space-200 ]">
+            Tags:
+            {% for tag in tags %}
+              <a href="/blog/tag/{{tag}}/">{{tag}}</a>
+            {% endfor %}
           </nav>
         {% endif %}
+
+        {{ content | safe }}
+
       </div>
     </div>
   </article>

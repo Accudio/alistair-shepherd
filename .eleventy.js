@@ -4,7 +4,8 @@ const fs = require('fs')
 // plugins
 const syntaxHighlightPlugin = require('@11ty/eleventy-plugin-syntaxhighlight')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
-const pwaPlugin = require('eleventy-plugin-pwa')
+// const pwaPlugin = require('eleventy-plugin-pwa')
+const sitemapPlugin = require('@quasibit/eleventy-plugin-sitemap')
 
 // filters, transforms and shortcodes can be found in utils
 const addFilters = require('./src/_includes/utils/filters')
@@ -15,6 +16,7 @@ const addShortcodes = require('./src/_includes/utils/shortcodes')
  * Import site configuration
  */
 const siteConfig = require('./src/_data/config.json')
+const { configFunction } = require('@11ty/eleventy-plugin-syntaxhighlight')
 
 module.exports = function (config) {
   addFilters(config)
@@ -22,16 +24,12 @@ module.exports = function (config) {
   addShortcodes(config)
 
   /**
-   * Add custom watch targets
-   *
-   * @link https://www.11ty.dev/docs/config/#add-your-own-watch-targets
+   * custom watch targets
    */
   config.addWatchTarget('./bundle/')
 
   /**
-   * Passthrough file copy
-   *
-   * @link https://www.11ty.io/docs/copy/
+   * passthrough file copy
    */
   config.addPassthroughCopy({
     './static': '.'
@@ -45,21 +43,21 @@ module.exports = function (config) {
   })
 
   /**
-   * Add Plugins
-   * @link https://github.com/11ty/eleventy-plugin-rss
-   * @link https://github.com/11ty/eleventy-plugin-syntaxhighlight
-   * @link https://github.com/okitavera/eleventy-plugin-pwa
+   * plugins
    */
   config.addPlugin(rssPlugin)
   config.addPlugin(syntaxHighlightPlugin)
-  config.addPlugin(pwaPlugin)
+  // config.addPlugin(pwaPlugin)
+  config.addPlugin(sitemapPlugin, {
+    sitemap: {
+      hostname: siteConfig.url
+    }
+  })
 
   /**
-   * Create custom data collections
-   * for blog and feed
-   * Code from https://github.com/hankchizljaw/hylia
+   * custom blog post collection
    */
-  // Blog posts collection
+  // blog posts collection
   const now = new Date()
   const livePosts = post => post.date <= now && !post.data.draft
   config.addCollection('posts', collection => {
@@ -73,9 +71,19 @@ module.exports = function (config) {
   })
 
   /**
-   * Override BrowserSync Server options
-   *
-   * @link https://www.11ty.dev/docs/config/#override-browsersync-server-options
+   * work collection
+   */
+  config.addCollection('work', collection => {
+    return [
+      ...collection
+        .getFilteredByGlob(
+          `./${siteConfig.paths.src}/work/**/*`
+        )
+    ]
+  })
+
+  /**
+   * override BrowserSync Server options
    */
   config.setBrowserSyncConfig({
     ...config.browserSyncConfig,
@@ -89,7 +97,7 @@ module.exports = function (config) {
         },
       },
     },
-    // Set local server 404 fallback
+    // set local server 404 fallback
     callbacks: {
       ready: function (err, browserSync) {
         const content_404 = fs.readFileSync(`${siteConfig.paths.output}/404.html`)
@@ -104,13 +112,12 @@ module.exports = function (config) {
   })
 
   /*
-   * Disable use gitignore for avoiding ignoring of /bundle folder during watch
-   * https://www.11ty.dev/docs/ignores/#opt-out-of-using-.gitignore
+   * disable use gitignore for avoiding ignoring of /bundle folder during watch
    */
   config.setUseGitIgnore(false);
 
   /**
-   * Eleventy configuration object
+   * eleventy configuration object
    */
   return {
     dir: {

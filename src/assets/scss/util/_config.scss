@@ -58,7 +58,9 @@ $gorko-colors: (
   'mid': var(--c5),
   'mid+1': var(--c6),
   'dark-1': var(--c8),
-  'dark': var(--c9)
+  'dark': var(--c9),
+
+  'inherit': inherit
 );
 
 /**
