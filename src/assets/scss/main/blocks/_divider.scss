@@ -1,0 +1,12 @@
+.b-divider {
+  bottom: 100%;
+  position: absolute;
+  width: 100%;
+
+  svg {
+    display: block;
+    height: get-size('900');
+    min-width: 1000px;
+    width: 100%;
+  }
+}

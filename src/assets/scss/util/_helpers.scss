@@ -1,0 +1,44 @@
+/**
+ * helper mixins, functions and variables
+ */
+
+// breakpoints
+$break: (
+  small:  576px,
+  medium: 768px,
+  large:  992px,
+  xlarge: 1200px
+);
+
+// generate min-width media query
+@mixin min-width($min-breakpoint, $min-breakpoints: $break) {
+  // If $mq-breakpoint is a key that exists in $mq-breakpoints, get and use the value
+  @if map-has-key($min-breakpoints, $min-breakpoint) {
+    $min-breakpoint: map-get($min-breakpoints, $min-breakpoint);
+  }
+  @media screen and (min-width: #{$min-breakpoint}) {
+    @content;
+  }
+}
+
+// generate max-width media query
+@mixin max-width($max-breakpoint, $max-breakpoints: $break) {
+  // If $mq-breakpoint is a key that exists in $mq-breakpoints, get and use the value
+  @if map-has-key($max-breakpoints, $max-breakpoint) {
+    $max-breakpoint: map-get($max-breakpoints, $max-breakpoint);
+  }
+  @media screen and (max-width: #{$max-breakpoint - 1}) {
+    @content;
+  }
+}
+
+// get breakpoint
+@function break-get($breakpoint, $is-max: false, $breakpoints: $break) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint: map-get($breakpoints, $breakpoint);
+  }
+  @if $is-max {
+    $breakpoint: #{$breakpoint - 1};
+  }
+  @return $breakpoint;
+}

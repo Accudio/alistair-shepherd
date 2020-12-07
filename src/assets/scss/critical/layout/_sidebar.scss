@@ -1,0 +1,22 @@
+.l-side {
+  $self: &;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: -#{get-size('500')};
+
+  &__main {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 66.66%;
+  }
+
+  &__sidebar {
+    flex-basis: auto;
+    flex-grow: 1;
+  }
+
+  #{$self}__main, #{$self}__sidebar {
+    margin: get-size('500');
+  }
+}

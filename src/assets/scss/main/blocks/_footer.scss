@@ -1,0 +1,23 @@
+.b-footer {
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__copy {
+    flex: 1 1 auto;
+  }
+
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+
+    &:not(.d) {
+      margin: 0 -#{get-size('300')};
+    }
+
+    li {
+      margin: 0 get-size('300');
+    }
+  }
+}

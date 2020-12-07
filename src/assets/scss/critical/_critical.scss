@@ -1,0 +1,99 @@
+/**
+ * critical styles
+ */
+
+:root {
+  --flow-space: #{get-size('600')};
+}
+
+body {
+  @include apply-utility('font', 'base');
+
+  background: get-color('dark-1');
+  color: get-color('light');
+  font-size: get-size('500');
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  color: currentColor;
+  text-decoration-color: get-color('mid');
+}
+
+:focus {
+  outline: 2px dashed get-color('light');
+  outline-offset: .25rem;
+}
+
+main:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @include apply-utility('font', 'sans');
+  @include apply-utility('leading', 'flat');
+
+  font-weight: 900;
+}
+
+// high contrast selection because it can help visually-impaired
+// folks read the text easier
+::selection {
+  background: get-color('light');
+  color: get-color('dark');
+}
+
+/**
+ * scrollbar styling
+ */
+
+// firefox
+* {
+  scrollbar-color: get-color('light+1') get-color('dark');
+}
+
+// webkit
+::-webkit-scrollbar {
+  height: 1rem;
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: get-color('dark');
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: get-color('light+1');
+  border: .25rem solid get-color('dark');
+  border-radius: .125rem;
+}
+
+/**
+ * wrappers
+ */
+.app {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 100px;
+  position: relative;
+}
+
+.site-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  background: get-color('dark');
+  flex: 1 0 auto;
+}
+
+article {
+  padding-bottom: get-size('major') + get-size('900');
+  padding-top: get-size('major');
+  position: relative;
+}

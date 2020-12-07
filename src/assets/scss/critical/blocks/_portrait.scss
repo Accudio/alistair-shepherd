@@ -1,0 +1,11 @@
+.b-portrait {
+  svg {
+    background: get-color('dark-1');
+    border: get-size('200') solid get-color('light');
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    max-width: 50vw;
+    min-width: 15rem;
+  }
+}

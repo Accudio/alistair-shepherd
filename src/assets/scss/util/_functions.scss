@@ -1,0 +1,26 @@
+/**
+ * general functions unrelated to styling (eg, mathematical)
+ */
+
+// square root
+@function sqrt($input) {
+  $val0: 1;
+  $val1: $val0;
+
+  @for $i from 1 through 10 {
+    $val1: $val0 - ($val0 * $val0 - abs($input)) / (2 * $val0);
+    $val0: $val1;
+  }
+
+  @return $val1;
+}
+
+// replace within string
+@function str-replace($input, $search, $replace: '') {
+  $string: '' + $input;
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}

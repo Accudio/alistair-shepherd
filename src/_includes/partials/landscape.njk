@@ -1,0 +1,14 @@
+<div class="b-landscape" role="img">
+  <div class="b-landscape__sun">
+    <div class="b-landscape__sunH">
+      <div class="b-landscape__sunV"></div>
+    </div>
+  </div>
+  {% for i in range(1, 11) -%}
+    <div class="b-landscape__layer b-landscape__layer--{{ i }}">
+      <div class="b-landscape__image">
+        {% include 'bundle/images/layer_' + i + '.svg' %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

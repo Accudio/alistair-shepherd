@@ -1,0 +1,67 @@
+<header class="[ b-header ][ color-dark-1 ]">
+  <div class="b-header__overlay">
+    <div class="[ b-header__wrap ][ wrap ][ pad-top-200 pad-bot-200 ]">
+      <a href="/" class="[ b-brand ][ ma-r ]" aria-label="go to homepage">
+        {% include '../bundle/images/logo.svg' %}
+        <div class="[ b-brand__name ][ pad-left-400 ][ font-sans weight-bold text-600 leading-flat ]" aria-hidden="true">
+          Alistair<br>
+          Shepherd
+        </div>
+      </a>
+      {% if navigation.items %}
+        <nav
+          class="[ b-nav ][ ma-l ][ align-center ]"
+          id="primary-nav"
+          data-state="closed">
+          <ul class="b-nav__flow">
+            {% for item in navigation.items %}
+              {% set relExternal = '' %}
+              {% set isCurrent = '' %}
+
+              {% if item.external %}
+                {% set relExternal = ' rel="external" target="_blank"' %}
+              {% endif %}
+              {% if page.url == item.url %}
+                {% set isCurrent = ' aria-current="page"' %}
+              {% endif %}
+              <li class="b-nav__item" style="--n:{{ loop.index0 }}">
+                <a class="b-nav__link" href="{{ item.url }}" {{ relExternal | safe }}{{ isCurrent | safe }}>
+                  {{ item.text }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
+
+      <div class="b-header__btns">
+        <button
+          class="[ b-themes__toggle ][ b-header__btn ]"
+          id="themes"
+          aria-expanded="false"
+          aria-controls="theme-panel"
+          aria-label="toggle theme panel">
+          {% icon 'paint' %}
+        </button>
+
+        {% if navigation.items %}
+          <button
+            class="[ b-navToggle ][ b-header__btn ]"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="toggle navigation">
+            <div class="b-navToggle__burger" aria-hidden="true">
+              <span class="b-navToggle__bar"></span>
+              <span class="b-navToggle__bar"></span>
+              <span class="b-navToggle__bar"></span>
+            </div>
+          </button>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+  {% include './landscape.njk' %}
+</header>

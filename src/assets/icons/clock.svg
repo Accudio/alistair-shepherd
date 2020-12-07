@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!--
+    Clock icon by Cole Bemis (@colebemis);
+    Url:            https://feathericons.com/?query=clock;
+    License:        Available under MIT License (https://github.com/feathericons/feather/blob/master/LICENSE);
+  -->
+  <circle cx="12" cy="12" r="10"/>
+  <path d="M12 6v6l4 2"/>
+</svg>

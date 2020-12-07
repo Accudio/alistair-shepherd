@@ -1,0 +1,113 @@
+{% import 'utils/css.njk' as css %}
+
+<!DOCTYPE html>
+<html lang="{{ config.lang }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ config.url }}/feed.xml">
+
+    {% include "partials/meta.njk" %}
+
+    <link rel="icon" href="/favicon.png" type="image/png">
+
+    {{ css.inline('critical') }}
+
+    {{ css.defer('/assets/css/main.css') }}
+
+    <!-- naked stylesheet -->
+    <link id="naked-stylesheet" rel="none" href="/assets/css/naked.css">
+
+    {% block head %}{% endblock %}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,700;1,400&family=Red+Hat+Display:wght@400;900">
+
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/barba.js" defer></script>
+  </head>
+
+  <body data-barba="wrapper">
+
+    {{ process.env.ELEVENTY_ENV }}
+
+    <div class="app">
+      <div id="page" class="site-wrap">
+        {% include "partials/themes.njk" %}
+        {% include "partials/header.njk" %}
+
+        <main id="main" tabindex="-1" data-barba="container">
+          {% block content %}{% endblock content %}
+        </main>
+
+        <article class="bg-dark-1">
+          {% divider 'color-dark-1' %}
+          <div class="wrap">
+            <div class="l-side">
+              <div class="[ l-side__main ][ flow ]">
+                <h2>Get in touch!</h2>
+                <p class="measure-short">I'm always up for a chat, whether it be about my work, new opportunities, or just a natter! Feel free to <a href="mailto:alistair@accudio.com">send me an email</a> at alistair@accudio.com or find me on social media.</p>
+              </div>
+              <div class="[ l-side__sidebar ][ flow ]">
+                <h2>Quick Links</h2>
+                <ul class="b-linkList">
+                  <li>
+                    <a href="#0">
+                      {% icon 'email', 'b-intro__icon inline' %}
+                      alistair@accudio.com
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#0">
+                      {% icon 'twitter', 'b-intro__icon inline' %}
+                      Twitter
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#0">
+                      {% icon 'github', 'b-intro__icon inline' %}
+                      GitHub
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#0">
+                      {% icon 'codepen', 'b-intro__icon inline' %}
+                      CodePen
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#0">
+                      {% icon 'linkedin', 'b-intro__icon inline' %}
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#0">
+                      {% icon 'paperclip', 'b-intro__icon inline' %}
+                      CV/Resume
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        {% include "partials/footer.njk" %}
+      </div>
+    </div>
+
+    <script>
+      {% if not env.IS_DEV %}
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+          });
+        }
+      {% endif %}
+    </script>
+
+    <div style="display:none">
+      {% include 'bundle/assets/icons.svg' %}
+    </div>
+  </body>
+</html>

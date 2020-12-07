@@ -1,0 +1,53 @@
+.b-featWork {
+  &__item {
+    display: block;
+  }
+
+  &__action {
+    text-align: center;
+  }
+
+  @include media-query('md') {
+    &__inner {
+      display: grid;
+      grid-gap: get-size('500');
+      grid-template-columns: repeat(12, 1fr);
+
+      @supports (display: grid) {
+        > * {
+          margin: 0;
+        }
+      }
+    }
+
+    &__intro {
+      align-self: center;
+      grid-column: 1/13;
+    }
+
+    &__item {
+      &:nth-child(odd) {
+        grid-column: 1/8;
+      }
+
+      &:nth-child(even) {
+        grid-column: 13/6;
+      }
+    }
+  }
+
+  @include media-query('lg') {
+    grid-template-columns: repeat(2, 1fr);
+
+    &__intro,
+    &__item {
+      &:nth-child(odd) {
+        grid-column: 1/7;
+      }
+
+      &:nth-child(even) {
+        grid-column: 13/7;
+      }
+    }
+  }
+}

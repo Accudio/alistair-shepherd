@@ -1,0 +1,112 @@
+$sun-size: 4rem;
+$sun-movement-v: 30%;
+$sun-movement-h: 40%;
+
+.b-landscape {
+  $self: &;
+
+  height: 75vh;
+  overflow: hidden;
+  position: relative;
+  transform-style: preserve-3d;
+
+  &__sun {
+    $distance: 10;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    max-height: 800px;
+    opacity: 0;
+    position: absolute;
+    transform: translateZ(-100 * $distance#{px}) scale($distance + 1) translateY(-150px);
+    transition: all 2s;
+    transition-property: opacity, visibility;
+    visibility: hidden;
+    width: 100%;
+
+    &[data-active] {
+      opacity: 1;
+      visibility: visible;
+
+      #{$self}__sunH {
+        transform: translateX(calc(#{$sun-movement-h} * var(--sun-h)));
+      }
+
+      #{$self}__sunV {
+        transform: translateY(calc(#{$sun-movement-v} * var(--sun-v)));
+      }
+    }
+  }
+
+  &__sunH {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateX(0);
+    width: 100%;
+  }
+
+  &__sunV {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(#{$sun-movement-v});
+    width: 100%;
+
+    &::before {
+      background: #fff;
+      border-radius: 50%;
+      content: '';
+      height: $sun-size;
+      left: calc(50% - #{$sun-size / 2});
+      position: absolute;
+      top: calc(50% - #{$sun-size / 2});
+      width: $sun-size;
+    }
+  }
+
+  &__layer {
+    $layers: 10;
+
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: 50% 67%;
+    transition: transform-origin .2s;
+
+    @for $i from 1 through $layers {
+      $x: ($layers - $i) / 2;
+      &--#{$i} {
+        @if $i < 10 {
+          transform: translateZ(-100 * $x#{px}) scale($x + 1) translateX(-4px);
+        }
+      }
+    }
+  }
+
+  &__image {
+    bottom: 0;
+    left: 50%;
+    max-width: 300%;
+    min-width: 100%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 2500px;
+
+    svg {
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
+  &[data-themes='true'] {
+    #{$self}__layer {
+      transform-origin: 50% 55%;
+    }
+  }
+}

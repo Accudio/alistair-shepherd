@@ -1,0 +1,23 @@
+---
+layout: page
+metaTitle: Tag
+description: Categories page description
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /writing/tag/{{ tag | slug }}/
+---
+{% from "partials/postItem.njk" import postItem %}
+
+<h1>#{{ tag }}</h1>
+<small>{{ collections[tag].length }} posts published</small>
+
+<ol reversed>
+  {% for post in collections[tag] | reverse %}
+    {% if not loop.first %}
+      <hr/>
+    {% endif %}
+    {{ postItem(post.url, post.data.title, post.date) }}
+  {% endfor %}
+</ol>

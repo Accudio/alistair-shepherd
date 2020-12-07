@@ -1,0 +1,13 @@
+// don't generate CSS rules for config or gorko
+$outputTokenCSS: false; // stylelint-disable-line scss/dollar-variable-pattern
+
+// import configuration and functions
+@import 'util/config';
+@import 'util/functions';
+@import 'util/helpers';
+
+// import gorko to generate design tokens and functions/mixins
+@import '../../../node_modules/gorko/gorko';
+
+// index
+@import 'naked/naked';

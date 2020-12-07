@@ -1,0 +1,8 @@
+{% macro postItem(url, title, date) %}
+  <li>
+    <h3>
+      <a href="{{ url }}">{{ title }}</a>
+    </h3>
+    <time datetime="{{ date | htmlDate }}">{{ date | date }}</time>
+  </li>
+{% endmacro %}

@@ -1,0 +1,29 @@
+/**
+ * img-fit
+ *
+ * displays image with placeholder with fixed apsect-ratio
+ */
+
+.img-fit {
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: calc(100% / (var(--aspect-ratio, 2/1)));
+    width: 100%;
+  }
+
+  > * {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    @supports (object-fit: cover) {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

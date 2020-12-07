@@ -1,0 +1,17 @@
+.b-brand {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  text-decoration: none;
+
+  svg {
+    height: 4rem;
+    width: auto;
+  }
+
+  &__name {
+    @include max-width(medium) {
+      display: none;
+    }
+  }
+}

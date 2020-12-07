@@ -1,0 +1,10 @@
+/**
+ * Flow
+ * Applies a margin to sibling elements based on a --flow-space custom property.
+ */
+
+.flow > * {
+  + *, + ul, + ol {
+    margin-top: var(--flow-space, get-size('600'));
+  }
+}

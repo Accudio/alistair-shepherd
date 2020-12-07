@@ -1,0 +1,73 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+  <article>
+    <div class="[ wrap ][ flow ]">
+
+      <div class="[ flow ][ measure-long ]">
+        {{ intro | safe }}
+      </div>
+
+      {% if techs %}
+        <h2>Technologies</h2>
+        <ul>
+          {% for tech in techs %}
+            <li>{{ tech }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if buttons %}
+        {% for button in buttons %}
+          <a class="b-button" href="{{ button.url }}">{{ button.title }}</a>
+        {% endfor %}
+      {% endif %}
+
+      {% if images %}
+        <div class="[ u-radius ][ img-auto ]">
+          {% plaiceholder images[0].src %}
+          <img
+            src="{{ images[0].src }}"
+            alt="{{ images[0].alt }}"
+            width="1200"
+            height="600"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+    </div>
+  </article>
+
+  <article class="bg-dark-1">
+    {% divider 'color-dark-1' %}
+    <div class="wrap">
+      <div class="[ flow ][ measure-long ]">
+        {{ content | safe }}
+      </div>
+    </div>
+  </article>
+
+  {% if images %}
+    <article>
+      {% divider 'color-dark' %}
+      <div class="[ wrap ][ flow ]">
+        <h2>Gallery</h2>
+          <ul class="auto-grid" style="--auto-grid-min-size:24rem">
+          {% for image in images %}
+            <li class="[ u-radius ][ img-auto ]">
+              {% plaiceholder image.src %}
+              <img
+                src="{{ image.src }}"
+                alt="{{ image.alt }}"
+                width="1200"
+                height="600"
+                loading="lazy"
+              >
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </article>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,58 @@
+.b-navToggle {
+  $self: &;
+
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+
+  @include min-width(medium) {
+    display: none;
+  }
+
+
+  &__burger {
+    height: 1em;
+    position: relative;
+    transition: margin-top .5s;
+    width: 1.125em;
+    z-index: 5;
+  }
+
+  &__bar {
+    background: currentColor;
+    border-radius: .125rem;
+    display: block;
+    height: .125em;
+    left: 0;
+    margin-top: -.0625em;
+    position: absolute;
+    top: 50%;
+    transition: all .3s, color .1s;
+    width: 100%;
+
+    &:first-child {
+      top: .125em;
+    }
+
+    &:last-child {
+      top: .875em;
+    }
+  }
+
+  &.is-active {
+    #{$self}__bar {
+      opacity: 0;
+      top: 50%;
+
+      &:first-child {
+        opacity: 1;
+        transform: rotate(225deg);
+      }
+
+      &:last-child {
+        opacity: 1;
+        transform: rotate(-225deg);
+      }
+    }
+  }
+}

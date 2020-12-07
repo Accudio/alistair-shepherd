@@ -1,0 +1,18 @@
+{% macro defer(url) %}
+  {% if env.IS_DEV %}
+      <link rel="stylesheet" href="{{ url }}" />
+  {% else %}
+    <link rel="stylesheet" href="{{ url }}" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="{{ url }}">
+    </noscript>
+  {% endif %}
+{% endmacro %}
+
+{% macro inline(name) %}
+  {% if env.IS_DEV %}
+    <link rel="stylesheet" href="/assets/css/{{ name }}.css">
+  {% else %}
+    <style>{% include "bundle/assets/scss/" + name + ".css" %}</style>
+  {% endif %}
+{% endmacro %}

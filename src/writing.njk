@@ -1,0 +1,17 @@
+---
+layout: page
+title: Writing
+---
+{% from "partials/postItem.njk" import postItem %}
+
+{% set postList = collections.posts %}
+{% if collections.posts.length %}
+  <ol reversed>
+    {% for item in postList | reverse %}
+      {% if not loop.first %}
+        <hr>
+      {% endif %}
+      {{ postItem(item.url, item.data.title, item.date) }}
+    {% endfor %}
+  </ol>
+{% endif %}

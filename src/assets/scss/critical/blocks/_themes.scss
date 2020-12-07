@@ -1,0 +1,43 @@
+.b-themes {
+  max-height: 0;
+  overflow-x: auto;
+  transition: max-height .2s;
+  visibility: hidden;
+
+  &[data-expand='true'] {
+    max-height: 100vh;
+    max-height: var(--theme-height);
+    visibility: visible;
+  }
+
+  &__list {
+    white-space: nowrap;
+
+    &:not(.d) {
+      padding: get-size('300') 0;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0 get-size('300');
+  }
+
+  &__btn {
+    appearance: none;
+    background: none;
+    border: 0;
+    border-radius: 5px;
+    color: inherit;
+    cursor: pointer;
+    padding: .25rem 1rem;
+
+    &[data-active] {
+      background: get-color('mid+1');
+    }
+  }
+
+  &__icon {
+    margin-right: .5ch;
+  }
+}

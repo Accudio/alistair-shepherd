@@ -1,0 +1,22 @@
+// import configuration, functions and helpers
+@import 'util/config';
+@import 'util/functions';
+@import 'util/helpers';
+
+// import gorko to generate design tokens and functions/mixins
+@import '../../../node_modules/gorko/gorko';
+
+// Andy Bell's simplified reset
+@import 'critical/reset';
+
+// global styles
+@import 'critical/critical';
+
+// utilities
+@import 'critical/utilities/*';
+
+// layout
+@import 'critical/layout/*';
+
+// blocks
+@import 'critical/blocks/*';

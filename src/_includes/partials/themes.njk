@@ -1,0 +1,24 @@
+{% set themes = [
+  { slug: 'live',     name: 'Live',     icon: 'clock'   },
+  { slug: 'sunrise',  name: 'Sunrise',  icon: 'sunrise' },
+  { slug: 'day',      name: 'Day',      icon: 'sun'     },
+  { slug: 'sunset',   name: 'Sunset',   icon: 'sunset'  },
+  { slug: 'night',    name: 'Night',    icon: 'moon'    }
+] %}
+
+<div class="[ b-themes ][ color-light bg-dark-1 ]" data-expand="false" tabindex="-1" id="theme-panel">
+  <ul class="[ b-themes__list ][ align-center ]">
+    {% for theme in themes %}
+      <li class="b-themes__item">
+        <button
+          class="b-themes__btn"
+          data-theme="{{ theme.slug }}"
+          {% if theme.slug == 'live' %}data-active{% endif %}
+        >
+          {% icon theme.icon, 'inline b-themes__icon' %}
+          {{ theme.name }}
+        </button>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

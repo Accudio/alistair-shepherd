@@ -1,0 +1,14 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+  <article>
+    <div class="wrap">
+      <div class="[ flow ][ measure-long ]">
+        {% if title %}
+          <h1>{{ title }}</h1>
+        {% endif %}
+        {{ content | safe }}
+      </div>
+    </div>
+  </article>
+{% endblock %}

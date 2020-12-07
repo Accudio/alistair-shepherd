@@ -1,0 +1,14 @@
+/**
+ * Wrap
+ * Sets a max width, adds a consisten gutter and horizontally
+ * centers the contents
+ */
+
+.wrap {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70rem;
+  padding-left: get-size('500');
+  padding-right: get-size('500');
+  position: relative;
+}
