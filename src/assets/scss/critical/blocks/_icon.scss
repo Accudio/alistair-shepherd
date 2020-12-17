@@ -1,21 +1,12 @@
 .b-icon {
   $self: &;
+
   align-self: center;
   display: flex;
 
   &__svg {
-    fill: currentColor;
     height: 1em;
     width: 1em;
-
-    &--s {
-      fill: none;
-      fill: none;
-      stroke: currentColor;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-width: 2;
-    }
   }
 
   &.inline {

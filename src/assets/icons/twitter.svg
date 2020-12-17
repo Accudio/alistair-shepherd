@@ -4,5 +4,5 @@
     Url:            https://feathericons.com/?query=twitter;
     License:        Available under MIT License (https://github.com/feathericons/feather/blob/master/LICENSE);
   -->
-  <path d="M23 3a10.9 10.9 0 01-3.1 1.5 4.5 4.5 0 00-7.9 3v1A10.7 10.7 0 013 4s-4 9 5 13a11.6 11.6 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 000-.8A7.7 7.7 0 0023 3z"/>
+  <path d="M23 3a10.9 10.9 0 01-3.1 1.5 4.5 4.5 0 00-7.9 3v1A10.7 10.7 0 013 4s-4 9 5 13a11.6 11.6 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 000-.8A7.7 7.7 0 0023 3z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
 </svg>
