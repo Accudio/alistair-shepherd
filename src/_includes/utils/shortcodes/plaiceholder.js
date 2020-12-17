@@ -12,7 +12,7 @@ module.exports = async function plaiceholder(imagePath) {
   const css = await getPixelsCSS(image)
 
   return `<div
-    class="plaice"
+    class="b-plaice"
     style="
       background-image:${css.backgroundImage};
       background-position:${css.backgroundPosition};

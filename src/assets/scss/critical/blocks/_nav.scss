@@ -87,7 +87,7 @@
         }
       }
 
-      @include min-width(medium) {
+      @include media-query('md') {
         &::after {
           background: get-color('dark');
           bottom: 0;

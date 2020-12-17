@@ -16,16 +16,9 @@
     display: flex;
   }
 
-  &__btns {
-    margin-left: get-size('900');
-  }
-
   &__btn {
-    background: get-color('dark-1');
     border: 2px solid transparent;
     border-radius: 50%;
-    color: get-color('light');
     cursor: pointer;
-    padding: .5rem;
   }
 }

@@ -1,12 +1,12 @@
 .b-button {
-  @extend .u-radius; // stylelint-disable-line scss/at-extend-no-missing-placeholder
+  @extend .radius; // stylelint-disable-line scss/at-extend-no-missing-placeholder
 
   @include apply-utility('font', 'sans');
   @include apply-utility('weight', 'bold');
+
   background: get-color('light+1');
   border: 2px solid transparent;
   color: get-color('dark');
-
   cursor: pointer;
   display: inline-block;
   padding: .5rem 2rem;

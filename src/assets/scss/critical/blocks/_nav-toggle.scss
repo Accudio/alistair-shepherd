@@ -1,14 +1,13 @@
 .b-navToggle {
   $self: &;
 
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   position: relative;
   z-index: 1;
 
-  @include min-width(medium) {
+  @include media-query('md') {
     display: none;
   }
-
 
   &__burger {
     height: 1em;

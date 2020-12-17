@@ -1,7 +1,7 @@
 <header class="[ b-header ][ color-dark-1 ]">
   <div class="b-header__overlay">
     <div class="[ b-header__wrap ][ wrap ][ pad-top-200 pad-bot-200 ]">
-      <a href="/" class="[ b-brand ][ ma-r ]" aria-label="go to homepage">
+      <a href="/" class="[ b-brand ][ gap-right-auto ]" aria-label="go to homepage">
         {% include '../bundle/images/logo.svg' %}
         <div class="[ b-brand__name ][ pad-left-400 ][ font-sans weight-bold text-600 leading-flat ]" aria-hidden="true">
           Alistair<br>
@@ -10,7 +10,7 @@
       </a>
       {% if navigation.items %}
         <nav
-          class="[ b-nav ][ ma-l ][ align-center ]"
+          class="[ b-nav ][ gap-left-auto ][ align-center ]"
           id="primary-nav"
           data-state="closed">
           <ul class="b-nav__flow">
@@ -34,9 +34,9 @@
         </nav>
       {% endif %}
 
-      <div class="b-header__btns">
+      <div class="[ b-header__btns ][ gap-left-900 ]">
         <button
-          class="[ b-themes__toggle ][ b-header__btn ]"
+          class="[ b-themes__toggle ][ b-header__btn ][ bg-dark-1 color-light ][ pad-200 ]"
           id="themes"
           aria-expanded="false"
           aria-controls="theme-panel"
@@ -46,7 +46,7 @@
 
         {% if navigation.items %}
           <button
-            class="[ b-navToggle ][ b-header__btn ]"
+            class="[ b-navToggle ][ b-header__btn ][ pad-200 ]"
             id="nav-toggle"
             aria-expanded="false"
             aria-controls="primary-nav"

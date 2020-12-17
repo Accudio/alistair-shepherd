@@ -84,6 +84,11 @@ $gorko-config: (
     'output': 'responsive',
     'property': '--flow-space',
   ),
+  'pad': (
+    'items': $gorko-size-scale,
+    'output': 'standard',
+    'property': 'padding',
+  ),
   'pad-top': (
     'items': $gorko-size-scale,
     'output': 'standard',
@@ -114,13 +119,23 @@ $gorko-config: (
   ),
   'gap-bot': (
     'items': $gorko-size-scale,
-    'output': 'responsive',
+    'output': 'standard',
     'property': 'margin-bottom',
   ),
   'gap-top': (
     'items': $gorko-size-scale,
-    'output': 'responsive',
+    'output': 'standard',
     'property': 'margin-top',
+  ),
+  'gap-left': (
+    'items': $gorko-size-scale,
+    'output': 'standard',
+    'property': 'margin-left',
+  ),
+  'gap-right': (
+    'items': $gorko-size-scale,
+    'output': 'standard',
+    'property': 'margin-right',
   ),
   'leading': (
     'items': (

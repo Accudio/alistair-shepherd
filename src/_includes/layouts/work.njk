@@ -24,7 +24,7 @@
       {% endif %}
 
       {% if images %}
-        <div class="[ u-radius ][ img-auto ]">
+        <div class="[ radius ][ img-auto ]">
           {% plaiceholder images[0].src %}
           <img
             src="{{ images[0].src }}"
@@ -54,7 +54,7 @@
         <h2>Gallery</h2>
         <ul class="auto-grid" style="--auto-grid-min-size:24rem">
           {% for image in images %}
-            <li class="[ u-radius ][ img-auto ]">
+            <li class="[ radius ][ img-auto ]">
               {% plaiceholder image.src %}
               <img
                 src="{{ image.src }}"
