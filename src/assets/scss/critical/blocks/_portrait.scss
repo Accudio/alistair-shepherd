@@ -1,4 +1,6 @@
 .b-portrait {
+  flex-basis: 15rem;
+
   svg {
     background: get-color('dark-1');
     border: get-size('200') solid get-color('light');
