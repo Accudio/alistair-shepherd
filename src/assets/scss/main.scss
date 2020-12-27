@@ -9,8 +9,11 @@ $outputTokenCSS: false; // stylelint-disable-line scss/dollar-variable-pattern
 // import gorko to generate design tokens and functions/mixins
 @import '../../../node_modules/gorko/gorko';
 
-// global blocks
-@import 'main/blocks/*';
-
-// global utilities
+// utilities
 @import 'main/utilities/*';
+
+// layout
+@import 'main/layout/*';
+
+// blocks
+@import 'main/blocks/*';

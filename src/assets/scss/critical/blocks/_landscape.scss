@@ -8,7 +8,7 @@ $sun-movement-h: 40%;
   height: 75vh;
   overflow: hidden;
   position: relative;
-  transform-style: preserve-3d;
+  // transform-style: preserve-3d;
 
   &__sun {
     $distance: 10;
@@ -80,11 +80,9 @@ $sun-movement-h: 40%;
     transition: transform-origin .2s;
 
     @for $i from 1 through $layers {
-      $x: ($layers - $i) / 2;
+      $x: ($layers - $i);
       &--#{$i} {
-        @if $i < 10 {
-          transform: translateZ(-100 * $x#{px}) scale($x + 1) translateX(-4px);
-        }
+        transform: translateY(calc(var(--scrollPos, 0px) * #{$x / 10}));
       }
     }
   }
