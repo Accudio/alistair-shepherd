@@ -1,5 +1,5 @@
 .b-header {
-  background: var(--c0);
+  background: var(--c1);
   height: 75vh;
   position: relative;
 
@@ -20,5 +20,15 @@
     border: 2px solid transparent;
     border-radius: 50%;
     cursor: pointer;
+  }
+
+  // selection and focus styling
+  ::selection {
+    background: get-color('dark');
+    color: get-color('light');
+  }
+
+  :focus {
+    outline-color: get-color('dark');
   }
 }
