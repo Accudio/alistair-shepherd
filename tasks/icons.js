@@ -7,13 +7,17 @@ const rename = require('gulp-rename')
 
 // gulp options
 const options = {
-  out: 'src/_includes/bundle/assets',
+  in: 'src/assets/icons/*.svg',
+  out: 'src/_includes/bundle',
   prefix: 'icons-'
 }
 
 // icon set generation
 const icons = () => {
-  return src('src/assets/icons/*.svg')
+
+  console.log('Building icons with gulp')
+
+  return src(options.in)
     .pipe(svgmin(function(file) {
       var prefix = options.prefix + path.basename(file.relative, path.extname(file.relative))
       return {

@@ -4,7 +4,6 @@ const fs = require('fs')
 // plugins
 const syntaxHighlightPlugin = require('@11ty/eleventy-plugin-syntaxhighlight')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
-// const pwaPlugin = require('eleventy-plugin-pwa')
 const sitemapPlugin = require('@quasibit/eleventy-plugin-sitemap')
 
 // filters, transforms and shortcodes can be found in utils
@@ -16,7 +15,6 @@ const addShortcodes = require('./src/_includes/utils/shortcodes')
  * Import site configuration
  */
 const siteConfig = require('./src/_data/config.json')
-const { configFunction } = require('@11ty/eleventy-plugin-syntaxhighlight')
 
 module.exports = function (config) {
   addFilters(config)
@@ -26,20 +24,19 @@ module.exports = function (config) {
   /**
    * custom watch targets
    */
-  config.addWatchTarget('./bundle/')
+  config.addWatchTarget('src/_includes/bundle/**/*')
 
   /**
    * passthrough file copy
    */
   config.addPassthroughCopy({
-    './static': '.'
+    'static/': '.'
   })
   config.addPassthroughCopy({
-    'src/_includes/bundle/assets/js': 'assets/js',
     'src/_includes/bundle/assets/scss': 'assets/css'
   })
   config.addPassthroughCopy({
-    'src/_includes/bundle/images': 'images'
+    'src/images': 'images'
   })
 
   /**

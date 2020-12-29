@@ -4,3 +4,5 @@ import './main/themes.js'
 import './main/naked.js'
 
 import './main/landscape-parallax.js'
+
+console.log(ENV)

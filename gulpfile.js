@@ -1,20 +1,19 @@
-const {parallel, watch} = require('gulp')
+const { parallel, watch } = require('gulp')
 
 // pull in tasks
 const icons = require('./tasks/icons.js')
+const sass = require('./tasks/sass.js')
+const scripts = require('./tasks/scripts.js')
 
-/**
- * set each directory and contents that we want to watch and
- * assign the relevant task. `ignoreInitial` set to true will
- * prevent the task being run when we run `gulp watch`, but it
- * will run when a file changes.
- */
+// watch files and run task when it changes
 const watcher = () => {
-  watch('./src/_includes/icons/*.svg', {ignoreInitial: true}, icons)
+  watch('src/assets/icons/*.svg', { ignoreInitial: true }, icons)
+  watch('src/assets/js/**/*.js', { ignoreInitial: true }, scripts)
+  watch('src/assets/scss/**/*.scss', { ignoreInitial: true }, sass)
 }
 
 // default - run each task in parallel
-exports.default = parallel(icons)
+exports.default = parallel(icons, sass, scripts)
 
-// watcher task that instructs gulp to watch directories and act accordingly
+// watch task
 exports.watch = watcher

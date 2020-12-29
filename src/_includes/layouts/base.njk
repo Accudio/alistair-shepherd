@@ -21,9 +21,6 @@
     {% block head %}{% endblock %}
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,700;1,400&family=Red+Hat+Display:wght@400;900">
-
-    <script src="/assets/js/main.js" defer></script>
-    <script src="/assets/js/barba.js" defer></script>
   </head>
 
   <body data-barba="wrapper">
@@ -96,6 +93,13 @@
       </div>
     </div>
 
+    <script src="/assets/js/main.js" type="module"></script>
+    <script src="/assets/js/barba.js" type="module"></script>
+
+    <div style="display:none">
+      {% include 'bundle/icons.svg' %}
+    </div>
+
     <script>
       {% if not env.IS_DEV %}
         if ('serviceWorker' in navigator) {
@@ -105,9 +109,5 @@
         }
       {% endif %}
     </script>
-
-    <div style="display:none">
-      {% include 'bundle/assets/icons.svg' %}
-    </div>
   </body>
 </html>

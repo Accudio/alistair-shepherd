@@ -13,6 +13,6 @@
   {% if env.IS_DEV %}
     <link rel="stylesheet" href="/assets/css/{{ name }}.css">
   {% else %}
-    <style>{% include "bundle/assets/scss/" + name + ".css" %}</style>
+    <style>{% include "bundle/css/" + name + ".css" %}</style>
   {% endif %}
 {% endmacro %}
