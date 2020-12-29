@@ -42,7 +42,6 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "3.0.1",
     "@barba/core": "^2.9.7",
     "@barba/prefetch": "^2.1.10",
-    "@plaiceholder/css": "^1.0.0",
     "@quasibit/eleventy-plugin-sitemap": "^2.0.3",
     "@tbranyen/jsdom": "13.0.0",
     "autoprefixer": "^9.8.5",
