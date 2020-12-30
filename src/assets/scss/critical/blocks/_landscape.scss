@@ -82,7 +82,7 @@ $sun-movement-h: 40%;
     @for $i from 1 through $layers {
       $x: ($layers - $i);
       &--#{$i} {
-        transform: translateY(calc(var(--scrollPos, 0px) * #{$x / 10}));
+        transform: translateY(calc(var(--scrollPos, 0) * #{$x / 10}));
       }
     }
   }
