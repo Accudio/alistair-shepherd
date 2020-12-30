@@ -14,9 +14,6 @@ const options = {
 
 // icon set generation
 const icons = () => {
-
-  console.log('Building icons with gulp')
-
   return src(options.in)
     .pipe(svgmin(function(file) {
       var prefix = options.prefix + path.basename(file.relative, path.extname(file.relative))

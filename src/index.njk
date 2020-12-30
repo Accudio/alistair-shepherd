@@ -35,7 +35,15 @@ title: XITY Starter
 
       <a href="/work/1896gallery/" aria-label="See 1896 Gallery" class="[ b-featWork__item ][ radius ][ img-fit ]">
         <img
-          src="/images/work1.jpg"
+          src="{% src 'work1.jpg', 528, 0.5 %}"
+          srcset="{% srcset 'work1.jpg', null, 0.5 %}"
+          sizes="{% sizes [
+            '(min-width: 62rem) calc((67.34rem / 2) - 1.33rem)',
+            '(min-width: 37rem) calc((100vw - 2.66rem) * .6)',
+            'calc(100vw - 2.66rem)'
+          ] %}"
+          width="528"
+          height="264"
           alt="Image alt"
           loading="lazy"
         >
@@ -43,7 +51,15 @@ title: XITY Starter
 
       <a href="/work/speedscanner/" aria-label="See Speed Scanner" class="[ b-featWork__item ][ radius ][ img-fit ]">
         <img
-          src="/images/work2.jpg"
+          src="{% src 'work2.jpg', 528, 0.5 %}"
+          srcset="{% srcset 'work2.jpg', null, 0.5 %}"
+          sizes="{% sizes [
+            '(min-width: 62rem) calc((67.34rem / 2) - 1.33rem)',
+            '(min-width: 37rem) calc((100vw - 2.66rem) * .6)',
+            'calc(100vw - 2.66rem)'
+          ] %}"
+          width="528"
+          height="264"
           alt="Image alt"
           loading="lazy"
         >
@@ -51,7 +67,15 @@ title: XITY Starter
 
       <a href="/work/potter-tree-consultancy/" aria-label="See Potter Tree Consultancy" class="[ b-featWork__item ][ radius ][ img-fit ]">
         <img
-          src="/images/work3.jpg"
+          src="{% src 'work3.jpg', 528, 0.5 %}"
+          srcset="{% srcset 'work3.jpg', null, 0.5 %}"
+          sizes="{% sizes [
+            '(min-width: 62rem) calc((67.34rem / 2) - 1.33rem)',
+            '(min-width: 37rem) calc((100vw - 2.66rem) * .6)',
+            'calc(100vw - 2.66rem)'
+          ] %}"
+          width="528"
+          height="264"
           alt="Image alt"
           loading="lazy"
         >

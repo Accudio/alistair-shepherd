@@ -20,10 +20,15 @@ layout: 'raw'
 
             <div class="[ b-workGrid__img ][ radius ][ img-auto ]" aria-hidden="true">
               <img
-                src="{{ work.data.images[0].src }}"
+                src="{% src work.data.images[0].src, 528, 0.5 %}"
+                srcset="{% srcset work.data.images[0].src, null, 0.5 %}"
+                sizes="{% sizes [
+                  '(min-width: 70rem) 33rem',
+                  'calc(100vw - 2.66rem)'
+                ] %}"
                 alt="{{ work.data.images[0].alt }}"
-                width="1200"
-                height="600"
+                width="528"
+                height="264"
                 loading="lazy"
               >
             </div>

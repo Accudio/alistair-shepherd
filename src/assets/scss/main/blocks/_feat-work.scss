@@ -7,7 +7,7 @@
     text-align: center;
   }
 
-  @include media-query('md') {
+  @include min-width(medium) {
     &__inner {
       display: grid;
       grid-gap: get-size('500');
@@ -36,7 +36,7 @@
     }
   }
 
-  @include media-query('lg') {
+  @include min-width(large) {
     grid-template-columns: repeat(2, 1fr);
 
     &__intro,

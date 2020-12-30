@@ -10,7 +10,7 @@
   }
 
   &__name {
-    @include max-width(medium) {
+    @include max-width(large) {
       display: none;
     }
   }

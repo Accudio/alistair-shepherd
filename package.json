@@ -34,7 +34,8 @@
     "lint:css": "stylelint --ignore-path .gitignore \"src/assets/scss/**/*.scss\"",
     "fix": "run-p fix:*",
     "fix:js": "eslint --ignore-path .gitignore \"src/assets/js/**/*.js\" --fix",
-    "fix:css": "stylelint --ignore-path .gitignore \"src/assets/scss/**/*.scss\" --fix"
+    "fix:css": "stylelint --ignore-path .gitignore \"src/assets/scss/**/*.scss\" --fix",
+    "devimages": "surge dist/raw-images https://as-dev-images.surge.sh"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",

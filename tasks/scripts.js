@@ -11,9 +11,6 @@ const options = {
 
 // script generation
 const scripts = () => {
-
-  console.log('Building scripts with gulp')
-
   return src(options.in)
     .pipe(gulpEsbuild({
       bundle: true,

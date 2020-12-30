@@ -36,7 +36,7 @@ module.exports = function (config) {
     'src/_includes/bundle/assets/scss': 'assets/css'
   })
   config.addPassthroughCopy({
-    'src/images': 'images'
+    'src/images': 'raw-images'
   })
 
   /**

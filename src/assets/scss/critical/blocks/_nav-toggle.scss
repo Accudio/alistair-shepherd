@@ -5,7 +5,7 @@
   position: relative;
   z-index: 1;
 
-  @include media-query('md') {
+  @include min-width(large) {
     display: none;
   }
 

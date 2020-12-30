@@ -17,11 +17,11 @@ buttons:
     url: 'https://1896gallery.com'
 
 images:
-  - src: '/images/placeholder.jpg'
+  - src: 'placeholder.jpg'
     alt: 'Placeholder Image'
-  - src: '/images/placeholder.jpg'
+  - src: 'placeholder.jpg'
     alt: 'Placeholder Image'
-  - src: '/images/placeholder.jpg'
+  - src: 'placeholder.jpg'
     alt: 'Placeholder Image'
 ---
 

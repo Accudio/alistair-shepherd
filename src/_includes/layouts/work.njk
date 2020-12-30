@@ -26,10 +26,12 @@
       {% if images %}
         <div class="[ radius ][ img-auto ]">
           <img
-            src="{{ images[0].src }}"
+            src="{% src images[0].src, 1077, 0.5 %}"
+            srcset="{% srcset images[0].src, null, 0.5 %}"
+            sizes="{% sizes 'full' %}"
             alt="{{ images[0].alt }}"
-            width="1200"
-            height="600"
+            width="1077"
+            height="539"
             loading="lazy"
           >
         </div>
@@ -55,10 +57,16 @@
           {% for image in images %}
             <li class="[ radius ][ img-auto ]">
               <img
-                src="{{ image.src }}"
+                src="{% src image.src, 528, 0.5 %}"
+                srcset="{% srcset image.src, null, 0.5 %}"
+                sizes="{% sizes [
+                  '(min-width: 70rem) 33rem',
+                  '(min-width: 53rem) calc((100vw - 4rem) / 2)',
+                  'calc(100vw - 2.66rem)'
+                ] %}"
                 alt="{{ image.alt }}"
-                width="1200"
-                height="600"
+                width="528"
+                height="264"
                 loading="lazy"
               >
             </li>

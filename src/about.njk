@@ -12,7 +12,9 @@ title: 'About'
       </div>
       <div class="[ radius ][ img-auto ]">
         <img
-          src="/images/about-portrait.jpg"
+          src="{% src 'about-portrait.jpg', 1077 %}"
+          srcset="{% srcset 'about-portrait.jpg' %}"
+          sizes="{% sizes 'full' %}"
           alt="Image alt"
           width="1200"
           height="600"
@@ -48,7 +50,9 @@ title: 'About'
       </div>
       <div class="[ radius ][ img-auto ]">
         <img
-          src="/images/about-snowboard.jpg"
+          src="{% src 'about-snowboard.jpg', 1077 %}"
+          srcset="{% srcset 'about-snowboard.jpg' %}"
+          sizes="{% sizes 'full' %}"
           alt="Image alt"
           width="1200"
           height="600"
