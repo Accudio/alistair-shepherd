@@ -68,7 +68,7 @@ module.exports = function (config) {
   })
 
   /**
-   * work collection
+   * work collections
    */
   config.addCollection('work', collection => {
     return [
@@ -76,6 +76,18 @@ module.exports = function (config) {
         .getFilteredByGlob(
           `./${siteConfig.paths.src}/work/**/*`
         )
+    ]
+  })
+  config.addCollection('featuredWork', collection => {
+    return [
+      ...collection
+        .getFilteredByGlob(
+          `./${siteConfig.paths.src}/work/**/*`
+        )
+        .filter(work => !!work.data.featured)
+        .sort((a, b) => {
+          return (a.data.featured > b.data.featured) ? 1 : -1
+        })
     ]
   })
 

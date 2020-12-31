@@ -35,53 +35,23 @@ title: XITY Starter
         </p>
       </div>
 
-      <a href="/work/1896gallery/" aria-label="See 1896 Gallery" class="[ b-featWork__item ][ radius ][ img-fit ]">
-        <img
-          src="{% src 'work1.jpg', 528, 0.5 %}"
-          srcset="{% srcset 'work1.jpg', null, 0.5 %}"
-          sizes="{% sizes [
-            '(min-width: 62rem) calc((67.34rem / 2) - 1.33rem)',
-            '(min-width: 37rem) calc((100vw - 2.66rem) * .6)',
-            'calc(100vw - 2.66rem)'
-          ] %}"
-          width="528"
-          height="264"
-          alt="Image alt"
-          loading="lazy"
-        >
-      </a>
-
-      <a href="/work/speedscanner/" aria-label="See Speed Scanner" class="[ b-featWork__item ][ radius ][ img-fit ]">
-        <img
-          src="{% src 'work2.jpg', 528, 0.5 %}"
-          srcset="{% srcset 'work2.jpg', null, 0.5 %}"
-          sizes="{% sizes [
-            '(min-width: 62rem) calc((67.34rem / 2) - 1.33rem)',
-            '(min-width: 37rem) calc((100vw - 2.66rem) * .6)',
-            'calc(100vw - 2.66rem)'
-          ] %}"
-          width="528"
-          height="264"
-          alt="Image alt"
-          loading="lazy"
-        >
-      </a>
-
-      <a href="/work/potter-tree-consultancy/" aria-label="See Potter Tree Consultancy" class="[ b-featWork__item ][ radius ][ img-fit ]">
-        <img
-          src="{% src 'work3.jpg', 528, 0.5 %}"
-          srcset="{% srcset 'work3.jpg', null, 0.5 %}"
-          sizes="{% sizes [
-            '(min-width: 62rem) calc((67.34rem / 2) - 1.33rem)',
-            '(min-width: 37rem) calc((100vw - 2.66rem) * .6)',
-            'calc(100vw - 2.66rem)'
-          ] %}"
-          width="528"
-          height="264"
-          alt="Image alt"
-          loading="lazy"
-        >
-      </a>
+      {% for work in collections.featuredWork %}
+        <a href="{{ work.url }}" aria-label="See {{ work.data.title }}" class="[ b-featWork__item ][ radius ][ img-fit ]">
+          <img
+            src="{% src work.data.images[0].src, 528, 0.5 %}"
+            srcset="{% srcset work.data.images[0].src, null, 0.5 %}"
+            sizes="{% sizes [
+              '(min-width: 62rem) calc((67.34rem / 2) - 1.33rem)',
+              '(min-width: 37rem) calc((100vw - 2.66rem) * .6)',
+              'calc(100vw - 2.66rem)'
+            ] %}"
+            width="528"
+            height="264"
+            alt="{{ work.data.images[0].alt }}"
+            loading="lazy"
+          >
+        </a>
+      {% endfor %}
 
     </div>
     <div class="[ b-featWork__action ][ flow-space-700 ]">

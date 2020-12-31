@@ -2,6 +2,8 @@
 layout: work
 title: 1896 Gallery
 
+featured: 1
+
 summary: 'A website built with Eleventy to showcase artwork online.'
 
 intro: '
