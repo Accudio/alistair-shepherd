@@ -10,7 +10,7 @@ body {
   @include apply-utility('font', 'base');
 
   background: get-color('dark-1');
-  color: get-color('light');
+  color: get-color('white');
   font-size: get-size('500');
   line-height: 1.5;
 }
