@@ -8,12 +8,9 @@ title: Writing
 
 {% set postList = collections.posts %}
 {% if collections.posts.length %}
-  <ol reversed>
+  <ol reversed class="[ latest-posts ][ flow flow-space-700 ]">
     {% for item in postList | reverse %}
-      {% if not loop.first %}
-        <hr>
-      {% endif %}
-      {{ postItem(item.url, item.data.title, item.date) }}
+      {{ postItem(item.url, item.data.title, item.date, item.data.excerpt) }}
     {% endfor %}
   </ol>
 {% endif %}

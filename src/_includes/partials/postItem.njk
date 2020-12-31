@@ -1,8 +1,11 @@
-{% macro postItem(url, title, date) %}
+{% macro postItem(url, title, date, excerpt) %}
   <li>
     <h3>
       <a href="{{ url }}">{{ title }}</a>
     </h3>
     <time datetime="{{ date | htmlDate }}">{{ date | date }}</time>
+    {% if excerpt %}
+      <p>{{ excerpt }}</p>
+    {% endif %}
   </li>
 {% endmacro %}

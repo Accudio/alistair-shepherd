@@ -3,6 +3,8 @@ layout: 'raw'
 title: XITY Starter
 ---
 
+{% from "partials/postItem.njk" import postItem %}
+
 <article class="pad-top-600">
   <div class="wrap">
     <div class="l-side">
@@ -92,31 +94,14 @@ title: XITY Starter
   {% divider 'color-dark' %}
   <div class="[ wrap ][ flow ]">
     <h2>My Writing</h2>
-    <ul class="[ latest-posts ][ flow flow-space-700 ][ measure-long ]">
-      <li>
-        <h3>
-          <a href="#0">Why you'll never succeed at applications</a>
-        </h3>
-        <p>Why business software is afraid of the truth. 11 things your boss expects you know about home tech gadgets. 13 ideas you can steal from science facts.</p>
-      </li>
-      <li>
-        <h3>
-          <a href="#0">How latest electronic gadgets are the new latest electronic gadgets</a>
-        </h3>
-        <p>What wikipedia can't tell you about future technologies. Why science articles are killing you. The unconventional guide to best stores. The 16 best home tech gadget twitter feeds to follow.</p>
-      </li>
-      <li>
-        <h3>
-          <a href="#0">How to be unpopular in the design world</a>
-        </h3>
-        <p>Expose: you're losing money by not using modular homes. How modular homes are making the world a better place.</p>
-      </li>
-      <li>
-        <h3>
-          <a href="#0">Why your operating system never works out the way you plan</a>
-        </h3>
-        <p>9 great articles about future technologies. 9 facts about cool tech gadgets that'll keep you up at night. Why you shouldn't eat science current event in bed.</p>
-      </li>
-    </ul>
+
+    {% set postList = collections.posts %}
+    {% if collections.posts.length %}
+      <ol reversed class="[ latest-posts ][ flow flow-space-700 ][ measure-long ]">
+        {% for item in postList | reverse %}
+          {{ postItem(item.url, item.data.title, item.date, item.data.excerpt) }}
+        {% endfor %}
+      </ol>
+    {% endif %}
   </div>
 </article>

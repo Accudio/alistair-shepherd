@@ -1,6 +1,7 @@
 ---
 title: A post with embeds and images
 date: '2020-01-25'
+excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 tags:
   - images
   - content

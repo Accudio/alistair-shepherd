@@ -1,6 +1,7 @@
 ---
 title: Simple blog post
 date: '2020-01-25'
+excerpt:  Curabitur pulvinar ligula nec quam vulputate dapibus. Duis quis turpis rhoncus, luctus magna at, ornare ex.
 tags:
   - sample-content
   - code

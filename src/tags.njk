@@ -13,11 +13,8 @@ permalink: /writing/tag/{{ tag | slug }}/
 <h1>#{{ tag }}</h1>
 <small>{{ collections[tag].length }} posts published</small>
 
-<ol reversed>
-  {% for post in collections[tag] | reverse %}
-    {% if not loop.first %}
-      <hr/>
-    {% endif %}
-    {{ postItem(post.url, post.data.title, post.date) }}
+<ol reversed class="[ latest-posts ][ flow flow-space-700 ]">
+  {% for item in collections[tag] | reverse %}
+    {{ postItem(item.url, item.data.title, item.date, item.data.excerpt) }}
   {% endfor %}
 </ol>
