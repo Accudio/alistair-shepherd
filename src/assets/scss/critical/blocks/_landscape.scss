@@ -25,6 +25,10 @@ $sun-movement-h: 40%;
     visibility: hidden;
     width: 100%;
 
+    @media (prefers-reduced-motion: reduce) {
+      transform: translateY(0);
+    }
+
     &[data-active] {
       opacity: 1;
       visibility: visible;
@@ -79,6 +83,10 @@ $sun-movement-h: 40%;
     transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
     transform-origin: 50% 67%;
     transition: transform-origin .2s;
+
+    @media (prefers-reduced-motion: reduce) {
+      transform: translateY(0);
+    }
   }
 
   &__image {
