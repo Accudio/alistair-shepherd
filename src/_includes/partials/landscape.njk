@@ -1,3 +1,16 @@
+{% set offsets = {
+  '1': 0.96,
+  '2': 0.92,
+  '3': 0.9,
+  '4': 0.86,
+  '5': 0.83,
+  '6': 0.8,
+  '7': 0.75,
+  '8': 0.4,
+  '9': 0.2,
+  '10': 0
+} %}
+
 <div class="b-landscape" role="img">
   <div class="b-landscape__sun">
     <div class="b-landscape__sunH">
@@ -5,7 +18,7 @@
     </div>
   </div>
   {% for i in range(1, 11) -%}
-    <div class="b-landscape__layer b-landscape__layer--{{ i }}">
+    <div class="b-landscape__layer b-landscape__layer--{{ i }}" style="--offset:{{ offsets[i] }}">
       <div class="b-landscape__image">
         {% include 'svg/layer_' + i + '.svg' %}
       </div>
