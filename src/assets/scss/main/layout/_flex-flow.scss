@@ -1,0 +1,9 @@
+.flex-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: get-size('600');
+
+  > * {
+    flex: 1 0 auto;
+  }
+}

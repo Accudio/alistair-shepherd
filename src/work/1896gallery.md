@@ -4,37 +4,60 @@ title: 1896 Gallery
 
 featured: 1
 
-summary: 'A website built with Eleventy to showcase artwork online.'
+summary: A website built with Eleventy to showcase artwork online.
 
 intro: '
   <h1>1896 Gallery Website</h1>
-  <p>A Fox and a Leopard, resting lazily after a generous dinner, amused themselves by disputing about their good looks. The Leopard was very proud of his glossy, spotted coat and made disdainful remarks about the Fox, whose appearance he declared was quite ordinary.</p>
+  <p>
+    The 1896 Gallery is a art gallery based in the Highlands of Scotland. I&apos;ve worked with the 1896 Gallery team over several years and this is the third iteration of the site.
+  </p>
+  <p>
+    I built the site from scratch, writing almost all HTML, CSS and JS myself to minimise dependencies. The stack consists of WordPress as a headless CMS, Eleventy to generate HTML from the WP REST API, with Netlify handling hosting and forms.
+  </p>
 '
 techs:
-  - 'Eleventy'
-  - 'Headless WordPress'
-  - 'Netlify'
+  - Eleventy
+  - Headless WordPress with ACF
+  - Custom SCSS
+  - Netlify
 buttons:
-  - title: 'Visit Website'
-    url: 'https://1896gallery.com'
+  - title: Visit Website
+    label: 1896gallery.com
+    url: https://1896gallery.com
+
+thumbnail: 1896gallery-thumb.jpg
+
+mainImage:
+  src: 1896gallery1.jpg
+  alt: Screenshot of 1896 Gallery website on desktop, and on mobile
 
 images:
-  - src: 'placeholder.jpg'
-    alt: 'Placeholder Image'
-  - src: 'placeholder.jpg'
-    alt: 'Placeholder Image'
-  - src: 'placeholder.jpg'
-    alt: 'Placeholder Image'
+  - src: 1896gallery2.jpg
+    alt: Artist listing on 1896 Gallery website. Has grid of items with artwork, title, price and enquiry button.
+  - src: 1896gallery3.jpg
+    alt: Photography page on 1896 Gallery website. Has framed photo with grid of photography thumbnails beneath.
+  - src: 1896gallery4.jpg
+    alt: Artwork enquiry on 1896 Gallery website. Small thumbnail of art and enquiry form.
 ---
 
 ## The Project
 
-A Giant Oak stood near a brook in which grew some slender Reeds. When the wind blew, the great Oak stood proudly upright with its hundred arms uplifted to the sky. But the Reeds bowed low in the wind and sang a sad and mournful song.
+The 1896 Gallery team asked about adding artists, artworks and exhibitions online for people to view. We found the best course of action would be to redesign the site with this in mind.
+
+I worked with web and UX designer Natassia Woodger to design the site. We hoped to not only exhibit the artwork, but also produce a great experience to visitors.
 
 ## The Build
 
-Two Goats, frisking gayly on the rocky steeps of a mountain valley, chanced to meet, one on each side of a deep chasm through which poured a mighty mountain torrent. The trunk of a fallen tree formed the only means of crossing the chasm, and on this not even two squirrels could have passed each other in safety. The narrow path would have made the bravest tremble. Not so our Goats. Their pride would not permit either to stand aside for the other.
+The 1896 Gallery team wanted to be able to add or remove content themselves, so I chose WordPress with ACF as the CMS. This allowed us to get it live quickly, and it's popularity made it easy for editors to get used to.
+
+The site had no need for a database so this was a great opportunity to use a static site generator (SSG). The first build was with Gridsome and Vue but with little interactivity, the Vue runtime was unnecessary. I switched the project to Eleventy, a SSG focused on HTML output. Using a component-based methodology made the switch easy.
+
+As a greenfield project, performance and accessibility was vital right from the beginning. I wrote all CSS and most JS by hand to reduce the number of dependencies, using SCSS and a Gulp build chain. As an artwork site, images were important so it was an obvious choice to integrate with an image CDN for resizing and optimisation. I chose CloudImage due to it's easy implementation, competitive pricing and great support.
 
 ## The Result
 
-A Beetle once begged the Eagle to spare a Hare which had run to her for protection. But the Eagle pounced upon her prey, the sweep of her great wings tumbling the Beetle a dozen feet away. Furious at the disrespect shown her, the Beetle flew to the Eagle's nest and rolled out the eggs. Not one did she spare. The Eagle's grief and anger knew no bounds, but who had done the cruel deed she did not know.
+The fact the project started from almost scratch, and the flexibility of the client made the process a bit smoother than most. Although the Gallery team had an idea of what they wanted, they trusted Natassia and I to design and build with our discretion.
+
+There were still some difficulties as with all projects; it was a tricky design to build and the switch from Vue to Eleventy took work. I also needed a bit of experimentation to get used to new methods and to find the best solution.
+
+The website has been successful in prompting more enquiries, and particularly during the Covid-19 pandemic has allowed the business to still operate and sell their works.

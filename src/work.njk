@@ -8,7 +8,8 @@ layout: 'raw'
     <div class="flow">
       <div class="[ flow ][ measure-long ][ gap-bot-900 ]">
         <h1>My Work and Projects</h1>
-        <p>A Wolf had been feasting too greedily, and a bone had stuck crosswise in his throat. He could get it neither up nor down, and of course he could not eat a thing. Naturally that was an awful state of affairs for a greedy Wolf.</p>
+        <p>I've worked on a range of accessible and performant websites and web-apps in the form of my personal projects, freelance work for small businesses, and agency work.</p>
+        <p>Below are some case studies for my latest personal projects and for my finest freelance work, <a href="#contact">contact me</a> for information about my work with agencies.</p>
       </div>
       <ul class="[ b-workGrid ][ auto-grid ]" style="--auto-grid-min-size:32rem">
         {% for work in collections.work %}
@@ -20,8 +21,8 @@ layout: 'raw'
 
             <div class="[ b-workGrid__img ][ radius ][ img-auto ]" aria-hidden="true">
               <img
-                src="{% src work.data.images[0].src, 528, 0.5 %}"
-                srcset="{% srcset work.data.images[0].src, null, 0.5 %}"
+                src="{% src work.data.thumbnail, 528, 0.5 %}"
+                srcset="{% srcset work.data.thumbnail, null, 0.5 %}"
                 sizes="{% sizes [
                   '(min-width: 70rem) 33rem',
                   'calc(100vw - 2.66rem)'

@@ -18,7 +18,7 @@
     "clean": "rimraf ./.cache ./dist ./src/_includes/bundle",
     "compile": "run-s clean compile:assets compile:html",
     "compile:assets": "cross-env NODE_ENV=development gulp",
-    "compile:11ty": "cross-env ELEVENTY_ENV=development eleventy",
+    "compile:html": "cross-env ELEVENTY_ENV=development eleventy",
     "build": "run-s clean build:assets build:html",
     "build:assets": "cross-env NODE_ENV=production gulp",
     "build:html": "cross-env ELEVENTY_ENV=production eleventy",
@@ -35,7 +35,7 @@
     "fix": "run-p fix:*",
     "fix:js": "eslint --ignore-path .gitignore \"src/assets/js/**/*.js\" --fix",
     "fix:css": "stylelint --ignore-path .gitignore \"src/assets/scss/**/*.scss\" --fix",
-    "devimages": "surge dist/raw-images https://as-dev-images.surge.sh"
+    "devimages": "npm run compile && surge dist/raw-images https://as-dev-images.surge.sh"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",

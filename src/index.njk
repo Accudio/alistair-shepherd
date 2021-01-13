@@ -14,7 +14,10 @@ title: XITY Starter
           I'm a web developer based in Edinburgh, Scotland, and use the pronouns he/him. I love front-end development&mdash;particularly CSS, HTML, and web performance.
         </p>
         <p>
-          A Fox one day spied a beautiful bunch of ripe grapes hanging from a vine trained along the branches of a tree. The grapes seemed ready to burst with juice, and the Fox's mouth watered as he gazed longingly at them.
+          You can find out more about <a href="/work/">my Projects and Work</a>, <a href="/about/">about me</a> or <a href="/cv/">view my CV</a>. I occasionally write about web technologies on my <a href="">blog</a>.
+        </p>
+        <p>
+          Feel free to <a href="#contact">contact me</a> if you want to find out more info, speak about a project, or have a chat about the web!
         </p>
       </div>
       <div class="[ l-side__sidebar ][ b-portrait ]">
@@ -31,15 +34,15 @@ title: XITY Starter
       <div class="[ b-featWork__intro ][ flow flow-space-300 ]">
         <h2>My Work and Projects</h2>
         <p class="[ b-featWork__summary ][ measure-compact ]">
-          A certain Wolf could not get enough to eat because of the watchfulness of the Shepherds.
+          Case studies for a few personal projects I like to show off and a few of my finest freelance websites!
         </p>
       </div>
 
       {% for work in collections.featuredWork %}
         <a href="{{ work.url }}" aria-label="See {{ work.data.title }}" class="[ b-featWork__item ][ radius ][ img-fit ]">
           <img
-            src="{% src work.data.images[0].src, 528, 0.5 %}"
-            srcset="{% srcset work.data.images[0].src, null, 0.5 %}"
+            src="{% src work.data.thumbnail, 528, 0.5 %}"
+            srcset="{% srcset work.data.thumbnail, null, 0.5 %}"
             sizes="{% sizes [
               '(min-width: 62rem) calc((67.34rem / 2) - 1.33rem)',
               '(min-width: 37rem) calc((100vw - 2.66rem) * .6)',
@@ -47,7 +50,7 @@ title: XITY Starter
             ] %}"
             width="528"
             height="264"
-            alt="{{ work.data.images[0].alt }}"
+            alt=""
             loading="lazy"
           >
         </a>

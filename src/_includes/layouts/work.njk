@@ -4,32 +4,39 @@
   <article>
     <div class="[ wrap ][ flow ]">
 
-      <div class="[ flow ][ measure-long ]">
+      <div class="[ flow ][ measure-long ][ gap-bot-900 ]">
         {{ intro | safe }}
       </div>
 
-      {% if techs %}
-        <h2>Technologies</h2>
-        <ul>
-          {% for tech in techs %}
-            <li>{{ tech }}</li>
+      <div class="flex-flow">
+        {% if techs %}
+          <div class="flow">
+            <h2>Technologies</h2>
+            <ul>
+              {% for tech in techs %}
+                <li>{{ tech }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        {% if buttons %}
+          {% for button in buttons %}
+            <div class="flow">
+              <h2>{{ button.title }}</h2>
+              <a class="b-button" href="{{ button.url }}">{{ button.label }}</a>
+            </div>
           {% endfor %}
-        </ul>
-      {% endif %}
+        {% endif %}
+      </div>
 
-      {% if buttons %}
-        {% for button in buttons %}
-          <a class="b-button" href="{{ button.url }}">{{ button.title }}</a>
-        {% endfor %}
-      {% endif %}
-
-      {% if images %}
+      {% if mainImage %}
         <div class="[ radius ][ img-auto ]">
           <img
-            src="{% src images[0].src, 1077, 0.5 %}"
-            srcset="{% srcset images[0].src, null, 0.5 %}"
+            src="{% src mainImage.src, 1077, 0.5 %}"
+            srcset="{% srcset mainImage.src, null, 0.5 %}"
             sizes="{% sizes 'full' %}"
-            alt="{{ images[0].alt }}"
+            alt="{{ mainImage.alt }}"
             width="1077"
             height="539"
             loading="lazy"
@@ -56,19 +63,21 @@
         <ul class="auto-grid" style="--auto-grid-min-size:24rem">
           {% for image in images %}
             <li class="[ radius ][ img-auto ]">
-              <img
-                src="{% src image.src, 528, 0.5 %}"
-                srcset="{% srcset image.src, null, 0.5 %}"
-                sizes="{% sizes [
-                  '(min-width: 70rem) 33rem',
-                  '(min-width: 53rem) calc((100vw - 4rem) / 2)',
-                  'calc(100vw - 2.66rem)'
-                ] %}"
-                alt="{{ image.alt }}"
-                width="528"
-                height="264"
-                loading="lazy"
-              >
+              <a href="{% src image.src, 2000 %}">
+                <img
+                  src="{% src image.src, 528, 0.5 %}"
+                  srcset="{% srcset image.src, null, 0.5 %}"
+                  sizes="{% sizes [
+                    '(min-width: 70rem) 33rem',
+                    '(min-width: 53rem) calc((100vw - 4rem) / 2)',
+                    'calc(100vw - 2.66rem)'
+                  ] %}"
+                  alt="{{ image.alt }}"
+                  width="528"
+                  height="264"
+                  loading="lazy"
+                >
+              </a>
             </li>
           {% endfor %}
         </ul>
