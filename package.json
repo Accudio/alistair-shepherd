@@ -30,11 +30,11 @@
     "test": "npm run lint",
     "update:cssdb": "npx browserslist@latest --update-db",
     "lint": "run-p lint:*",
-    "lint:js": "eslint --ignore-path .gitignore \"src/assets/js/**/*.js\"",
-    "lint:css": "stylelint --ignore-path .gitignore \"src/assets/scss/**/*.scss\"",
+    "lint:js": "eslint --ignore-path .gitignore \"src/**/*.js\"",
+    "lint:css": "stylelint --ignore-path .gitignore \"src/**/*.scss\"",
     "fix": "run-p fix:*",
-    "fix:js": "eslint --ignore-path .gitignore \"src/assets/js/**/*.js\" --fix",
-    "fix:css": "stylelint --ignore-path .gitignore \"src/assets/scss/**/*.scss\" --fix",
+    "fix:js": "eslint --ignore-path .gitignore \"src/**/*.js\" --fix",
+    "fix:css": "stylelint --ignore-path .gitignore \"src/**/*.scss\" --fix",
     "devimages": "npm run compile && surge dist/raw-images https://as-dev-images.surge.sh"
   },
   "dependencies": {

@@ -1,10 +1,16 @@
 .b-themes,
 .b-landscape,
 .b-divider,
-.b-icon {
+.b-icon,
+.b-header__btns {
   display: none;
 }
 
 .b-portrait {
+  max-width: 200px;
+}
+
+
+.b-brand svg {
   max-width: 200px;
 }

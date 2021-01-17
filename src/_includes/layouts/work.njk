@@ -39,7 +39,7 @@
             alt="{{ mainImage.alt }}"
             width="1077"
             height="539"
-            loading="lazy"
+            loading="eager"
           >
         </div>
       {% endif %}
@@ -63,7 +63,7 @@
         <ul class="auto-grid" style="--auto-grid-min-size:24rem">
           {% for image in images %}
             <li class="[ radius ][ img-auto ]">
-              <a href="{% src image.src, 2000 %}">
+              <a href="{% src image.src, false %}">
                 <img
                   src="{% src image.src, 528, 0.5 %}"
                   srcset="{% srcset image.src, null, 0.5 %}"

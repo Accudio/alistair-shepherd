@@ -1,4 +1,4 @@
-const FALLBACK_WIDTHS = [ 400, 600, 800, 1077, 1500, 2154 ]
+const FALLBACK_WIDTHS = [400, 600, 800, 1077, 1500, 2154]
 const FALLBACK_WIDTH = 1077
 const SIZES_PROFILES = {
   full: [
@@ -63,18 +63,22 @@ function getSizes(sizes) {
  */
 function formatUrl(file, width, ratio) {
   const params = {
-    org_if_sml: 1,
-    w: width
+    org_if_sml: 1
+  }
+
+  // if width
+  if (width) {
+    params.w = width
   }
 
   // if aspect ratio has been set, add the height based on width
-  if (ratio) {
+  if (ratio && width) {
     params.h = width * ratio
   }
 
   const paramStr = Object.keys(params).map(function(key) {
-    return key + '=' + params[key];
-  }).join('&');
+    return key + '=' + params[key]
+  }).join('&')
 
   // if this is production, use Netlify proxying for
   if (isProd) {
@@ -85,6 +89,7 @@ function formatUrl(file, width, ratio) {
   return `https://ahqwbmhykq.cloudimg.io/v7/_dev_/${file}?${paramStr}`
 }
 
+/* eslint-disable key-spacing */
 module.exports = {
   srcset: (file, widths, ratio) => getSrcset(file, widths, ratio),
   src:     (file, width, ratio) => getSrc(file, width, ratio),
