@@ -2,7 +2,7 @@
 layout: work
 title: Potter Tree Consultancy
 
-featured: 1
+featured: 2
 
 summary: Brochure site for Arboriculturist with Gridsome, Vue and headless WordPress.
 
