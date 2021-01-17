@@ -7,7 +7,7 @@ const SIZES_PROFILES = {
   ]
 }
 
-const isProd = process.env.ELEVENTY_ENV === 'production'
+const isNetlify = process.env.NETLIFY === 'true'
 
 /**
  * getSrcset
@@ -81,7 +81,7 @@ function formatUrl(file, width, ratio) {
   }).join('&')
 
   // if this is production, use Netlify proxying for
-  if (isProd) {
+  if (isNetlify) {
     return `/images/${file}?${paramStr}`
   }
 

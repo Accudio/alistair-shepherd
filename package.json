@@ -35,7 +35,8 @@
     "fix": "run-p fix:*",
     "fix:js": "eslint --ignore-path .gitignore \"src/**/*.js\" --fix",
     "fix:css": "stylelint --ignore-path .gitignore \"src/**/*.scss\" --fix",
-    "devimages": "npm run compile && surge dist/raw-images https://as-dev-images.surge.sh"
+    "devimages": "npm run compile && surge dist/raw-images https://as-dev-images.surge.sh",
+    "demo": "npm run dist && surge dist/ https://alistairshepherd.surge.sh"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
