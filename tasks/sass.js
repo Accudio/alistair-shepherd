@@ -11,7 +11,7 @@ const csso = require('gulp-csso')
 
 const sourcemaps = require('gulp-sourcemaps')
 
-const isProd = process.env.ELEVENTY_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production'
 
 const options = {
   in: 'src/assets/scss/*.scss',

@@ -48,6 +48,7 @@
     "@tbranyen/jsdom": "13.0.0",
     "autoprefixer": "^9.8.5",
     "cross-env": "7.0.2",
+    "get-google-fonts": "^1.2.2",
     "gorko": "^0.2.1",
     "gulp": "^4.0.2",
     "gulp-csso": "^4.0.1",

@@ -6,8 +6,11 @@
 
   "author": {
     "name": "Alistair Shepherd",
+    "email": "alistair@accudio.com",
     "twitter": "accudio",
-    "email": "alistair@accudio.com"
+    "github": "accudio",
+    "codepen": "accudio",
+    "linkedin": "alistairjshepherd"
   },
 
   "syntaxTheme": "prism-material-light.css",

@@ -15,12 +15,15 @@
 
     {{ css.defer('/assets/css/main.css') }}
 
+    <link rel="preload" as="style" href="/fonts/fonts.css" crossorigin>
+    <link rel="preload" as="font" href="/fonts/Literata-400-latin14.woff2" crossorigin>
+    <link rel="preload" as="font" href="/fonts/Red_Hat_Display-900-latin25.woff2" crossorigin>
+    {{ css.defer('/fonts/fonts.css') }}
+
     <!-- naked stylesheet -->
     <link id="naked-stylesheet" rel="none" href="/assets/css/naked.css">
 
     {% block head %}{% endblock %}
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,700;1,400&family=Red+Hat+Display:wght@400;900">
   </head>
 
   <body data-barba="wrapper">
@@ -50,7 +53,7 @@
       {% include 'bundle/icons.svg' %}
     </div>
 
-    <script>
+    <!--<script>
       {% if not env.IS_DEV %}
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
@@ -58,6 +61,6 @@
           });
         }
       {% endif %}
-    </script>
+    </script>-->
   </body>
 </html>

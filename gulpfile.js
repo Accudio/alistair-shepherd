@@ -1,6 +1,7 @@
 const { parallel, watch } = require('gulp')
 
 // pull in tasks
+const fonts = require('./tasks/fonts.js')
 const icons = require('./tasks/icons.js')
 const sass = require('./tasks/sass.js')
 const scripts = require('./tasks/scripts.js')
@@ -13,7 +14,7 @@ const watcher = () => {
 }
 
 // default - run each task in parallel
-exports.default = parallel(icons, sass, scripts)
+exports.default = parallel(fonts, icons, sass, scripts)
 
 // watch task
 exports.watch = watcher

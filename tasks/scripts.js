@@ -1,4 +1,4 @@
-const { src, dest, } = require('gulp')
+const { src, dest } = require('gulp')
 const gulpEsbuild = require('gulp-esbuild')
 
 const isProd = process.env.ELEVENTY_ENV === 'production'
@@ -23,7 +23,8 @@ const scripts = () => {
         'safari12.1'
       ],
       define: {
-        'ENV': `"${process.env.NODE_ENV}"`,
+        // eslint-disable-next-line quote-props
+        'ENV': `"${process.env.NODE_ENV}"`
       }
     }))
     .pipe(dest(options.out))
