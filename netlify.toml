@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/images/:image"
+  to = "https://ahqwbmhykq.cloudimg.io/v7/_prod_/:image"
+  status = 200
