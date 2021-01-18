@@ -1,6 +1,5 @@
 const jsdom = require('@tbranyen/jsdom')
 const { JSDOM } = jsdom
-const config = require('../../../_data/config.json')
 
 // Parse the page HTML content and perform some manipulation
 module.exports = function(value, outputPath) {
@@ -40,7 +39,7 @@ module.exports = function(value, outputPath) {
           /**
            * Add custom class to the figure elements inside posts
            */
-          setClass(figure, config.figureClass)
+          setClass(figure, ['figure'])
           /**
            * Clone image inside figure
            * and add the figcaption element
@@ -93,7 +92,7 @@ module.exports = function(value, outputPath) {
       articleEmbeds.forEach(embed => {
         const wrapper = document.createElement('div')
         embed.setAttribute('loading', 'lazy')
-        setClass(wrapper, config.iframeClass)
+        setClass(wrapper, ['iframe'])
         wrapper.appendChild(embed.cloneNode(true))
         embed.replaceWith(wrapper)
       })
@@ -106,7 +105,7 @@ module.exports = function(value, outputPath) {
     if (codeSnippets.length) {
       codeSnippets.forEach(embed => {
         const wrapper = document.createElement('div')
-        setClass(wrapper, config.codeClass)
+        setClass(wrapper, ['code-wrapper'])
         wrapper.appendChild(embed.cloneNode(true))
         embed.replaceWith(wrapper)
       })

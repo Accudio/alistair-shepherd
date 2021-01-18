@@ -58,7 +58,7 @@
     text-decoration: none;
 
     @include max-width(large) {
-      background: get-color('dark-1');
+      background: get-color('dark-m1');
       padding: get-size('500');
       text-shadow: 0 0 5px #000;
       transform: skewY(-15deg);
@@ -81,7 +81,7 @@
 
         @supports (clip-path: polygon(0 0)) {
           &::before {
-            background: get-color('mid-1');
+            background: get-color('mid-m1');
             clip-path: polygon(0 0, 1rem 0, 2rem 90%, 100% 90%, 100% 100%, 0 100%);
           }
         }

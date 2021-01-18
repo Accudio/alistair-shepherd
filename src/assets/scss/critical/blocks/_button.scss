@@ -4,7 +4,7 @@
   @include apply-utility('font', 'sans');
   @include apply-utility('weight', 'bold');
 
-  background: get-color('light+1');
+  background: get-color('light-p1');
   border: 2px solid transparent;
   color: get-color('dark');
   cursor: pointer;

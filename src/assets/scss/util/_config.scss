@@ -55,11 +55,11 @@ $gorko-size-scale: (
  */
 $gorko-colors: (
   'light': var(--c0),
-  'light+1': var(--c1),
-  'mid-1': var(--c4),
+  'light-p1': var(--c1),
+  'mid-m1': var(--c4),
   'mid': var(--c5),
-  'mid+1': var(--c6),
-  'dark-1': var(--c9),
+  'mid-p1': var(--c6),
+  'dark-m1': var(--c9),
   'dark': var(--c10),
 
   'white': #fff,

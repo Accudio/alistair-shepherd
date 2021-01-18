@@ -1,6 +1,10 @@
+{% macro link(url) %}
+  <link rel="stylesheet" href="{{ url }}">
+{% endmacro %}
+
 {% macro defer(url) %}
   {% if env.IS_DEV %}
-      <link rel="stylesheet" href="{{ url }}" />
+      <link rel="stylesheet" href="{{ url }}">
   {% else %}
     <link rel="stylesheet" href="{{ url }}" media="print" onload="this.media='all'">
     <noscript>

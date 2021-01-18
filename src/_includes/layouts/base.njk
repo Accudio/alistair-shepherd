@@ -1,7 +1,7 @@
 {% import 'utils/css.njk' as css %}
 
 <!DOCTYPE html>
-<html lang="{{ config.lang }}">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -33,6 +33,7 @@
         {% include "partials/header.njk" %}
 
         <main id="main" tabindex="-1" data-barba="container">
+          {% block beforeContent %}{% endblock beforeContent %}
           {% block content %}{% endblock content %}
         </main>
 

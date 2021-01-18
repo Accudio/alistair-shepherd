@@ -2,9 +2,9 @@
 {% import 'utils/css.njk' as css %}
 
 {# Populate <head> with post-related assets #}
-{% block head %}
+{% block beforeContent %}
   {% if config.syntaxTheme %}
-    {{ css.defer('/assets/css/syntax-highlight.css') }}
+    {{ css.link('/assets/css/syntax-highlight.css') }}
   {% endif %}
 {% endblock %}
 
@@ -32,4 +32,15 @@
       </div>
     </div>
   </article>
+
+  <article id="contact" class="bg-mid-p1">
+    {% divider 'color-mid-p1' %}
+    <div class="wrap">
+      <div class="[ measure-long ][ flow ]">
+        <h2>Thoughts or comments?</h2>
+        <p>If you have any comments or feedback on this article, let me know! I'd love to hear your thoughts, go ahead and <a href="{{ config.author.email }}">send me an email</a> at {{ config.author.email }} or <a href="#0">contact me on Twitter</a>.</p>
+      </div>
+    </div>
+  </article>
+
 {% endblock %}

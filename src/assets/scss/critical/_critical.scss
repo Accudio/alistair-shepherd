@@ -9,7 +9,7 @@
 body {
   @include apply-utility('font', 'base');
 
-  background: get-color('dark-1');
+  background: get-color('dark-m1');
   color: get-color('white');
   font-size: get-size('500');
   line-height: 1.5;
@@ -17,7 +17,7 @@ body {
 
 a:not([class]) {
   color: currentColor;
-  text-decoration-color: get-color('light+1');
+  text-decoration-color: get-color('light-p1');
 }
 
 :focus {
@@ -52,7 +52,7 @@ h4 {
 
 // firefox
 * {
-  scrollbar-color: get-color('light+1') get-color('dark');
+  scrollbar-color: get-color('light-p1') get-color('dark');
 }
 
 // webkit
@@ -66,7 +66,7 @@ h4 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: get-color('light+1');
+  background-color: get-color('light-p1');
   border: .25rem solid get-color('dark');
   border-radius: .125rem;
 }
