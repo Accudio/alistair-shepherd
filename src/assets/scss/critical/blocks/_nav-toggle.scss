@@ -10,6 +10,7 @@
   }
 
   &__burger {
+    display: block;
     height: 1em;
     position: relative;
     transition: margin-top .5s;
