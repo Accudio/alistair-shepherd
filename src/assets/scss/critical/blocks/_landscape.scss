@@ -91,7 +91,10 @@ $sun-movement-h: 40%;
 
   &__image {
     bottom: 0;
+    display: flex;
+    flex-direction: column;
     left: 50%;
+    max-height: 100%;
     max-width: 300%;
     min-width: 100%;
     position: absolute;
