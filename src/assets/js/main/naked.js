@@ -10,6 +10,8 @@ let naked = false
 button.addEventListener('click', () => {
   naked = !naked
 
+  button.setAttribute('aria-checked', naked)
+
   items.forEach(item => {
     item.disabled = !item.disabled
   })
