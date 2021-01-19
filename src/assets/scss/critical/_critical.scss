@@ -57,8 +57,8 @@ h4 {
 
 // webkit
 ::-webkit-scrollbar {
-  height: 1rem;
-  width: 1rem;
+  height: .75rem;
+  width: .75rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -67,8 +67,8 @@ h4 {
 
 ::-webkit-scrollbar-thumb {
   background-color: get-color('light-p1');
-  border: .25rem solid get-color('dark');
-  border-radius: .125rem;
+  border: .125rem solid get-color('dark');
+  border-radius: 100vw;
 }
 
 /**
