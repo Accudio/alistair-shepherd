@@ -72,7 +72,7 @@ title: XITY Starter
     {% if collections.posts.length %}
       <ol reversed class="[ latest-posts ][ flow flow-space-700 ][ measure-long ]">
         {% for item in postList | reverse %}
-          {{ postItem(item.url, item.data.title, item.date, item.data.excerpt) }}
+          {{ postItem(item.url, item.data.title, item.date, item.data.excerpt, 'h3') }}
         {% endfor %}
       </ol>
     {% endif %}

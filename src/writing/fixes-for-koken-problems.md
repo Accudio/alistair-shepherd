@@ -36,7 +36,7 @@ There was a Community Koken Forum called Koken Community, but as Koken died it w
 
 ## My relationship with Koken
 
-Every few weeks I get a message on twitter or an email from someone asking for help with their Koken site. This is because I have the 'honour' of being the last tweet on Koken's twitter account [@koken](https://twitter.com/koken). In 2017 I developed a theme for Koken for the previously mentioned client called Monolith. Over the end of 2017 and early 2018 I refined this and released it onto GitHub open-sourced under a GPL-v3.0 license. At this point I was unaware of the problems going on with Koken and perhaps had I known that client would be on a different platform.
+Every few weeks I get a message on twitter or an email from someone asking for help with their Koken site. This is because I have the 'honour' of being the last tweet on Koken's [twitter @koken](https://twitter.com/koken). In 2017 I developed a theme for Koken for the previously mentioned client called Monolith. Over the end of 2017 and early 2018 I refined this and released it onto GitHub open-sourced under a GPL-v3.0 license. At this point I was unaware of the problems going on with Koken and perhaps had I known that client would be on a different platform.
 
 Since 2017 I have been maintaining a Koken site, and have encountered a few problems that I am consistently asked about. These are my fixes for them, I hope they help!
 

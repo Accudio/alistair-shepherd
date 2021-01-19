@@ -1,8 +1,8 @@
-{% macro postItem(url, title, date, excerpt) %}
+{% macro postItem(url, title, date, excerpt, hLevel='h2') %}
   <li>
-    <h3>
+    <{{ hLevel}} class="text-600">
       <a href="{{ url }}">{{ title }}</a>
-    </h3>
+    </{{ hLevel}}>
     <time datetime="{{ date | htmlDate }}">{{ date | date }}</time>
     {% if excerpt %}
       <p>{{ excerpt }}</p>

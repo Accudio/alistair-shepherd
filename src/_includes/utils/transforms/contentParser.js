@@ -17,72 +17,15 @@ module.exports = function(value, outputPath) {
     if (images.length) {
       images.forEach(image => {
         /**
-         * Set the loading attribute to all
-         * the images to be lazy loaded if supported
+         * Set the loading attribute to all images to
+         * be lazy loaded if supported and not set
          */
-        image.setAttribute('loading', 'lazy')
-        /**
-         * Replace images with title with figure and figcaption
-         */
-        if (image.hasAttribute('title')) {
-          /**
-           * Create figure and figcaption elements
-           */
-          const figure = document.createElement('figure')
-          const figCaption = document.createElement('figcaption')
-          /**
-           * Set figcaption content from image title
-           * then remove the title attribute
-           */
-          figCaption.innerHTML = `<small>${image.getAttribute('title')}</small>`
-          image.removeAttribute('title')
-          /**
-           * Add custom class to the figure elements inside posts
-           */
-          setClass(figure, ['figure'])
-          /**
-           * Clone image inside figure
-           * and add the figcaption element
-           */
-          figure.appendChild(image.cloneNode(true))
-          figure.appendChild(figCaption)
-          /**
-           * Replace the original image with title
-           * with the generated figure
-           */
-          image.replaceWith(figure)
+        if (!image.hasAttribute('loading')) {
+          image.setAttribute('loading', 'lazy')
         }
       })
     }
-    /**
-     * Get all the headings inside the post
-     */
-    // const articleHeadings = [
-    //   ...document.querySelectorAll(
-    //     'article h2, article h3, article h4, article h5, article h6'
-    //   )
-    // ]
-    // if (articleHeadings.length) {
-    //   /**
-    //    * Create an ahcor element inside each post heading
-    //    * to link to the secion
-    //    */
-    //   articleHeadings.forEach(heading => {
-    //     // Create the anchor element
-    //     const anchor = document.createElement('a')
-    //     // Create the anchor slug
-    //     const headingSlug = slugify(heading.textContent.toLowerCase())
-    //     // Set the anchor href based on the generated slug
-    //     anchor.setAttribute('href', `#${headingSlug}`)
-    //     // Add class and content to the anchor
-    //     setClass(anchor, config.permalinkClass)
-    //     anchor.innerHTML = '#'
-    //     // Set the ID attribute with the slug
-    //     heading.setAttribute('id', `${headingSlug}`)
-    //     // Appen che anchor element to the heading
-    //     heading.appendChild(anchor)
-    //   })
-    // }
+
     /**
      * Get all the iframes inside the article
      * and wrap them inside a class
@@ -97,15 +40,19 @@ module.exports = function(value, outputPath) {
         embed.replaceWith(wrapper)
       })
     }
+
     /**
-     * Get all the code snippets and wrap them
-     * inside a div to apply custom style
+     * Get all the code snippets, wrap them inside a div to apply
+     * custom style and add tabindex to make keyboard-accessible
      */
     const codeSnippets = [...document.querySelectorAll('pre[class^="language"')]
     if (codeSnippets.length) {
       codeSnippets.forEach(embed => {
+        embed.setAttribute('tabindex', '0')
+
         const wrapper = document.createElement('div')
         setClass(wrapper, ['code-wrapper'])
+
         wrapper.appendChild(embed.cloneNode(true))
         embed.replaceWith(wrapper)
       })
@@ -132,9 +79,10 @@ module.exports = function(value, outputPath) {
             )
           }
         }
+
         /**
-         * If the link starts with http or https
-         * appen the "noopener" value to the rel attribute
+         * If the link starts with http or https append
+         * the "noopener" value to the rel attribute
          */
         const getHref = link.getAttribute('href')
         const currentRel = link.getAttribute('rel')
