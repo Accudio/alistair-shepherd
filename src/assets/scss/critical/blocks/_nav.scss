@@ -51,11 +51,7 @@
   }
 
   &__link {
-    color: inherit;
-    display: block;
     line-height: 1;
-    padding: get-size('300');
-    text-decoration: none;
 
     @include max-width(large) {
       background: get-color('dark-m1');

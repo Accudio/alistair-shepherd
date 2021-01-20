@@ -8,7 +8,6 @@ $sun-movement-h: 40%;
   height: 75vh;
   overflow: hidden;
   position: relative;
-  // transform-style: preserve-3d;
 
   &__sun {
     $distance: 10;
@@ -44,21 +43,11 @@ $sun-movement-h: 40%;
   }
 
   &__sunH {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
     transform: translateX(0);
-    width: 100%;
   }
 
   &__sunV {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
     transform: translateY(#{$sun-movement-v});
-    width: 100%;
 
     &::before {
       background: #fff;
@@ -75,11 +64,6 @@ $sun-movement-h: 40%;
   &__layer {
     $layers: 10;
 
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
     transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
     transform-origin: 50% 67%;
     transition: transform-origin .2s;

@@ -8,9 +8,6 @@
   }
 
   &__link {
-    color: inherit;
-    display: inline-block;
-
     &:hover {
       + #{$self}__img {
         transform: scale(1.03);
@@ -33,9 +30,5 @@
     margin-top: 0;
     order: -1;
     transition: all .2s;
-  }
-
-  &__seemore {
-    text-decoration: underline;
   }
 }

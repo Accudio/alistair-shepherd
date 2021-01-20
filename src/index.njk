@@ -40,7 +40,7 @@ metaTitle: Alistair Shepherd - Front-end Web Developer
       </div>
 
       {% for work in collections.featuredWork %}
-        <a href="{{ work.url }}" aria-label="See {{ work.data.title }}" class="[ b-featWork__item ][ radius ][ img-fit ]">
+        <a href="{{ work.url }}" aria-label="See {{ work.data.title }}" class="[ b-featWork__item ][ d-b ][ radius ][ img-fit ]">
           <img
             src="{% src work.data.thumbnail, 528, 0.5 %}"
             srcset="{% srcset work.data.thumbnail, null, 0.5 %}"
@@ -58,7 +58,7 @@ metaTitle: Alistair Shepherd - Front-end Web Developer
       {% endfor %}
 
     </div>
-    <div class="[ b-featWork__action ][ flow-space-700 ]">
+    <div class="[ align-center ][ flow-space-700 ]">
       <a href="/work/" class="b-button">More work</a>
     </div>
   </div>

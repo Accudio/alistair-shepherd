@@ -1,19 +1,9 @@
 .b-header {
-  background: var(--c1);
   height: 75vh;
   position: relative;
 
   &__overlay {
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
     z-index: 1;
-  }
-
-  &__wrap {
-    align-items: center;
-    display: flex;
   }
 
   &__btn {

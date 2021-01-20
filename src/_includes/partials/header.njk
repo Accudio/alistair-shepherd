@@ -1,7 +1,7 @@
-<header class="[ b-header ][ color-dark-m1 ]">
-  <div class="b-header__overlay">
-    <div class="[ b-header__wrap ][ wrap ][ pad-top-200 pad-bot-200 ]">
-      <a href="/" class="[ b-brand ][ gap-right-auto ]" aria-label="Alistair Shepherd home page">
+<header class="[ b-header ][ bg-light-p1 ][ color-dark-m1 ]">
+  <div class="[ b-header__overlay ][ absolute w-100 ]">
+    <div class="[ wrap ][ flex ][ pad-top-200 pad-bot-200 ]">
+      <a href="/" class="[ b-brand ][ gap-right-auto ][ color-inherit ][ flex ][ decoration-none ]" aria-label="Alistair Shepherd home page">
         {% include '../svg/logo.svg' %}
         <div class="[ b-brand__name ][ pad-left-400 ][ font-sans weight-bold text-600 leading-flat ]" aria-hidden="true">
           Alistair<br>
@@ -26,7 +26,7 @@
                 {% set isCurrent = ' aria-current="page"' %}
               {% endif %}
               <li class="b-nav__item" style="--n:{{ loop.index0 }}">
-                <a class="b-nav__link" href="{{ item.url }}" {{ relExternal | safe }}{{ isCurrent | safe }}>
+                <a class="[ b-nav__link ][ d-b ][ pad-300 ][ color-inherit ][ decoration-none ]" href="{{ item.url }}" {{ relExternal | safe }}{{ isCurrent | safe }}>
                   {{ item.text }}
                 </a>
               </li>

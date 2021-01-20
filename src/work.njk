@@ -16,7 +16,7 @@ metaDesc: I've worked on a range of different projects and technologies, agency 
         {% for work in collections.work %}
           <li class="[ b-workGrid__item ][ flow ]">
 
-            <a class="b-workGrid__link" href="{{ work.url }}">
+            <a class="[ b-workGrid__link ][ d-ib ][ color-inherit ]" href="{{ work.url }}">
               <h2>{{ work.data.title }}</h2>
             </a>
 
@@ -39,7 +39,7 @@ metaDesc: I've worked on a range of different projects and technologies, agency 
               <p class="measure-short">{{ work.data.summary }}</p>
             {% endif %}
 
-            <div class="b-workGrid__seemore" aria-hidden="true">See More &#129042;</div>
+            <div class="decoration-underline" aria-hidden="true">See More &#129042;</div>
           </li>
         {% endfor %}
       </ul>

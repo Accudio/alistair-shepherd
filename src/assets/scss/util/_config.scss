@@ -173,6 +173,14 @@ $gorko-config: (
     'output': 'standard',
     'property': 'font-weight',
   ),
+  'decoration': (
+    'items': (
+      'none': 'none',
+      'underline': 'underline'
+    ),
+    'output': 'standard',
+    'property': 'text-decoration',
+  ),
   'pos': (
     'items': (
       'relative': 'relative',

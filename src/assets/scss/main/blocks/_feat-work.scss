@@ -1,12 +1,4 @@
 .b-featWork {
-  &__item {
-    display: block;
-  }
-
-  &__action {
-    text-align: center;
-  }
-
   @include min-width(medium) {
     &__inner {
       display: grid;
