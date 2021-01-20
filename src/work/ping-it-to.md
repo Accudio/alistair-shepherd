@@ -2,6 +2,8 @@
 layout: work
 title: Ping It To
 
+metaDesc: Case study for Ping It To, a web app helping you share links between mobile and desktop.
+
 featured: 3
 
 summary: Paired React PWAs helping you share URLs between mobile and desktop.

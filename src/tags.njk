@@ -1,12 +1,12 @@
 ---
 layout: page
-metaTitle: Tag
-description: Categories page description
 pagination:
   data: collections
   size: 1
   alias: tag
 permalink: /writing/tag/{{ tag | slug }}/
+eleventyComputed:
+  title: Tagged {{ tag }}
 ---
 {% from "partials/postItem.njk" import postItem %}
 

@@ -2,6 +2,8 @@
 layout: work
 title: Potter Tree Consultancy
 
+metaDesc: Case study for the build of the Potter Tree Consultancy website, using Gridsome, Vue, and headless WordPress.
+
 featured: 2
 
 summary: Brochure site for Arboriculturist with Gridsome, Vue and headless WordPress.

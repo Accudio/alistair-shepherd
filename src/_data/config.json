@@ -1,6 +1,6 @@
 {
-  "name": "Eleventy blog/site starter",
-  "shortDesc": "I'm Mattia Astorino, UX Engineer in Milan and member of Open Source Design.",
+  "name": "Alistair Shepherd",
+  "shortDesc": "I'm Alistair, a web developer in Scotland. I love front-end development including CSS, HTML, and web performance.",
 
   "url": "https://www.alistairshepherd.uk",
 
@@ -12,8 +12,6 @@
     "codepen": "accudio",
     "linkedin": "alistairjshepherd"
   },
-
-  "syntaxTheme": "prism-material-light.css",
 
   "paths": {
     "src": "src",

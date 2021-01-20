@@ -2,6 +2,8 @@
 layout: work
 title: 1896 Gallery
 
+metaDesc: Case study for the build of the 1896 Gallery website, using eleventy, headless WordPress and Netlify.
+
 featured: 1
 
 summary: A website built with Eleventy to showcase artwork online.

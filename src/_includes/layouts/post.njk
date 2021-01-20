@@ -3,9 +3,7 @@
 
 {# Populate <head> with post-related assets #}
 {% block beforeContent %}
-  {% if config.syntaxTheme %}
-    {{ css.link('/assets/css/syntax-highlight.css') }}
-  {% endif %}
+  {{ css.link('/assets/css/syntax-highlight.css') }}
 {% endblock %}
 
 {% block content %}

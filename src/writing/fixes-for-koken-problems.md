@@ -2,6 +2,7 @@
 title: Fixes for Koken Problems
 date: '2020-09-17'
 excerpt: Koken is an old CMS for photographers I've worked with, these are some fixes for those still using it.
+metaDesc: Koken is a CMS for photographers, these are some fixes including forgotten password reset and PHP 7.
 ---
 
 [Koken](http://koken.me/) was a self-hosted Content Management System built for photographers, offering off-the-shelf features like Adobe Lightroom integration, EXIF handling, album categorisation and much more.
