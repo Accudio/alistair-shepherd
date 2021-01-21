@@ -1,7 +1,7 @@
 import config from './landscape-config'
 
 const root = document.documentElement
-const interval = config.debug ? 100 : 60000
+let animMode = 'live'
 
 // add first element of states to end for looping
 config.states.push({
@@ -14,7 +14,7 @@ config.states.push({
 let animation
 function startAnim() {
   updateProps()
-  animation = setInterval(updateProps, interval)
+  animation = setInterval(updateProps, config.anims[animMode].interval)
 }
 function endAnim() {
   clearInterval(animation)
@@ -53,15 +53,7 @@ function updateProps() {
 
 function getProgress() {
   const d = new Date()
-  let progress
-
-  if (config.debug) {
-    const time = (d.getSeconds() * 1000) + d.getMilliseconds()
-    progress = time / 60000
-  } else {
-    const time = (d.getHours() * 3600) + (d.getMinutes() * 60) + d.getSeconds()
-    progress = time / 86400
-  }
+  const progress = config.anims[animMode].getProgress(d)
 
   return progress
 }
@@ -121,7 +113,10 @@ if (themes) {
 
       const themeSlug = this.getAttribute('data-theme')
 
-      if (themeSlug === 'live') return startAnim()
+      if (themeSlug === 'live' || themeSlug === 'cycle') {
+        animMode = themeSlug
+        return startAnim()
+      }
       if (animation) endAnim()
 
       const state = config.states.find(item => item.name === themeSlug)

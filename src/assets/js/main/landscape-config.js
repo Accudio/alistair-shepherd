@@ -1,5 +1,20 @@
 export default {
-  debug: false,
+  anims: {
+    live: {
+      interval: 60000,
+      getProgress: now => {
+        const time = (now.getHours() * 3600) + (now.getMinutes() * 60) + now.getSeconds()
+        return time / 86400
+      }
+    },
+    cycle: {
+      interval: 50,
+      getProgress: now => {
+        const time = (now.getSeconds() * 1000) + now.getMilliseconds()
+        return time / 60000
+      }
+    }
+  },
   states: [
     {
       at: 0,

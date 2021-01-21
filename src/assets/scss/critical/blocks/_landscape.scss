@@ -1,4 +1,4 @@
-$sun-size: 4rem;
+$sun-size: m#{i}n(4rem, 10vw);
 $sun-movement-v: 30%;
 $sun-movement-h: 40%;
 
@@ -12,10 +12,9 @@ $sun-movement-h: 40%;
   &__sun {
     $distance: 10;
 
-    bottom: 0;
-    height: 100%;
+    bottom: 10%;
+    height: 75%;
     left: 0;
-    max-height: 800px;
     opacity: 0;
     position: absolute;
     transform: translateY(var(--scrollPos, 0));
@@ -25,7 +24,7 @@ $sun-movement-h: 40%;
     width: 100%;
 
     @media (prefers-reduced-motion: reduce) {
-      transform: translateY(0);
+      display: none;
     }
 
     &[data-active] {
@@ -54,9 +53,10 @@ $sun-movement-h: 40%;
       border-radius: 50%;
       content: '';
       height: $sun-size;
-      left: calc(50% - #{$sun-size / 2});
+      left: 50%;
       position: absolute;
-      top: calc(50% - #{$sun-size / 2});
+      top: 50%;
+      transform: translate(-50%, -50%);
       width: $sun-size;
     }
   }
