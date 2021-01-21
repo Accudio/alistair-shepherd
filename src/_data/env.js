@@ -2,6 +2,7 @@ const now = new Date()
 
 module.exports = {
   IS_DEV: process.env.ELEVENTY_ENV !== 'production',
+  buildId: process.env.BUILD_ID || now.getTime(),
   date: {
     d: pad(now.getDate(), 2),
     m: pad(now.getMonth() + 1, 2),

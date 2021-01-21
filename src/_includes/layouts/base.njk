@@ -54,14 +54,14 @@
       {% include 'bundle/icons.svg' %}
     </div>
 
-    <!--<script>
+    <script>
       {% if not env.IS_DEV %}
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js');
+            navigator.serviceWorker.register('/sw.js');
           });
         }
       {% endif %}
-    </script>-->
+    </script>
   </body>
 </html>
