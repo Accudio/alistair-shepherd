@@ -113,11 +113,12 @@ if (themes) {
 
       const themeSlug = this.getAttribute('data-theme')
 
+      endAnim()
+
       if (themeSlug === 'live' || themeSlug === 'cycle') {
         animMode = themeSlug
         return startAnim()
       }
-      if (animation) endAnim()
 
       const state = config.states.find(item => item.name === themeSlug)
       Object.keys(state.colours).forEach(key => {
