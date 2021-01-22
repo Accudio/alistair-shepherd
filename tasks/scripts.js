@@ -1,7 +1,7 @@
 const { src, dest } = require('gulp')
 const gulpEsbuild = require('gulp-esbuild')
 
-const isProd = process.env.ELEVENTY_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production'
 
 // gulp options
 const options = {
