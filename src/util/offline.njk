@@ -1,0 +1,15 @@
+---
+title: You are currently offline
+metaTitle: Offline - Alistair Shepherd
+eleventyExcludeFromCollections: true
+permalink: /offline.html
+---
+
+<p>You are currently offline. You can refresh your browser or use the buttom below to try again when you have internet connection.</p>
+
+<button id="reload" class="b-button" type="button">Reload</button>
+<script>
+  document.getElementById('reload').addEventListener('click', () => {
+    window.location.reload();
+  });
+</script>

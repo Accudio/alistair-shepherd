@@ -6,24 +6,24 @@ eleventyExcludeFromCollections: true
 const PRECACHE = 'precache-{{ env.buildId }}';
 const RUNTIME = 'runtime';
 
-// A list of local resources we always want to be cached.
+// list of local resources to pre-cache
 const PRECACHE_URLS = [
   './',
   './assets/css/main.css',
   './assets/js/barba.js',
-  './assets/js/main.js'
+  './assets/js/main.js',
+  './offline/'
 ];
 
-// The install handler takes care of precaching the resources we always need.
+// install handler takes care of precaching resources
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(PRECACHE)
-      .then(cache => cache.addAll(PRECACHE_URLS))
-      .then(self.skipWaiting())
-  );
+  event.waitUntil(async function() {
+    const cache = await caches.open(PRECACHE);
+    await cache.addAll(PRECACHE_URLS);
+  }());
 });
 
-// The activate handler takes care of cleaning up old caches.
+// activate handler takes care of cleaning up old caches
 self.addEventListener('activate', event => {
   const currentCaches = [PRECACHE, RUNTIME];
   event.waitUntil(
@@ -38,23 +38,42 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  // Skip cross-origin requests, like those for Google Analytics.
-  if (event.request.url.startsWith(self.location.origin)) {
-    event.respondWith(
-      caches.match(event.request).then(cachedResponse => {
-        if (cachedResponse) {
-          return cachedResponse;
-        }
+  const { request } = event;
 
-        return caches.open(RUNTIME).then(cache => {
-          return fetch(event.request).then(response => {
-            // Put a copy of the response in the runtime cache.
-            return cache.put(event.request, response.clone()).then(() => {
-              return response;
-            });
-          });
+  // always bypass for range requests, due to browser bugs
+  if (request.headers.has('range')) return;
+
+  // skip cross-origin requests, like those for Google Analytics.
+  if (!request.url.startsWith(self.location.origin)) return;
+
+  event.respondWith(async function() {
+    // try to get from the cache:
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) return cachedResponse;
+
+    try {
+      // see https://developers.google.com/web/updates/2017/02/navigation-preload#using_the_preloaded_response
+      const response = await event.preloadResponse;
+      if (response) return response;
+
+      // otherwise, get from network
+      const cache = await caches.open(RUNTIME);
+      return await fetch(request).then(response => {
+        // put a copy of the response in the runtime cache.
+        return cache.put(request, response.clone()).then(() => {
+          return response;
         });
-      })
-    );
-  }
+      });
+
+    } catch (err) {
+      // if this was a navigation, show the offline page:
+      console.log('test');
+      if (request.mode === 'navigate') {
+        return caches.match('offline/');
+      }
+
+      // Otherwise throw
+      throw err;
+    }
+  }());
 });
