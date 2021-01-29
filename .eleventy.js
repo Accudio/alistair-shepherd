@@ -5,6 +5,7 @@ const fs = require('fs')
 const syntaxHighlightPlugin = require('@11ty/eleventy-plugin-syntaxhighlight')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 const sitemapPlugin = require('@quasibit/eleventy-plugin-sitemap')
+const embedCodePen = require('@manustays/eleventy-plugin-codepen-iframe')
 
 // filters, transforms and shortcodes can be found in utils
 const addFilters = require('./src/_includes/utils/filters')
@@ -50,6 +51,11 @@ module.exports = function (config) {
       hostname: siteConfig.url
     }
   })
+  config.addPlugin(embedCodePen, {
+    tabs: 'result',
+    height: 380,
+    user: 'accudio'
+	});
 
   /**
    * custom blog post collection
