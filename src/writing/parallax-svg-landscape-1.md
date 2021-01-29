@@ -3,8 +3,7 @@ title: Making a Parallax SVG Landscape - new site part 1
 date: '2021-01-29'
 excerpt: How I made the parallax SVG landscape in the header of my website. First of a series of two.
 metaDesc: A parallax SVG landscape in the style of Firewatch, using HTML, CSS, SVG and a sprinkle of JavaScript.
-permalink: /writing/draft/parallax-svg-landscape-1/
-eleventyExcludeFromCollections: true
+draft: true
 ---
 
 I've finally finished my new website, and I am really happy with it. I started the site in July 2020 and I launched it in mid Jan 2021.
