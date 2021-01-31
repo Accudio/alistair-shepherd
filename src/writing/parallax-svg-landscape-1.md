@@ -6,11 +6,11 @@ metaDesc: A parallax SVG landscape in the style of Firewatch, using HTML, CSS, S
 draft: true
 ---
 
-I've finally finished my new website, and I am really happy with it. I started the site in July 2020 and I launched it in mid Jan 2021.
+I've finally finished my new website, and I am really happy with it. I started the site in July 2020 and I launched it in mid January 2021.
 
-It's a big change from Nuxt, Vue and Webpack to doing pretty much everything myself with 11ty (Eleventy) and gulp—but I love it. More on that in a future post, today is about the star of the show—the parallax landscape you see at the top of the page.
+It's a big change from Nuxt, Vue and Webpack to doing pretty much everything myself with 11ty (Eleventy) and gulp—I love it. More on that in a future post however, today is about the star of the show—the parallax landscape you see at the top of the page.
 
-If you're the type who wants to dive straight into the code, [here's a CodePen for it](https://codepen.io/accudio/pen/ExNxXrP) - go and have a play!
+If you're the type who wants to dive straight into the code, [here's a CodePen](https://codepen.io/accudio/pen/ExNxXrP) - go and have a play!
 
 {% CodePen "https://codepen.io/accudio/pen/ExNxXrP" %}
 
@@ -20,17 +20,19 @@ For those still with me, let's go through it.
 
 ## Inspiration
 
-If you recognise the art-style, I'm **super** inspired by  the game [Firewatch](https://firewatchgame.com). Firewatch is a 'walking simulator' game that came out in 2016 and people loved for its art style. Featuring a bright, layered landscape it inspired many, myself included. For several years the wallpaper of my phone changed between these wallpapers based on time and weather.
+If you recognise the art-style, it's **super** inspired by  the game [Firewatch](https://firewatchgame.com). Firewatch is a 'walking simulator' game that came out in 2016 and people loved its art style. Featuring a bright, layered landscape it inspired many, myself included. For several years the wallpaper of my phone changed between [these wallpapers](https://imgur.com/a/snB5O) based on time and weather.
 
-When planning a new site, that art style ended up being what the entire website was centered around. I wanted it to feel interactive, and parallax felt like a natural way to do that.
+When I was planning my new site, I decided to centre it on this art style. I wanted it to feel interactive, and parallax felt like a natural way to do that.
 
 ## The Markup
 
 My wonderful sister [Becci Shepherd](https://beccishep.co.uk) produced the landscape, and sent me a raster PNG for each layer. Although I experimented with masking, it's browser support isn't quite there. SVGs were the obvious choice.
 
-To convert to vector I used [Vector Magic Desktop Edition](https://vectormagic.com/desktop). It does a brilliant job of anything you throw at it, and is the best raster to vector converter I've found.
+To convert to vector I used [Vector Magic Desktop Edition](https://vectormagic.com/desktop). It does a brilliant job of anything you throw at it, and is the best raster-to-vector converter I've found.
 
-I tidied up the paths in a graphics program; exported it to SVG; tidied up the markup and optimised with [SVGOMG](https://jakearchibald.github.io/svgomg/). That left me with a decent sized SVG for each layer. Try ensure the viewbox is identical as it will make sizing much easier.
+I tidied up the paths in a graphics program; exported it to SVG; tidied up the markup and optimised with [SVGOMG](https://jakearchibald.github.io/svgomg/). This left me with a decent sized SVG for each layer.
+
+*Try ensure the viewbox is identical as it will make sizing much easier.*
 
 Now in HTML, we need to stack them:
 
@@ -56,7 +58,7 @@ Now in HTML, we need to stack them:
 </div>
 ```
 
-*Note: remember accessibility! Despite being a whole bunch of markup, this is really a fancy image. We use* `role="img"` *and* `aria-label` *to make it accessible.*
+*Remember accessibility! Despite being a whole bunch of markup, this is really a fancy image. We use* `role="img"` *and* `aria-label` *to make it accessible.*
 
 I didn't have the two wrapping `div`s at first, but realised that wrappers for each layer allowed me to use flexbox. This made positioning the SVGs easier:
 
@@ -104,7 +106,7 @@ I didn't have the two wrapping `div`s at first, but realised that wrappers for e
 }
 ```
 
-We now have a static landscape and are set up to start making it more dynamic!
+We now have a static landscape and are set up to make it more dynamic!
 
 {% CodePen "https://codepen.io/accudio/pen/eYBYEWz" %}
 
@@ -112,25 +114,24 @@ We now have a static landscape and are set up to start making it more dynamic!
 
 ### Perspective and translateZ
 
-There are two popular methods to implement parallax on the web. The more performant implementation is a CSS-only solution using the `perspective` CSS property with `translateZ()`. This is what browser vendors suggest, as it allows the browser to render changes with the GPU. That makes it super quick and smooth and is how I tried to implement it for weeks.
+There are two popular methods to implement parallax on the web. The more performant implementation is a CSS-only solution using the `perspective` CSS property with `translateZ()`. This is what browser vendors suggest, as it allows the browser to render changes with the GPU. This makes it super quick and smooth and is how I tried to implement it for weeks.
 
 Google Developer docs have a [good example of this method](https://developers.google.com/web/updates/2016/12/performant-parallaxing).
 
-Although it's great for a simple implementations—I found that in my case it was unreliable. This was because:
+Although it's great for simple implementations—I found that in my case it was unreliable. This was because:
 
 - Browser implementations vary. Chrome handles a deep 3D perspective easily, but Firefox interprets the spec differently. This meant I had to apply `transform-style: preserve-3d` on every element between my scroll element and my layers.
-- Firefox on Android works inconsistently with deep DOM trees, and not with the structure I wanted.
+- Firefox on Android handles 3D transformations inconsistently with deep DOM trees, making it hard to adapt to my structure.
 - Mobile Safari on iOS has quirks, and the current solution is to use a trick which 'reverses' the parallax direction. Not an option in my case as that would break the effect!
 
 I spent about two weeks trying to get this working before giving up and going for method two.
 
 ### JavaScript parallax
 
-JS-based parallax has hada bad rep as a few popular libraries weren't very performant or accessible. This was to deal with browser inconsistencies, but with modern CSS and JS we can do it ourselves without much work.
+JS-based parallax has had a bad rep, as a few popular libraries weren't very performant or accessible. Their size was to deal with browser inconsistencies, but with modern CSS and JS we can do it ourselves without much work.
 
-With CSS custom properties and calc() we can come with a light and neat implementation ourselves. In JavaScript we use `window.requestAnimationFrame` and if the scroll position has changed we set it to a custom property.
+With CSS custom properties and `calc()` we can come up with a light and neat implementation ourselves. In JavaScript we use `window.requestAnimationFrame` and if the scroll position has changed we set it to a custom property.
 
-The JS:
 ```js
 // constant elements: your main scrolling element; html element
 const scrollEl = document.documentElement
@@ -158,7 +159,7 @@ window.requestAnimationFrame(animation)
 
 That's it. That's all the JavaScript we need. As someone who **loves CSS** it feels great knowing that we can keep the JS simple and use CSS to implement this *descriptively*.
 
-Okay the real action is happening in the CSS, this is what we need to add to our previous styles:
+The real action is happening in the CSS, this is what we need to add to our previous styles:
 
 ```scss
 .landscape__layer {
@@ -171,7 +172,7 @@ Okay the real action is happening in the CSS, this is what we need to add to our
 }
 ```
 
-The key line is that transform and it's custom properties. What we are doing is translating the layer down a certain amount based on the scroll position.
+The key line is the first `transform` and it's custom properties. What we are doing is translating the layer down a certain amount based on the scroll position.
 
 We use a `prefers-reduced-motion` media query to remove the parallax effect for those who might get motion-sick or prefer less movement in their browsing.
 
@@ -180,7 +181,7 @@ The `--offset` property is a value that would be between 0 and 1, and changes ho
 - `--offset: 0.5` — the element will be translated down by `50px`. This makes it look like it's moved `50px`;
 - `--offset: 1` — the element is translated down `100px`, it's in the same place it used to be. This makes it look like it's not moving with scroll;
 
-That `--offset` is the key to our parallax system. If each layer has a different value it will scroll at a different speed from the other layers. We can choose how much each layer will scroll so it looks natural.
+The `--offset` property is the key to our parallax system. If each layer has a different value it will scroll at a different speed from the other layers. We can manually set how much each layer will scroll so it looks natural.
 
 The way we apply this to our layers is using the style property. This way we can avoid adding any more CSS, no matter how many layers we have. We set the front layer to 0 so it scrolls with the content, and increase it with each layer. This is what worked for my image:
 
@@ -207,4 +208,4 @@ And here we have our final parallax landscape!
 
 {% CodePen "https://codepen.io/accudio/pen/ExNxXrP" %}
 
-Thank you for reading! Next up we're going to take this landscape and add colour schemes - including one that matches the visitors local time!
+Thank you for reading! Next up we're going to take this landscape and add colour schemes—including one that matches the visitors local time!
