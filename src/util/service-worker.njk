@@ -4,7 +4,7 @@ layout: null
 eleventyExcludeFromCollections: true
 ---
 const PRECACHE = 'precache-{{ env.buildId }}';
-const RUNTIME = 'runtime';
+const RUNTIME = 'runtime-{{ env.buildId }}';
 
 // list of local resources to pre-cache
 const PRECACHE_URLS = [
