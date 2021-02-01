@@ -15,3 +15,17 @@ metaDesc: I don't get the chance to write often, but I do ocassionally write som
     {% endfor %}
   </ol>
 {% endif %}
+
+<nav class="[ text-400 ][ flow-space-major ]">
+  All Tags:
+  {% for tag, items in collections %}
+    {% if items.length and tag not in [
+      'all',
+      'posts',
+      'work',
+      'featuredWork'
+    ] %}
+      <a href="/writing/tag/{{ tag | slug }}/">{{ tag }}</a>
+    {% endif %}
+  {% endfor %}
+</nav>
