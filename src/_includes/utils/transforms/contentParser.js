@@ -1,5 +1,4 @@
-const jsdom = require('@tbranyen/jsdom')
-const { JSDOM } = jsdom
+const { DOMParser } = require('linkedom')
 
 // Parse the page HTML content and perform some manipulation
 module.exports = function(value, outputPath) {
@@ -7,8 +6,8 @@ module.exports = function(value, outputPath) {
     /**
      * create the document model
      */
-    const DOM = new JSDOM(value)
-    const document = DOM.window.document
+    const DOM = new DOMParser(value)
+    const document = DOM.parseFromString(value, 'text/html')
 
     /**
      * Get all the images from the post
@@ -45,7 +44,7 @@ module.exports = function(value, outputPath) {
      * Get all the code snippets, wrap them inside a div to apply
      * custom style and add tabindex to make keyboard-accessible
      */
-    const codeSnippets = [...document.querySelectorAll('pre[class^="language"')]
+    const codeSnippets = [...document.querySelectorAll('pre[class^="language"]')]
     if (codeSnippets.length) {
       codeSnippets.forEach(embed => {
         embed.setAttribute('tabindex', '0')
