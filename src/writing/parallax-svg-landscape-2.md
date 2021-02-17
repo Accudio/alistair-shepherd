@@ -482,4 +482,8 @@ If you've gotten this far, congratulations and thank you for sticking with me! H
 
 This is not the easiest post to read by any stretch of the imagination, but I wanted to get down a lot of info and I struggled to in a way that felt natural. Initial drafts were tutorial-like before I realised I was writing a 10,000 word tutorial!
 
-I am planning to write more, but will be making them shorter and simpler than this one.
+I am planning to write more, but will be making them shorter and simpler than this one. Keep an eye out for future posts about:
+- The 'hilly' dividers
+- Blog setup with 11ty, esbuild and gulp
+- Implementing mouse-based painting with canvas and JS
+and a few more I have planned!
