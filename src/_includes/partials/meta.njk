@@ -51,4 +51,6 @@
   <meta name="twitter:image" content="{{ config.url }}/cover.jpg"/>
 {% endif %}
 
-<meta name="monetization" content="$ilp.uphold.com/EYBHKJjWP8Fq">
+{% if config.author.monetisation %}
+  <meta name="monetization" content="{{ config.author.monetisation }}">
+{% endif %}
