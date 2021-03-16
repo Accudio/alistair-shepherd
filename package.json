@@ -1,6 +1,6 @@
 {
   "name": "aistairshepherd",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0",
   "description": "",
   "browserslist": [
     "last 1 Chrome versions",
@@ -9,10 +9,11 @@
     "last 1 Edge versions"
   ],
   "author": "Alistair Shepherd <alistair@accudio.com>",
-  "license": "MPL-2.0",
+  "license": "UNLICENSED",
+  "private": "true",
   "repository": {
     "type": "git",
-    "url": "#"
+    "url": "https://github.com/Accudio/alistair-shepherd/"
   },
   "scripts": {
     "clean": "rimraf ./.cache ./dist ./src/_includes/bundle",
