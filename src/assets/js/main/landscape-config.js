@@ -19,6 +19,7 @@ export default {
     {
       at: 0,
       name: 'night',
+      dynamic: true,
       colours: {
         c0: '#bed8f8',
         c1: '#7da5d5',
@@ -37,6 +38,7 @@ export default {
     {
       at: 6,
       name: 'sunrise',
+      dynamic: true,
       colours: {
         c0: '#f5e5e5',
         c1: '#fed4d5',
@@ -55,6 +57,7 @@ export default {
     {
       at: 12,
       name: 'day',
+      dynamic: true,
       colours: {
         c0: '#feebe2',
         c1: '#ffe2a6',
@@ -73,6 +76,7 @@ export default {
     {
       at: 18,
       name: 'sunset',
+      dynamic: true,
       colours: {
         c0: '#ffc348',
         c1: '#ffad39',
@@ -89,6 +93,7 @@ export default {
       }
     },
     {
+      at: 12,
       name: 'light',
       colours: {
         c0: '#000000',

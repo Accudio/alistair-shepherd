@@ -5,7 +5,7 @@ let animMode = 'live'
 
 // add first element of states to end for looping
 const dynamicStates = config.states.filter(item => {
-  return Boolean(item.at)
+  return Boolean(item.dynamic)
 })
 dynamicStates.push({
   ...dynamicStates[0],
