@@ -16,6 +16,7 @@ $outputTokenCSS: true !default; // stylelint-disable-line scss/dollar-variable-p
     --c8: #393939;
     --c9: #1f1f1f;
     --c10: #000;
+    --c99: #fff;
   }
 }
 
@@ -61,6 +62,8 @@ $gorko-colors: (
   'mid-p1': var(--c6),
   'dark-m1': var(--c9),
   'dark': var(--c10),
+
+  'base': var(--c99),
 
   'white': #fff,
   'black': #000,

@@ -4,8 +4,11 @@ const root = document.documentElement
 let animMode = 'live'
 
 // add first element of states to end for looping
-config.states.push({
-  ...config.states[0],
+const dynamicStates = config.states.filter(item => {
+  return Boolean(item.at)
+})
+dynamicStates.push({
+  ...dynamicStates[0],
   name: 'end',
   at: 24
 })
@@ -24,13 +27,13 @@ function endAnim() {
 function updateProps() {
   const progress = getProgress() * 24
 
-  const endIndex = config.states.findIndex(frame => {
+  const endIndex = dynamicStates.findIndex(frame => {
     return frame.at !== 0 && progress < frame.at
   })
   const startIndex = endIndex - 1
 
-  const start = config.states[startIndex]
-  const end = config.states[endIndex]
+  const start = dynamicStates[startIndex]
+  const end = dynamicStates[endIndex]
 
   const diff = end.at - start.at
   const progressCurr = (progress - start.at) / diff
