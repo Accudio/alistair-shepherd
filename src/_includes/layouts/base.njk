@@ -53,15 +53,5 @@
     <div style="display:none">
       {% include 'bundle/icons.svg' %}
     </div>
-
-    <script>
-      {% if not env.IS_DEV %}
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js');
-          });
-        }
-      {% endif %}
-    </script>
   </body>
 </html>
