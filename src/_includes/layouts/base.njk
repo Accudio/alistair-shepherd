@@ -22,6 +22,9 @@
     <link id="naked-stylesheet" rel="none" href="/assets/css/naked.css">
 
     {% block head %}{% endblock %}
+
+    <script src="/assets/js/main.js" type="module"></script>
+    <script src="/assets/js/barba.js" type="module" async></script>
   </head>
 
   <body data-barba="wrapper">
@@ -46,9 +49,6 @@
         {% include "partials/footer.njk" %}
       </div>
     </div>
-
-    <script src="/assets/js/main.js" type="module"></script>
-    <script src="/assets/js/barba.js" type="module"></script>
 
     <div style="display:none">
       {% include 'bundle/icons.svg' %}
