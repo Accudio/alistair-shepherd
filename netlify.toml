@@ -17,7 +17,7 @@
   for = '/' # all files
   [headers.values]
     Cache-Control = 'public, max-age=3600'
-    Content-Security-Policy-Report-Only = "default-src 'self'; img-src https:; frame-src https:; object-src 'none'; media-src: 'none';"
+    Content-Security-Policy = "default-src 'self'; img-src https:; frame-src https:; object-src 'none'; media-src: 'none';"
     Referrer-Policy = 'strict-origin-when-cross-origin'
     X-Content-Type-Options = 'nosniff'
     X-Frame-Options = 'SAMEORIGIN'
