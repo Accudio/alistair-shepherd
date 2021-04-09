@@ -10,6 +10,7 @@
     {% include "partials/meta.njk" %}
 
     {{ css.inline('critical') }}
+    <script>document.querySelector('style').disabled = true</script>
 
     {{ css.defer('/assets/css/main.css') }}
 
@@ -19,7 +20,7 @@
     {{ css.defer('/fonts/fonts.css') }}
 
     <!-- naked stylesheet -->
-    <link id="naked-stylesheet" rel="none" href="/assets/css/naked.css">
+    <link id="naked-stylesheet" rel="stylesheet" href="/assets/css/naked.css">
 
     {% block head %}{% endblock %}
 

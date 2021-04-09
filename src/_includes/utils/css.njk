@@ -1,22 +1,22 @@
 {% macro link(url) %}
-  <link rel="stylesheet" href="{{ url }}">
+  <link rel="stylesheet" href="{{ url }}" disabled>
 {% endmacro %}
 
 {% macro defer(url) %}
   {% if env.IS_DEV %}
-      <link rel="stylesheet" href="{{ url }}">
+      <link rel="stylesheet" href="{{ url }}" disabled>
   {% else %}
-    <link rel="stylesheet" href="{{ url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ url }}" media="print" onload="this.media='all'" disabled>
     <noscript>
-      <link rel="stylesheet" href="{{ url }}">
+      <link rel="stylesheet" href="{{ url }}" disabled>
     </noscript>
   {% endif %}
 {% endmacro %}
 
 {% macro inline(name) %}
   {% if env.IS_DEV %}
-    <link rel="stylesheet" href="/assets/css/{{ name }}.css">
+    <link rel="stylesheet" href="/assets/css/{{ name }}.css" disabled>
   {% else %}
-    <style data-inline>{% include "bundle/css/" + name + ".css" %}</style>
+    <style data-inline disabled>{% include "bundle/css/" + name + ".css" %}</style>
   {% endif %}
 {% endmacro %}
