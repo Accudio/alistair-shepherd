@@ -19,6 +19,11 @@ ol[class] {
   padding: 0;
 }
 
+ul:not([class]) * + *,
+ol:not([class]) * + * {
+  margin-top: .5rem;
+}
+
 /* Remove default margin */
 body,
 h1,
@@ -69,6 +74,14 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+code:not([class]) {
+  background: #1d1f21;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 0 .5ch;
+  margin: 0 .25ch;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
