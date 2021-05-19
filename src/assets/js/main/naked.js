@@ -5,7 +5,7 @@ const items = [
 ]
 const nakedStylesheet = document.getElementById('naked-stylesheet')
 
-let naked = true
+let naked = false
 
 button.addEventListener('click', () => {
   naked = !naked
