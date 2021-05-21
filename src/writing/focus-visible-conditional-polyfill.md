@@ -1,6 +1,6 @@
 ---
 title: Conditionally loading a polyfill for :focus-visible
-date: '2021-05-19'
+date: '2021-05-21'
 excerpt: Lorem ipsum
 metaDesc: Lorem ipsum
 tags:
