@@ -3,7 +3,6 @@ title: Conditionally loading a polyfill for :focus-visible
 date: '2021-05-19'
 excerpt: Lorem ipsum
 metaDesc: Lorem ipsum
-draft: true
 tags:
 - CSS
 - JavaScript
