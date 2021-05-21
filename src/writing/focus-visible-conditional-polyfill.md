@@ -1,8 +1,8 @@
 ---
 title: Conditionally loading a polyfill for :focus-visible
 date: '2021-05-21'
-excerpt: Lorem ipsum
-metaDesc: Lorem ipsum
+excerpt: Helpful snippet to load the polyfill for CSS pseudo class :focus-visible conditionally.
+metaDesc: Helpful snippet to load the polyfill for CSS pseudo class :focus-visible conditionally.
 tags:
 - CSS
 - JavaScript
