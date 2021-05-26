@@ -1,14 +1,11 @@
 const container = document.querySelector('.app')
-const root = document.documentElement
-
-let scrollPos
+const elements = document.querySelectorAll('[data-parallax]')
 
 function animation() {
-  if (scrollPos !== container.scrollTop) {
-    scrollPos = container.scrollTop
-    root.style.setProperty('--scrollPos', scrollPos + 'px')
-  }
-
+  const scrollPos = container.scrollTop + 'px'
+  elements.forEach(el => {
+    el.style.setProperty('--scrollPos', scrollPos)
+  })
   window.requestAnimationFrame(animation)
 }
 
