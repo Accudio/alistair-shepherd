@@ -2,60 +2,60 @@
 # accudio.com
 [[redirects]]
   from = 'https://accudio.com/*'
-  to = 'https://alistairshepherd.com/:splat'
-  status = 308
+  to = 'https://alistairshepherd.uk/:splat'
+  status = 301
   force = true
 
 # www.accudio.com
 [[redirects]]
   from = 'https://www.accudio.com/*'
-  to = 'https://alistairshepherd.com/:splat'
-  status = 308
+  to = 'https://alistairshepherd.uk/:splat'
+  status = 301
   force = true
 
 # accudio.co.uk
 [[redirects]]
   from = 'https://accudio.co.uk/*'
-  to = 'https://alistairshepherd.com/:splat'
-  status = 308
+  to = 'https://alistairshepherd.uk/:splat'
+  status = 301
   force = true
 
 # www.accudio.co.uk
 [[redirects]]
   from = 'https://www.accudio.co.uk/*'
-  to = 'https://alistairshepherd.com/:splat'
-  status = 308
+  to = 'https://alistairshepherd.uk/:splat'
+  status = 301
   force = true
 
 # accudiodesign.com
 [[redirects]]
   from = 'https://accudiodesign.com/*'
-  to = 'https://alistairshepherd.com/:splat'
-  status = 308
+  to = 'https://alistairshepherd.uk/:splat'
+  status = 301
   force = true
 
 # www.accudiodesign.com
 [[redirects]]
   from = 'https://www.accudiodesign.com/*'
-  to = 'https://alistairshepherd.com/:splat'
-  status = 308
+  to = 'https://alistairshepherd.uk/:splat'
+  status = 301
   force = true
 
 ########## OLD URLS ##########
 [[redirects]]
   from = '/services/*'
   to = '/work'
-  status = 308
+  status = 301
 
 [[redirects]]
   from = '/portfolio/*'
   to = '/work'
-  status = 308
+  status = 301
 
 [[redirects]]
   from = '/about/accudio'
   to = '/about'
-  status = 308
+  status = 301
 
 
 ########## SITE FUNCTIONALITY ##########
@@ -67,12 +67,12 @@
 [[redirects]]
   from = '/projects'
   to = '/work'
-  status = 308
+  status = 301
 
 [[redirects]]
   from = '/contact'
   to = '/'
-  status = 308
+  status = 301
 
 [[headers]]
   for = '/' # all files
