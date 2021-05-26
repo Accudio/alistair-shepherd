@@ -1,4 +1,32 @@
-########## OLD URLS ##########
+########## OTHER DOMAINS ##########
+# alistairshepherd.co.uk
+[[redirects]]
+  from = 'https://alistairshepherd.co.uk/*'
+  to = 'https://alistairshepherd.uk/:splat'
+  status = 301
+  force = true
+
+# www.alistairshepherd.co.uk
+[[redirects]]
+  from = 'https://www.alistairshepherd.co.uk/*'
+  to = 'https://alistairshepherd.uk/:splat'
+  status = 301
+  force = true
+
+# alistairshepherd.com
+[[redirects]]
+  from = 'https://alistairshepherd.com/*'
+  to = 'https://alistairshepherd.uk/:splat'
+  status = 301
+  force = true
+
+# www.alistairshepherd.com
+[[redirects]]
+  from = 'https://www.alistairshepherd.com/*'
+  to = 'https://alistairshepherd.uk/:splat'
+  status = 301
+  force = true
+
 # accudio.com
 [[redirects]]
   from = 'https://accudio.com/*'
