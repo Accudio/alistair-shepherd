@@ -1,3 +1,64 @@
+########## OLD URLS ##########
+# accudio.com
+[[redirects]]
+  from = 'https://accudio.com/*'
+  to = 'https://alistairshepherd.com/:splat'
+  status = 308
+  force = true
+
+# www.accudio.com
+[[redirects]]
+  from = 'https://www.accudio.com/*'
+  to = 'https://alistairshepherd.com/:splat'
+  status = 308
+  force = true
+
+# accudio.co.uk
+[[redirects]]
+  from = 'https://accudio.co.uk/*'
+  to = 'https://alistairshepherd.com/:splat'
+  status = 308
+  force = true
+
+# www.accudio.co.uk
+[[redirects]]
+  from = 'https://www.accudio.co.uk/*'
+  to = 'https://alistairshepherd.com/:splat'
+  status = 308
+  force = true
+
+# accudiodesign.com
+[[redirects]]
+  from = 'https://accudiodesign.com/*'
+  to = 'https://alistairshepherd.com/:splat'
+  status = 308
+  force = true
+
+# www.accudiodesign.com
+[[redirects]]
+  from = 'https://www.accudiodesign.com/*'
+  to = 'https://alistairshepherd.com/:splat'
+  status = 308
+  force = true
+
+########## OLD URLS ##########
+[[redirects]]
+  from = '/services/*'
+  to = '/work'
+  status = 308
+
+[[redirects]]
+  from = '/portfolio/*'
+  to = '/work'
+  status = 308
+
+[[redirects]]
+  from = '/about/accudio'
+  to = '/about'
+  status = 308
+
+
+########## SITE FUNCTIONALITY ##########
 [[redirects]]
   from = '/images/:image'
   to = 'https://ahqwbmhykq.cloudimg.io/v7/_prod_/:image'
@@ -11,7 +72,7 @@
 [[redirects]]
   from = '/contact'
   to = '/'
-  status = 303
+  status = 308
 
 [[headers]]
   for = '/' # all files
