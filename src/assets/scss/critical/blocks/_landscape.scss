@@ -22,6 +22,7 @@ $sun-movement-h: 40%;
     transition-property: opacity, visibility;
     visibility: hidden;
     width: 100%;
+    will-change: transform;
 
     @media (prefers-reduced-motion: reduce) {
       display: none;
@@ -67,6 +68,7 @@ $sun-movement-h: 40%;
     transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
     transform-origin: 50% 67%;
     transition: transform-origin .2s;
+    will-change: transform;
 
     @media (prefers-reduced-motion: reduce) {
       transform: translateY(0);
