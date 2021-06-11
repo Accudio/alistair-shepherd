@@ -79,6 +79,7 @@ select {
 code:not([class]) {
   background: #1d1f21;
   border-radius: 4px;
+  color: get-color('white');
   display: inline-block;
   padding: 0 .5ch;
   margin: 0 .25ch;

@@ -1,0 +1,9 @@
+html {
+  // light theme
+  &[data-theme='light'] {
+    code:not([class]),
+    .code-wrapper > pre {
+      filter: invert(1);
+    }
+  }
+}

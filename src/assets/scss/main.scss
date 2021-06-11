@@ -17,3 +17,6 @@ $outputTokenCSS: false; // stylelint-disable-line scss/dollar-variable-pattern
 
 // blocks
 @import 'main/blocks/*';
+
+// theme overrides
+@import 'main/themes.scss';

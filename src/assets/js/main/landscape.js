@@ -116,6 +116,8 @@ if (themes) {
 
       const themeSlug = this.getAttribute('data-theme')
 
+      root.setAttribute('data-theme', themeSlug)
+
       endAnim()
 
       if (themeSlug === 'live' || themeSlug === 'cycle') {
