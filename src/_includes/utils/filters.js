@@ -9,4 +9,9 @@ module.exports = function(config) {
   config.addFilter('stringify', function(value) {
     return JSON.stringify(value)
   })
+
+  // return first n items of array/collection
+  config.addFilter('limit', function(array, limit) {
+    return array.slice(0, limit)
+  })
 }

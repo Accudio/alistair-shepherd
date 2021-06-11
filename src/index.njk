@@ -64,18 +64,22 @@ metaTitle: Alistair Shepherd - Front-end Web Developer
   </div>
 </article>
 
-<article>
-  {% divider 'color-dark' %}
-  <div class="[ wrap ][ flow ]">
-    <h2>My Writing</h2>
+{% set postList = collections.posts %}
+{% if postList.length %}
+  <article>
+    {% divider 'color-dark' %}
+    <div class="[ wrap ][ flow ]">
+      <h2>My Writing</h2>
 
-    {% set postList = collections.posts %}
-    {% if collections.posts.length %}
       <ol reversed class="[ latest-posts ][ flow flow-space-700 ][ measure-long ]">
-        {% for item in postList | reverse %}
+        {% for item in postList | reverse | limit(3) %}
           {{ postItem(item.url, item.data.title, item.date, item.data.excerpt, 'h3') }}
         {% endfor %}
       </ol>
-    {% endif %}
-  </div>
-</article>
+
+      {% if postList.length > 3 %}
+        <a href="/writing/" class="b-button">More writing</a>
+      {% endif %}
+    </div>
+  </article>
+{% endif %}
