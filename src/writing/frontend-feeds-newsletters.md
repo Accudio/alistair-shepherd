@@ -41,7 +41,7 @@ I thought I'd crack out a post I can point people to with a list of the feeds an
 - Browsers
 - 11ty
 
-I find it quite fun that the format for the majority of these feeds about modern web development is RSS, a technology that has existed since 1999! If you're looking for a feed reader I use Feedbin, which is a great cloud RSS and newsletter reader across multiple platforms.
+I find it quite fun that the format for the majority of these feeds about modern web development is RSS, a technology that has existed since 1999! If you're looking for a feed reader I use Feedbin, which is a great cloud RSS and newsletter reader across multiple platforms. You can also find an [export of my RSS subscriptions](https://github.com/accudio/rss) on [my Github](https://github.com/accudio).
 
 ## Browser Vendors { #browsers tabindex="-1" }
 
