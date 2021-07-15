@@ -46,6 +46,11 @@ h4 {
   color: get-color('dark');
 }
 
+// add a bit of scroll margin
+[id] {
+  scroll-margin-top: 4rem;
+}
+
 /**
  * scrollbar styling
  */

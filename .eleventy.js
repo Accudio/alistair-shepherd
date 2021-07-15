@@ -12,6 +12,10 @@ const addFilters = require('./src/_includes/utils/filters')
 const addTransforms = require('./src/_includes/utils/transforms')
 const addShortcodes = require('./src/_includes/utils/shortcodes')
 
+// markdown configuration
+const markdownIt = require('markdown-it')
+const markdownItAttrs = require('markdown-it-attrs')
+
 /**
  * Import site configuration
  */
@@ -96,6 +100,16 @@ module.exports = function (config) {
         })
     ]
   })
+
+  /**
+   * markdown configuration
+   */
+  const markdownLibrary = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true
+  }).use(markdownItAttrs);
+  config.setLibrary('md', markdownLibrary);
 
   /**
    * override BrowserSync Server options
