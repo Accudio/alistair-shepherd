@@ -1,4 +1,5 @@
 const { src, dest } = require('gulp')
+const assets = require('gulp-asset-hash')
 const gulpEsbuild = require('gulp-esbuild')
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -26,6 +27,12 @@ const scripts = () => {
         // eslint-disable-next-line quote-props
         'ENV': `"${process.env.NODE_ENV}"`
       }
+    }))
+    .pipe(dest(options.out))
+    .pipe(assets.hash({
+      hashKey: 'a1',
+      length: 5,
+      manifest: 'src/_includes/bundle/asset-manifest.json'
     }))
     .pipe(dest(options.out))
 }

@@ -11,20 +11,20 @@
 
     {{ css.inline('critical') }}
 
-    {{ css.defer('/assets/css/main.css') }}
+    {{ css.defer('/assets/css/main.css' | asset) }}
 
     <link rel="preload" as="style" href="/fonts/fonts.css">
     <link rel="preload" as="font" href="/fonts/Literata-400-latin14.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/Red_Hat_Display-900-latin25.woff2" type="font/woff2" crossorigin>
-    {{ css.defer('/fonts/fonts.css') }}
+    {{ css.defer('/fonts/fonts.css' | asset) }}
 
     <!-- naked stylesheet -->
-    <link id="naked-stylesheet" rel="none" href="/assets/css/naked.css">
+    <link id="naked-stylesheet" rel="none" href="{{ '/assets/css/naked.css' | asset }}">
 
     {% block head %}{% endblock %}
 
-    <script src="/assets/js/main.js" type="module"></script>
-    <script src="/assets/js/barba.js" type="module" async></script>
+    <script src="{{ '/assets/js/main.js' | asset }}" type="module"></script>
+    <script src="{{ '/assets/js/barba.js' | asset }}" type="module" async></script>
   </head>
 
   <body data-barba="wrapper">

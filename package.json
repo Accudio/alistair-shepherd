@@ -52,6 +52,7 @@
     "get-google-fonts": "^1.2.2",
     "gorko": "^0.2.1",
     "gulp": "^4.0.2",
+    "gulp-asset-hash": "^1.0.1",
     "gulp-csso": "^4.0.1",
     "gulp-esbuild": "^0.3.9",
     "gulp-postcss": "^9.0.0",

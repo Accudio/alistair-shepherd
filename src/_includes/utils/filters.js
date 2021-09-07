@@ -1,7 +1,9 @@
+const asset = require('./filters/asset')
 const date = require('./filters/date')
 const htmlDate = require('./filters/htmlDate')
 
 module.exports = function(config) {
+  config.addFilter('asset', asset)
   config.addFilter('date', date)
   config.addFilter('htmlDate', htmlDate)
 

@@ -1,5 +1,7 @@
 const { dest, src } = require('gulp')
 
+const assets = require('gulp-asset-hash')
+
 const sassProcessor = require('gulp-sass')
 const globImporter = require('node-sass-glob-importer')
 sassProcessor.compiler = require('node-sass')
@@ -57,7 +59,14 @@ const sass = () => {
       .pipe(sourcemaps.write())
   }
 
-  return stream.pipe(dest(calculateOutput))
+  return stream
+    .pipe(dest(calculateOutput))
+    .pipe(assets.hash({
+      hashKey: 'a1',
+      length: 5,
+      manifest: 'src/_includes/bundle/asset-manifest.json'
+    }))
+    .pipe(dest(calculateOutput))
 }
 
 module.exports = sass
