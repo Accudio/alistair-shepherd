@@ -16,7 +16,7 @@
     "url": "https://github.com/Accudio/alistair-shepherd/"
   },
   "scripts": {
-    "clean": "rimraf ./.cache ./dist ./src/_includes/bundle",
+    "clean": "rimraf ./.cache ./dist ./src/_includes/bundle/*.*",
     "compile": "run-s clean compile:assets compile:html",
     "compile:assets": "cross-env NODE_ENV=development gulp",
     "compile:html": "cross-env ELEVENTY_ENV=development eleventy",
