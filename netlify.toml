@@ -103,11 +103,26 @@
   status = 301
 
 [[headers]]
-  for = '/' # all files
+  for = '/*' # all files
   [headers.values]
     Cache-Control = 'public, max-age=3600'
     Content-Security-Policy = "default-src 'self' 'unsafe-inline'; img-src https:; frame-src https:; object-src 'none';"
+    Permissions-Policy = 'fullscreen=(), geolocation=(), camera=()'
     Referrer-Policy = 'strict-origin-when-cross-origin'
+    Strict-Transport-Security = 'max-age=31536000; preload; includeSubDomains'
     X-Content-Type-Options = 'nosniff'
-    X-Frame-Options = 'SAMEORIGIN'
+    X-Frame-Options = 'DENY'
     X-Xss-Protection = '1; mode=block'
+
+# Set hashed assets to be immutable
+[[headers]]
+  for = "*-a1*.css"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Vary = "Accept-Encoding"
+
+[[headers]]
+  for = "*-a1*.js"
+    [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Vary = "Accept-Encoding"
