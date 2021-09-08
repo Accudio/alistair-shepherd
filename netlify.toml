@@ -117,12 +117,29 @@
 # Set hashed assets to be immutable
 [[headers]]
   for = "*-a1*.css"
-    [headers.values]
+  [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
     Vary = "Accept-Encoding"
 
 [[headers]]
   for = "*-a1*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Vary = "Accept-Encoding"
+
+# Other asset caching
+[[headers]]
+  for = "*.woff2" # fonts
     [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+    Vary = "Accept-Encoding"
+[[headers]]
+  for = "/fonts/fonts.css" # fonts.css
+    [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Vary = "Accept-Encoding"
+[[headers]]
+  for = "/meta/*" # meta files
+    [headers.values]
+    Cache-Control = "public, max-age=86400"
     Vary = "Accept-Encoding"
