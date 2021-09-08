@@ -13,7 +13,7 @@
 
     {{ css.defer('/assets/css/main.css' | asset) }}
 
-    <link rel="preload" as="style" href="/fonts/fonts.css">
+    <link rel="preload" as="style" href="{{ '/assets/css/fonts.css' | asset }}">
     <link rel="preload" as="font" href="/fonts/literata-400-subset.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="/fonts/red-hat-900-subset.woff2" type="font/woff2" crossorigin>
     {{ css.defer('/assets/css/fonts.css' | asset) }}
