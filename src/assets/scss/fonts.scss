@@ -1,0 +1,47 @@
+// Literata normal italic
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/literata-400-italic-subset.woff2') format('woff2');
+  unicode-range: U+20-7E;
+}
+// Literata normal
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/literata-400-subset.woff2') format('woff2');
+  unicode-range: U+20-7E;
+}
+// Literata bold
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/literata-700-subset.woff2') format('woff2');
+  unicode-range: U+20-7E;
+}
+
+// Red Hat normal
+@font-face {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/red-hat-400-subset.woff2') format('woff2');
+  unicode-range: U+20-7E;
+}
+
+// Red Hat Bold
+@font-face {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/red-hat-900-subset.woff2') format('woff2');
+  unicode-range: U+20-7E;
+}

@@ -37,7 +37,8 @@
     "fix:js": "eslint --ignore-path .gitignore \"src/**/*.js\" --fix",
     "fix:css": "stylelint --ignore-path .gitignore \"src/**/*.scss\" --fix",
     "devimages": "npm run compile && surge dist/raw-images https://as-dev-images.surge.sh",
-    "demo": "npm run dist && surge dist/ https://alistairshepherd.surge.sh"
+    "demo": "npm run dist && surge dist/ https://alistairshepherd.surge.sh",
+    "subset-fonts": "rimraf static/fonts/*-subset.woff2 && glyphhanger --US_ASCII --subset=\"static/fonts/*.woff2\" --formats=woff2"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
