@@ -10,10 +10,10 @@ $outputTokenCSS: false; // stylelint-disable-line scss/dollar-variable-pattern
 @import '../../../node_modules/gorko/gorko';
 
 // layout
-@import 'main/layout/';
+@import 'main/layout/*';
 
 // blocks
-@import 'main/blocks/';
+@import 'main/blocks/*';
 
 // theme overrides
 @import 'main/themes.scss';
