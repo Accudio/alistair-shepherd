@@ -6,7 +6,7 @@
  * https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
  *
  * needs the additional min function to ensure items don't overflow,
- * and needs to use \#{}\ hack so sass doesn't parse min
+ * and needs to use #{''} hack so sass doesn't parse min
  */
 
 .auto-grid {
