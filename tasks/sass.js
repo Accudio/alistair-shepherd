@@ -2,8 +2,9 @@ const { dest, src } = require('gulp')
 
 const assets = require('gulp-asset-hash')
 
-const sassProcessor = require('gulp-sass')
-sassProcessor.compiler = require('sass')
+const sassProcessor = require('gulp-sass')(require('sass'))
+const sassGlob = require('gulp-sass-glob')
+
 
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
@@ -35,6 +36,7 @@ const sass = () => {
 
   // sass
   stream = stream
+    .pipe(sassGlob())
     .pipe(sassProcessor({
       includePaths: ['node_modules']
     }).on('error', sassProcessor.logError))
