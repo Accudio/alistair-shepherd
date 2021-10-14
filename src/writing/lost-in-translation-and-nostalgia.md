@@ -1,8 +1,8 @@
 ---
 title: Web Nostalgia and Lost In Translation
 date: '2021-08-30'
-excerpt: Ramblings about web nostalgia, early web experiments and translationg through many different languages
-metaDesc: Ramblings about web nostalgia, early web experiments and translationg through many different languages
+excerpt: Ramblings about web nostalgia, early web experiments and translating through many different languages
+metaDesc: Ramblings about web nostalgia, early web experiments and translating through many different languages
 tags:
 - Rambling
 - Open Source
