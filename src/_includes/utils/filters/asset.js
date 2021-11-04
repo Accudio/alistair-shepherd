@@ -4,6 +4,8 @@ const outDir = 'dist'
 
 // get path from manifest
 module.exports = function(path) {
+  if (process.env.ELEVENTY_ENV !== 'production') return path
+
   const srcPath = outDir + path
 
   if (!manifest[srcPath]) return path

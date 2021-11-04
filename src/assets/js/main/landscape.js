@@ -1,6 +1,7 @@
 import config from './landscape-config'
 
 const root = document.documentElement
+const themeColour = document.querySelector('meta[name="theme-color"]')
 let animMode = 'live'
 
 // add first element of states to end for looping
@@ -49,6 +50,10 @@ function updateProps() {
     ]
 
     applyColour(key, currRGB)
+
+    if (key === 'c1') {
+      themeColour.setAttribute('content', rgbToHex(currRGB))
+    }
   })
 
   sunPos(progress)
@@ -68,6 +73,15 @@ function hexToRgb(hex) {
     parseInt(result[2], 16),
     parseInt(result[3], 16)
   ] : null
+}
+
+function rgbToHex(rgb) {
+  return '#' + componentToHex(rgb[0]) + componentToHex(rgb[1]) + componentToHex(rgb[2])
+}
+
+function componentToHex(c) {
+  var hex = c.toString(16)
+  return hex.length === 1 ? '0' + hex : hex
 }
 
 function lerp(start, end, progress) {
@@ -129,6 +143,9 @@ if (themes) {
       Object.keys(state.colours).forEach(key => {
         applyColour(key, hexToRgb(state.colours[key]))
       })
+
+      themeColour.setAttribute('content', state.colours.c1)
+
       sunPos(state.at)
     })
   })
