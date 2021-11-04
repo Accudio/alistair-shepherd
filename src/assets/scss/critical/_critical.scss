@@ -53,27 +53,29 @@ h4 {
 
 /**
  * scrollbar styling
+ * only on hover devices
  */
+@media (hover: hover) {
+  // firefox
+  * {
+    scrollbar-color: get-color('light-p1') get-color('dark');
+  }
 
-// firefox
-* {
-  scrollbar-color: get-color('light-p1') get-color('dark');
-}
+  // webkit
+  ::-webkit-scrollbar {
+    height: .75rem;
+    width: .75rem;
+  }
 
-// webkit
-::-webkit-scrollbar {
-  height: .75rem;
-  width: .75rem;
-}
+  ::-webkit-scrollbar-track {
+    background: get-color('dark');
+  }
 
-::-webkit-scrollbar-track {
-  background: get-color('dark');
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: get-color('light-p1');
-  border: .125rem solid get-color('dark');
-  border-radius: 100vw;
+  ::-webkit-scrollbar-thumb {
+    background-color: get-color('light-p1');
+    border: .125rem solid get-color('dark');
+    border-radius: 100vw;
+  }
 }
 
 /**
