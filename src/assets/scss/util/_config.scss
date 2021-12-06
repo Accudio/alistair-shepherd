@@ -2,8 +2,8 @@
  * Custom Properties
  * CSS custom properties
  */
-$outputTokenCSS: true !default; // stylelint-disable-line scss/dollar-variable-pattern
-@if $outputTokenCSS {
+$generate-utility-classes: true !default; // stylelint-disable-line scss/dollar-variable-pattern
+@if $generate-utility-classes {
   :root {
     --c0: #fff;
     --c1: #eee;

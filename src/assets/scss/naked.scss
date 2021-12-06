@@ -1,5 +1,5 @@
 // don't generate CSS rules for config or gorko
-$outputTokenCSS: false; // stylelint-disable-line scss/dollar-variable-pattern
+$generate-utility-classes: false; // stylelint-disable-line scss/dollar-variable-pattern
 
 // import configuration and functions
 @import 'util/config';

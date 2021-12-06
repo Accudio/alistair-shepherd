@@ -59,7 +59,7 @@ module.exports = function (config) {
     tabs: 'result',
     height: 380,
     user: 'accudio'
-	});
+	})
 
   /**
    * custom blog post collection
