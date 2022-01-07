@@ -27,7 +27,7 @@
     cursor: pointer;
     padding: .25rem 1rem;
 
-    &[data-active] {
+    &[aria-pressed='true'] {
       background: get-color('mid-p1');
     }
 

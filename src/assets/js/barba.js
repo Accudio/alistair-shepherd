@@ -1,6 +1,5 @@
 import barba from '@barba/core'
 import prefetch from '@barba/prefetch'
-import OnDemandLiveRegion from 'on-demand-live-region'
 
 window.barba = barba
 
@@ -14,22 +13,30 @@ window.barba.init({
 })
 
 // set up live region to be used for page navigation announcements
-const liveRegion = new OnDemandLiveRegion()
+// const liveRegion = new OnDemandLiveRegion()
 
 // fire initialisation event
 var event = new CustomEvent('barbaInit', { detail: barba })
 document.dispatchEvent(event)
 
 // accessibility tweaks
+let firstLoad = true
 let currentPath
 const scrollEl = document.querySelector('.app')
 const page = document.querySelector('#page')
+const liveRegion = document.getElementById('liveregion')
 window.barba.hooks.afterEnter(({ trigger }) => {
+  // only trigger on the first page load, not initialisation
+  if (firstLoad) {
+    firstLoad = false
+    return
+  }
+
   // focus page
   page.focus()
 
   // announce new page to screen readers
-  liveRegion.say(`Navigated to: ${document.title}`)
+  liveRegion.innerText = `Navigated to: ${document.title}`
 
   // attempt to restore scroll on back/forward
   restoreScroll(trigger)

@@ -159,11 +159,11 @@ if (themes) {
 function changeTheme(themeSlug) {
   // set active
   themes.forEach(theme => {
-    theme.removeAttribute('data-active')
+    theme.setAttribute('aria-pressed', 'false')
   })
 
   const currentTheme = document.querySelector(`.b-themes__btn[data-theme="${themeSlug}"`)
-  currentTheme.setAttribute('data-active', '')
+  currentTheme.setAttribute('aria-pressed', 'true')
 
   root.setAttribute('data-theme', themeSlug)
 
