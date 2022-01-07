@@ -1,8 +1,11 @@
 import config from './landscape-config'
+import labToRgb from '../util/lab-to-rgb'
+
+const houdiniSupport = typeof CSS.registerProperty !== 'undefined'
 
 const root = document.documentElement
 const themeColour = document.querySelector('meta[name="theme-color"]')
-let animMode = 'live'
+let animMode = 'cycle'
 
 // add first element of states to end for looping
 const dynamicStates = config.states.filter(item => {
@@ -13,6 +16,18 @@ dynamicStates.push({
   name: 'end',
   at: 24
 })
+
+// if houdini is supported register custom properties for smoother animation support
+if (houdiniSupport) {
+  Object.keys(dynamicStates[0].colours).forEach(key => {
+    CSS.registerProperty({
+      name: `--${key}`,
+      syntax: '<color>',
+      inherits: true,
+      initialValue: config.defaultColours[key]
+    });
+  })
+}
 
 // animation
 let animation
@@ -40,19 +55,24 @@ function updateProps() {
   const progressCurr = (progress - start.at) / diff
 
   Object.keys(start.colours).forEach(key => {
-    const startRGB = hexToRgb(start.colours[key])
-    const endRGB = hexToRgb(end.colours[key])
+    const startColour = start.colours[key]
+    const endColour = end.colours[key]
 
-    const currRGB = [
-      Math.round(lerp(startRGB[0], endRGB[0], progressCurr)),
-      Math.round(lerp(startRGB[1], endRGB[1], progressCurr)),
-      Math.round(lerp(startRGB[2], endRGB[2], progressCurr))
-    ]
+    const currColour = []
+    for (let i = 0; i < startColour.length; i++) {
+      currColour[i] = Math.round(
+        lerp(
+          startColour[i],
+          endColour[i],
+          progressCurr
+        )
+      )
+    }
 
-    applyColour(key, currRGB)
+    applyColour(key, currColour)
 
     if (key === 'c1') {
-      themeColour.setAttribute('content', rgbToHex(currRGB))
+      themeColour.setAttribute('content', formatColour(currColour))
     }
   })
 
@@ -66,22 +86,8 @@ function getProgress() {
   return progress
 }
 
-function hexToRgb(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
-  return result ? [
-    parseInt(result[1], 16),
-    parseInt(result[2], 16),
-    parseInt(result[3], 16)
-  ] : null
-}
-
-function rgbToHex(rgb) {
-  return '#' + componentToHex(rgb[0]) + componentToHex(rgb[1]) + componentToHex(rgb[2])
-}
-
-function componentToHex(c) {
-  var hex = c.toString(16)
-  return hex.length === 1 ? '0' + hex : hex
+function formatColour(components) {
+  return `rgb(${labToRgb(components).join(',')})`
 }
 
 function lerp(start, end, progress) {
@@ -89,8 +95,7 @@ function lerp(start, end, progress) {
 }
 
 function applyColour(key, colour) {
-  const colourString = 'rgb(' + colour.join(',') + ')'
-  root.style.setProperty('--' + key, colourString)
+  root.style.setProperty('--' + key, formatColour(colour))
 }
 
 function round(num, places) {
@@ -141,7 +146,7 @@ if (themes) {
 
       const state = config.states.find(item => item.name === themeSlug)
       Object.keys(state.colours).forEach(key => {
-        applyColour(key, hexToRgb(state.colours[key]))
+        applyColour(key, state.colours[key])
       })
 
       themeColour.setAttribute('content', state.colours.c1)
@@ -155,5 +160,11 @@ if (themes) {
 function init() {
   startAnim()
   activateSun()
+
+  if (houdiniSupport) {
+    window.requestAnimationFrame(() => {
+      root.classList.add('houdini')
+    })
+  }
 }
 init()

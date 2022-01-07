@@ -23,6 +23,14 @@
       transition: all .2s;
       z-index: -1;
     }
+
+    .houdini & {
+      transition: color 1s, all .2s;
+
+      &::before {
+        transition: background-color 1s, all .2s;
+      }
+    }
   }
 
   &__flow {
@@ -58,6 +66,10 @@
       padding: get-size('500');
       text-shadow: 0 0 5px #000;
       transform: skewY(-15deg);
+
+      .houdini & {
+        transition: background 1s;
+      }
     }
 
     &[aria-current] {
@@ -73,6 +85,10 @@
           top: 0;
           width: 100%;
           z-index: -1;
+
+          .houdini & {
+            transition: background 1s;
+          }
         }
 
         @supports (clip-path: polygon(0 0)) {
@@ -92,6 +108,10 @@
           left: 0;
           position: absolute;
           width: 100%;
+
+          .houdini & {
+            transition: background 1s;
+          }
         }
       }
     }

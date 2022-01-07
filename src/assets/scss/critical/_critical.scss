@@ -13,6 +13,11 @@ body {
   color: get-color('base');
   font-size: get-size('500');
   line-height: 1.5;
+
+  .houdini & {
+    transition: background 1s;
+    will-change: background;
+  }
 }
 
 a:not([class]) {
@@ -44,6 +49,10 @@ h4 {
 ::selection {
   background: get-color('light');
   color: get-color('dark');
+
+  .houdini & {
+    transition: background 1s, color 1s;
+  }
 }
 
 // add a bit of scroll margin
@@ -97,10 +106,29 @@ h4 {
 main {
   background: get-color('dark');
   flex: 1 0 auto;
+
+  .houdini & {
+    transition: background 1s;
+  }
 }
 
 article {
   padding-bottom: get-size('major') + get-size('900');
   padding-top: get-size('major');
   position: relative;
+}
+
+/**
+ * where houdini is supported add transition to colours
+ */
+.houdini {
+  [class*=' color-'],div[class^='color'] {
+    transition: color 1s;
+    will-change: color;
+  }
+
+  [class*=' bg-'],div[class^='bg'] {
+    transition: background 1s;
+    will-change: background;
+  }
 }

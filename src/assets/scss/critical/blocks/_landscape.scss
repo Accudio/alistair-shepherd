@@ -22,7 +22,7 @@ $sun-movement-h: 40%;
     transition-property: opacity, visibility;
     visibility: hidden;
     width: 100%;
-    will-change: transform;
+    will-change: opacity, visibility, transform;
 
     @media (prefers-reduced-motion: reduce) {
       display: none;
@@ -91,6 +91,10 @@ $sun-movement-h: 40%;
       display: block;
       height: auto;
       max-width: 100%;
+    }
+
+    .houdini & path {
+      transition: fill 1s;
     }
   }
 
