@@ -5,7 +5,14 @@ const houdiniSupport = typeof CSS.registerProperty !== 'undefined'
 
 const root = document.documentElement
 const themeColour = document.querySelector('meta[name="theme-color"]')
-let animMode = 'cycle'
+let animMode = 'live'
+
+// check if a theme preference has been set
+let theme = 'live'
+const lsTheme = localStorage.getItem('theme')
+if (lsTheme) {
+  theme = lsTheme
+}
 
 // add first element of states to end for looping
 const dynamicStates = config.states.filter(item => {
@@ -34,9 +41,21 @@ let animation
 function startAnim() {
   updateProps()
   animation = setInterval(updateProps, config.anims[animMode].interval)
+
+  if (houdiniSupport) {
+    window.requestAnimationFrame(() => {
+      root.classList.add('houdini-anim')
+    })
+  }
 }
 function endAnim() {
   clearInterval(animation)
+
+  if (houdiniSupport) {
+    window.requestAnimationFrame(() => {
+      root.classList.remove('houdini-anim')
+    })
+  }
 }
 
 // set colour
@@ -124,47 +143,50 @@ function sunPos(progress) {
  * theme picker
  */
 const themes = document.querySelectorAll('.b-themes__btn')
+
+// add event listeners
 if (themes) {
   themes.forEach(function(theme) {
-    theme.addEventListener('click', function(e) {
-      // set active
-      themes.forEach(theme => {
-        theme.removeAttribute('data-active')
-        this.setAttribute('data-active', '')
-      })
-
+    theme.addEventListener('click', function() {
       const themeSlug = this.getAttribute('data-theme')
-
-      root.setAttribute('data-theme', themeSlug)
-
-      endAnim()
-
-      if (themeSlug === 'live' || themeSlug === 'cycle') {
-        animMode = themeSlug
-        return startAnim()
-      }
-
-      const state = config.states.find(item => item.name === themeSlug)
-      Object.keys(state.colours).forEach(key => {
-        applyColour(key, state.colours[key])
-      })
-
-      themeColour.setAttribute('content', state.colours.c1)
-
-      sunPos(state.at)
+      changeTheme(themeSlug)
+      localStorage.setItem('theme', themeSlug)
     })
   })
 }
 
+// change the theme
+function changeTheme(themeSlug) {
+  // set active
+  themes.forEach(theme => {
+    theme.removeAttribute('data-active')
+  })
+
+  const currentTheme = document.querySelector(`.b-themes__btn[data-theme="${themeSlug}"`)
+  currentTheme.setAttribute('data-active', '')
+
+  root.setAttribute('data-theme', themeSlug)
+
+  endAnim()
+
+  if (themeSlug === 'live' || themeSlug === 'cycle') {
+    animMode = themeSlug
+    return startAnim()
+  }
+
+  const state = config.states.find(item => item.name === themeSlug)
+  Object.keys(state.colours).forEach(key => {
+    applyColour(key, state.colours[key])
+  })
+
+  themeColour.setAttribute('content', state.colours.c1)
+
+  sunPos(state.at)
+}
+
 // initialise
 function init() {
-  startAnim()
+  changeTheme(theme)
   activateSun()
-
-  if (houdiniSupport) {
-    window.requestAnimationFrame(() => {
-      root.classList.add('houdini')
-    })
-  }
 }
 init()

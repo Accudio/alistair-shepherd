@@ -24,7 +24,7 @@
       z-index: -1;
     }
 
-    .houdini & {
+    .houdini-anim & {
       transition: color 1s, all .2s;
 
       &::before {
@@ -67,7 +67,7 @@
       text-shadow: 0 0 5px #000;
       transform: skewY(-15deg);
 
-      .houdini & {
+      .houdini-anim & {
         transition: background 1s;
       }
     }
@@ -86,7 +86,7 @@
           width: 100%;
           z-index: -1;
 
-          .houdini & {
+          .houdini-anim & {
             transition: background 1s;
           }
         }
@@ -109,7 +109,7 @@
           position: absolute;
           width: 100%;
 
-          .houdini & {
+          .houdini-anim & {
             transition: background 1s;
           }
         }

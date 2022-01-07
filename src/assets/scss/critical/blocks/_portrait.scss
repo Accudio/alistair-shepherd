@@ -10,7 +10,7 @@
     max-width: 50vw;
     min-width: 15rem;
 
-    .houdini & {
+    .houdini-anim & {
       transition: background 1s, border-color 1s;
     }
   }

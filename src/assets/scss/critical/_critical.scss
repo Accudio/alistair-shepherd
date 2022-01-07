@@ -14,7 +14,7 @@ body {
   font-size: get-size('500');
   line-height: 1.5;
 
-  .houdini & {
+  .houdini-anim & {
     transition: background 1s;
     will-change: background;
   }
@@ -50,7 +50,7 @@ h4 {
   background: get-color('light');
   color: get-color('dark');
 
-  .houdini & {
+  .houdini-anim & {
     transition: background 1s, color 1s;
   }
 }
@@ -107,7 +107,7 @@ main {
   background: get-color('dark');
   flex: 1 0 auto;
 
-  .houdini & {
+  .houdini-anim & {
     transition: background 1s;
   }
 }
@@ -119,9 +119,9 @@ article {
 }
 
 /**
- * where houdini is supported add transition to colours
+ * where houdini-anim is supported add transition to colours
  */
-.houdini {
+.houdini-anim {
   [class*=' color-'],div[class^='color'] {
     transition: color 1s;
     will-change: color;

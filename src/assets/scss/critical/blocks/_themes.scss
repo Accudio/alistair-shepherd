@@ -30,6 +30,10 @@
     &[data-active] {
       background: get-color('mid-p1');
     }
+
+    .houdini-anim & {
+      transition: background .5s;
+    }
   }
 
   &__icon {
