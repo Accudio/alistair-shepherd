@@ -1,0 +1,57 @@
+---
+layout: raw
+title: Making assets fly and images a breeze with Image CDNs
+---
+
+<article>
+  <div class="wrap">
+    <div class="[ flow ][ measure-long ]">
+      <h1>{{ title }}</h1>
+      <h2>Upcoming:</h2>
+      <ul>
+        <li><a href="https://www.meetup.com/Brighton-Web-Development-Meetup/events/282242678/">Brighton Web Development Meetup</a> &mdash; <time datetime="{{ '2022-01-27' | htmlDate }}">{{ '2022-01-27' | date }}</time></li>
+      </ul>
+      <h2>Previous:</h2>
+      <ul>
+        <li><a href="https://www.meetup.com/WordPress-OX/events/282794402/">WordPress Oxford</a> &mdash; <time datetime="{{ '2022-01-19' | htmlDate }}">{{ '2022-01-19' | date }}</time></li>
+        <li><a href="https://www.linkedin.com/events/mmttechmeetup-jamstack-nov20216857048439935557632/">MMT Meetup</a> &mdash; <time datetime="{{ '2021-11-25' | htmlDate }}">{{ '2021-11-25' | date }}</time></li>
+        <li><a href="https://jamstacklondon.com">Jamstack London</a> &mdash; <time datetime="{{ '2021-09-30' | htmlDate }}">{{ '2021-09-30' | date }}</time></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article class="bg-dark-m1">
+  {% divider 'color-dark-m1' %}
+  <div class="wrap flow flow-space-600">
+    <h2>Other versions of this talk</h2>
+    <p>I have also given versions of this talk specific to the Jamstack and WordPress. You can see more information and the slides for those specific versions below.</p>
+    <ul>
+        <li><a href="/speaking/jamstack-imagecdns">Making assets fly on the Jamstack with Image CDNs</a></li>
+        <li><a href="/speaking/wordpress-imagecdns">Making assets fly on WordPress with Image CDNs</a></li>
+    </ul>
+  </div>
+</article>
+
+<article>
+  {% divider 'color-dark' %}
+  <div class="wrap">
+    <div class="measure-long flow">
+      <h2 class="gap-bot-600">Useful links and resources</h2>
+      <ul class="flow list-style">
+        <li><a href="https://slides.com/accudio/making-images-fly-on-the-web-with-image-cdns">Brighton Web Development Meetup slides</a></li>
+        <li><a href="https://squoosh.app">Great tool for optimising images manually &mdash; squoosh.app</a></li>
+        <li><a href="https://jakearchibald.com/2021/serving-sharp-images-to-high-density-screens/">Serving multiple image qualities depending on screen density &mdash; Jake Archibald</a></li>
+        <li><a href="https://www.smashingmagazine.com/2021/04/image-optimization-pre-release/">Image Optimisation &mdash; book by Addy Osmani</a></li>
+        <li><a href="https://1896gallery.com/">The site used in the 'case study' &mdash; 1896 Gallery</a></li>
+        <li><a href="https://accud.io/imagecdn-11ty">Example Nunjucks + Eleventy shortcode abstraction</a></li>
+        <li><a href="https://accud.io/imagecdn-react">Example React component abstraction</a></li>
+        <li><a href="https://accud.io/imagecdn-php">Example PHP function abstraction</a></li>
+        <li><a href="https://accud.io/imagecdn-acf">Example WordPress and Advanced Custom Fields abstraction</a></li>
+        <li><a href="https://firt.dev/image-cdn">Performance and feature comparison of major Image CDNs (2019) &mdash; Maximiliano Firtman</a></li>
+        <li><a href="https://almanac.httparchive.org/en/2021/media">HTTP Archive Web Almanac &mdash; Media chapter</a></li>
+        <li><a href="https://css-tricks.com/cloudinary-fetch-with-eleventy-respecting-local-development/">Chris Coyier's thoughts on proxying Image CDNs and local development</a></li>
+        <li><a href="https://timkadlec.com/remembers/2020-11-17-netlify-proxy-requests/">How to proxy Cloudinary requests using Netlify Rewrites &mdash; Tim Kadlec</a></li>
+    </div>
+  </div>
+</article>
