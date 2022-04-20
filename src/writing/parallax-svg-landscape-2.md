@@ -7,6 +7,7 @@ tags:
 - CSS
 - JavaScript
 - Animation
+- My site
 ---
 
 As promised, now we're going to dig into the colour-changing effects of my new website. If you haven't seen it, check out my previous post about the [SVG parallax effect in the landscape](/writing/parallax-svg-landscape-1/).

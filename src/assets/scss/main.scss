@@ -15,5 +15,8 @@ $generate-utility-classes: false; // stylelint-disable-line scss/dollar-variable
 // blocks
 @import 'main/blocks/*';
 
+// utilities
+@import 'main/utilities/*';
+
 // theme overrides
 @import 'main/themes.scss';

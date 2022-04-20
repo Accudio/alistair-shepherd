@@ -45,7 +45,7 @@ Before long, the site has 5 analytics scripts, 10 conversion trackers and a [scr
 
 Some developers will give up at the beginning of this process and instead of asking consent put a message saying "This site uses cookies and tracks you. Deal with it or fuck off".
 
-<div class="rounded pad-400 bg-dark-m1">
+<div class="rounded pad-400 bg-dark-m1 measure-long">
   <a id="screen-recorder"></a> * Seriously, check out <a href="https://mouseflow.com" rel="noopener referrer">MouseFlow</a> screen recorder, it's actually scary. I worked for a client a couple years ago who had it installed and you could see a recording of every user's session. Combined with GeoIP giving you the town they lived in, the client could make a pretty accurate guess as to **exactly** who that user was: "Ah yes that's probably Brian. I tried to sell x to him last week but looks like I should try sell him y instead based on how he's used the website"
 </div>
 

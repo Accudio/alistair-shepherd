@@ -8,6 +8,7 @@ tags:
 - SVG
 - JavaScript
 - Animation
+- My site
 ---
 
 I've finally finished my new website, and I am really happy with it. I started the site in July 2020 and I launched it in mid January 2021.

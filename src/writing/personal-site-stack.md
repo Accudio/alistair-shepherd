@@ -8,9 +8,10 @@ tags:
 - Build
 - CSS
 - JavaScript
+- My site
 ---
 
-<aside class="flow-space-800 gap-bot-800 rounded pad-400 bg-dark-m1">
+<aside class="flow-space-800 gap-bot-800 rounded pad-400 bg-dark-m1 measure-long">
   <p class="gap-bot-400">I've had a very chaotic few months at the end of 2021, with work, moving house and my <a href="/speaking/jamstack-imagecdns/">first steps into giving tech talks</a>! That has meant that all the blog posts and side projects I planned were left behind, but with some free time before Christmas I thought I'd squeeze a quick and easy post out!</p>
   <p class="gap-bot-400">I hope 2021 has been kind and merciful to you, and you have a good holiday period if you're taking one! Thank you so much for reading and supporting me/my work, it means a huge amount! ❤️</p>
   <p>So I'm finishing off this year with a very festive post... my website tech stack?! 🌲</p>

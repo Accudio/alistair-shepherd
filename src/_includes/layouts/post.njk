@@ -8,26 +8,23 @@
 
 {% block content %}
   <article>
-    <div class="wrap">
-      <div class="[ flow ][ measure-long ]">
-        {% if date %}
-          <time datetime="{{ date | htmlDate }}">{{ date | date }}</time>
-        {% endif %}
+    <div class="blog flow">
+      {% if date %}
+        <time datetime="{{ date | htmlDate }}">{{ date | date }}</time>
+      {% endif %}
 
-        <h1>{{ title }}</h1>
+      <h1>{{ title }}</h1>
 
-        {% if tags.length %}
-          <nav class="[ text-400 ][ flow-space-200 ]">
-            Tags:
-            {% for tag in tags %}
-              <a href="/writing/tag/{{ tag | slug }}/">{{ tag }}</a>
-            {% endfor %}
-          </nav>
-        {% endif %}
+      {% if tags.length %}
+        <nav class="[ text-400 ][ flow-space-200 ]">
+          Tags:
+          {% for tag in tags %}
+            <a href="/writing/tag/{{ tag | slug }}/">{{ tag }}</a>
+          {% endfor %}
+        </nav>
+      {% endif %}
 
-        {{ content | safe }}
-
-      </div>
+      {{ content | safe }}
     </div>
   </article>
 
