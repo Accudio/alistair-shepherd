@@ -41,19 +41,15 @@ That works great until the client gets an SEO expert who wants to track conversi
 
 Later on, they want to add more scripts so they either ask for a text box to add them arbitrarily, install plugins, or install a Tag Manager.
 
-Before long, the site has 5 analytics scripts, 10 conversion trackers and a [screen recorder*](#screen-recorder). Few of these respect the user's privacy settings or have a way to opt out, and the website slows to a crawl.
+Before long, the site has 5 analytics scripts, 10 conversion trackers and a screen recorder. Few of these respect the user's privacy settings or have a way to opt out, and the website slows to a crawl.
 
 Some developers will give up at the beginning of this process and instead of asking consent put a message saying "This site uses cookies and tracks you. Deal with it or fuck off".
-
-<div class="rounded pad-400 bg-dark-m1 measure-long">
-  <a id="screen-recorder"></a> * Seriously, check out <a href="https://mouseflow.com" rel="noopener referrer">MouseFlow</a> screen recorder, it's actually scary. I worked for a client a couple years ago who had it installed and you could see a recording of every user's session. Combined with GeoIP giving you the town they lived in, the client could make a pretty accurate guess as to **exactly** who that user was: "Ah yes that's probably Brian. I tried to sell x to him last week but looks like I should try sell him y instead based on how he's used the website"
-</div>
 
 ### Why this is an issue
 
 There are two reasons why this is a problem. Ethical and legal.
 
-Ethically, if this is your site you are stalking your users - standing 2 metres behind them as they peruse your store. The level of what is acceptable here can be debated, but tracking someones every move without their ability to consent to this is not justified. Place yourself in ['Brians' shoes from the example](#screen-recorder) above and it's hard to dispute.
+Ethically, if this is your site you are stalking your users - standing 2 metres behind them as they peruse your store. The level of what is acceptable here can be debated, but tracking someones every move without their ability to consent to this is not justified. Place yourself in the shoes of someone who is being tracked across the web by several trackers, without any knowledge that potentially every interaction and details about their computer and location are being harvested and stored. It's hard to dispute in those circumstances.
 
 This is also illegal in many jurisdictions. Consumer privacy laws like GDPR and ePrivacy in the EU, and CCPA and similar in American states requires some level of consent to web tracking. I'm not a lawyer so contact one for proper advice, but this gist is at minimum you **need** a way for users to be able to meaningfully opt out of tracking.
 
