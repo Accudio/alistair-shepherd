@@ -59,9 +59,9 @@ The big problem with the requirement to offer an opt out is that this is **very*
 
 As I mentioned earlier, some scripts like Google Analytics offer a method to opt out. This still isn't ideal as you're loading a tracking script and then checking if you're allowed to run it, but it at least gives you some control.
 
-However that is the only tracking script I have come across that allows a way to opt out. Pretty much all other scripts will happily run as soon as they load, without regard for consequences. Even if they did have methods to opt-out, it would be individual for each service and be a nightmare to manage.
+However that one of few tracking scripts I have come across that allows a way to opt out. Lots of other scripts will happily run as soon as they load, without regard for consequences. Even those that do have methods to opt-out, may be individual for each service and be a nightmare to manage.
 
-Developers can deal with this by dynamically adding scripts under certain conditions, but clients will want to add their own and often have no consideration for the consequences.
+Developers can deal with this by dynamically adding scripts under certain conditions, but clients will want to add their own and may not consider the consequences.
 
 As developers we're left in a difficult position. Laws require that tracking can be opt-out, but we have no way to do so.
 
@@ -71,10 +71,10 @@ The way to fix this is to be in control of all tracking scripts, and then load t
 
 There are many solutions to do this as investors have monopolised on businesses grappling with the issue of tracking and consent.
 
-Companies like OneTrust offer pricey 'hosted consent solutions' that supposedly solve all your problems. However when I load their site my browser tells me it's blocked 14 trackers.
+Some large 'privacy-focused' corporations offer pricey 'hosted consent solutions' that supposedly solve all your problems. However when I load the site of one, my browser tells me it's blocked 14 trackers.
 If you've ever been annoyed by a cookie popup, it's probably a solution like this. A big annoying popup that makes opting out difficult and will send all your preferences to a tracking service to track your consent.
 
-My opinion is that these companies are morally corrupt. Tracking the consent of users on a remote server is still tracking and they charge extortionate fees to fix a problem their own investors created.
+My opinion is that some of these companies are morally corrupt. Tracking the consent of users on a remote server is still tracking and they charge extortionate fees to fix a problem their own investors created.
 
 I think the fix is a lot easier. Our webpage only runs tracking scripts when we say so. That's why I made Cead Consent.
 
