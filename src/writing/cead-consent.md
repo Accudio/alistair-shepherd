@@ -41,7 +41,7 @@ That works great until the client gets an SEO expert who wants to track conversi
 
 Later on, they want to add more scripts so they either ask for a text box to add them arbitrarily, install plugins, or install a Tag Manager.
 
-Before long, the site has 5 analytics scripts, 10 conversion trackers and a screen recorder. Few of these respect the user's privacy settings or have a way to opt out, and the website slows to a crawl.
+Before long, the site has 5 analytics scripts, 10 conversion trackers and a screen recorder. These may not respect the user's privacy settings or have a way to opt out, and the website could slow to a crawl.
 
 Some developers will give up at the beginning of this process and instead of asking consent put a message saying "This site uses cookies and tracks you. Deal with it or fuck off".
 
