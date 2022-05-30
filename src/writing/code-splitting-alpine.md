@@ -1,16 +1,15 @@
 ---
 title: Code Splitting in Alpine.js
-date: '2022-05-25'
-draft: true
-excerpt: "Using Alpine.js with Asynchronous, lazy loaded components and code splitting"
-metaDesc: "Using Alpine.js with Asynchronous, lazy loaded components and code splitting"
+date: '2022-05-30'
+excerpt: "Code splitting in JavaScript projects and for Alpine.js"
+metaDesc: "Code splitting in JavaScript projects and for Alpine.js"
 tags:
 - JavaScript
 - Open Source
 - Alpine.js
 ---
 
-I've recently published a library called Async Alpine that adds asynchronous or lazy loading of components to Alpine.js! It can help you write faster, more efficient sites using Alpine.js. Check out my [Async Alpine blog post](#0) for more info!
+I've recently published a library called Async Alpine that adds asynchronous or lazy loading of components to Alpine.js! It can help you write faster, more efficient sites using Alpine.js. Check out my [Async Alpine blog post](/writing/async-alpine) for more info!
 
 ## How I use Alpine.js
 
@@ -55,8 +54,8 @@ With that we have a lightweight way to load components on-demand!
 
 That's a minimal setup that does the basics, but we could go a lot further to add different loading strategies and to support the standard Alpine syntax. I've done that work and released it as a library called [Async Alpine](https://github.com/Accudio/async-alpine)!
 
-I've written another post focusing on it more&mdash;[Async Alpine - Asynchronous Alpine component loading](#0)&mdash;and you can find [more info about Async Alpine on GitHub](https://github.com/Accudio/async-alpine)
+I've written another post focusing on it more&mdash;[Async Alpine &mdash; Asynchronous Alpine component loading](/writing/async-alpine)&mdash;and you can find [more info about Async Alpine on GitHub](https://github.com/Accudio/async-alpine)
 
 It came out of wanting Astro/Slinkity style loading for Alpine components, and I've been working on it the past couple of months. With more control over component loading I could build faster, more efficient websites without changing the syntax of a library I was familiar with. It has advanced loading options including immediately, on idle, when visible, using a media query, DOM events or **any** combination of those.
 
-It's still very much in development and will need more testing before I'd consider it stable, but I've used it on several production websites with great success. If you're familiar with Alpine I'd encourage you to give it a try and see how it works for you!
+It's still in development and will need more testing before I'd consider it stable, but I've used it on several production websites with great success. If you're familiar with Alpine I'd encourage you to give it a try and see how it works for you!
