@@ -40,7 +40,6 @@
     Referrer-Policy = 'strict-origin-when-cross-origin'
     Strict-Transport-Security = 'max-age=31536000; preload; includeSubDomains'
     X-Content-Type-Options = 'nosniff'
-    X-Frame-Options = 'DENY'
     X-Xss-Protection = '1; mode=block'
 
 # Set hashed assets to be immutable
