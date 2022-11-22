@@ -55,5 +55,8 @@
   <meta name="monetization" content="{{ config.author.monetisation }}">
 {% endif %}
 
-<meta name="generator" content="{{ eleventy.generator }}">
+{% if config.author.mastodon %}
+  <link rel="me" href="https://{{ config.author.mastodon }}">
+{% endif %}
 
+<meta name="generator" content="{{ eleventy.generator }}">
