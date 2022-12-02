@@ -25,7 +25,7 @@ eleventyExcludeFromCollections: true
         <![CDATA[
       {{ post.templateContent | safe }}
       <hr>
-      <p>If you have any comments or feedback on this article, let me know! I'd love to hear your thoughts, go ahead and <a href="mailto:alistair@accudio.com">send me an email</a> at alistair@accudio.com or <a href="https://twitter.com/accudio" rel="noopener noreferrer">contact me on Twitter</a>.</p>
+      <p>If you have any comments or feedback on this article, let me know! I'd love to hear your thoughts, go ahead and <a href="mailto:alistair@accudio.com">send me an email</a> at alistair@accudio.com or <a href="https://{{ config.author.mastodon }}" rel="noopener noreferrer">contact me on Mastodon</a>.</p>
       <p>The post <a href="{{ absolutePostUrl }}">{{ post.data.title }}</a> appeared first on <a href="https://alistairshepherd.uk">alistairshepherd.uk</a>.</p>
     ]]>
       </content>
