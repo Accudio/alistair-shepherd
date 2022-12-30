@@ -1,10 +1,8 @@
 ---
-title: 'My 2022 roundup'
-date: '2022-12-29'
-draft: true
-excerpt: ""
-metaDesc: ""
-tags:
+title: 'My 2022 round-up'
+date: '2022-12-30'
+excerpt: "Happy new year! This is a round-up of my 2022, including conferences, work, personal life and media!"
+metaDesc: "Happy new year! This is a round-up of my 2022, including conferences, work, personal life and media!"
 ---
 
 Happy Hogmanay, New Year, or January depending on what you celebrate!
