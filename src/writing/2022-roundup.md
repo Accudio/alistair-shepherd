@@ -136,15 +136,17 @@ Only a couple new ones so here's all of the podcasts I've been listening to, new
       <a class="d-b radius" href="{% src image[0], 2000 %}">
         <img
           class="radius"
-          src="{% src image[0], 528, 1 %}"
+          src="{% src image[0], 350, 1 %}"
           srcset="{% srcset image[0], null, 1 %}"
           sizes="{% sizes [
-            '(min-width: 70rem) 33rem',
+            '(min-width: 70rem) 21.5rem',
+            '(min-width: 54rem) calc(33vw - 2rem)',
+            '(min-width: 36.8rem) calc(50vw - 2.3rem)',
             'calc(100vw - 2.66rem)'
           ] %}"
           alt="{{ image[1] }}"
-          width="528"
-          height="528"
+          width="350"
+          height="350"
           loading="lazy"
         >
       </a>
