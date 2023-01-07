@@ -12,13 +12,13 @@
 } %}
 
 <div class="b-landscape" role="img" aria-label="Monotone illustration of a landscape. Trees are in the foreground, a loch and forest is in a valley and in the background a mountain range is visible.">
-  <div class="b-landscape__sun">
+  <div class="b-landscape__sun" data-offset="1">
     <div class="[ b-landscape__sunH ][ absolute w-100 h-100 ]">
       <div class="[ b-landscape__sunV ][ absolute w-100 h-100 ]"></div>
     </div>
   </div>
   {% for i in range(1, 11) -%}
-    <div class="[ b-landscape__layer b-landscape__layer--{{ i }} ][ absolute w-100 h-100 ]" style="--offset:{{ offsets[i] }}">
+    <div class="[ b-landscape__layer b-landscape__layer--{{ i }} ][ absolute w-100 h-100 ]" data-offset="{{ offsets[i] }}">
       <div class="b-landscape__image">
         {% include 'svg/layer_' + i + '.svg' %}
       </div>

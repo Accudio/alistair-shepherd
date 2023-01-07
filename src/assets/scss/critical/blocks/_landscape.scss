@@ -65,9 +65,7 @@ $sun-movement-h: 40%;
   &__layer {
     $layers: 10;
 
-    transform: translateY(calc(var(--scrollPos, 0) * var(--offset, 0)));
     transform-origin: 50% 67%;
-    transition: transform-origin .2s;
     will-change: transform;
 
     @media (prefers-reduced-motion: reduce) {

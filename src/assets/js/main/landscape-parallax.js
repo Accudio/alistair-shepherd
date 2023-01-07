@@ -1,38 +1,42 @@
-const container = document.querySelector('.app')
-
-let currentPos = 0
-let scrollPos = 0
-function animation() {
-  scrollPos = container.scrollTop
-  movePositions()
-  container.style.setProperty('--scrollPos', currentPos + 'px')
-  window.requestAnimationFrame(animation)
-}
-
-// if the current position doesn't match the scroll position move it towards it
-function movePositions() {
-  if (currentPos == scrollPos) return
-
-  // get the difference between currentPos and scrollPos
-  const posDiff = Math.abs(currentPos - scrollPos)
-
-  // use difference to calculate a 'speed', or number of px to move this frame.
-  // this means that the time it takes to sync the scroll is dependent on scroll distance, not time.
-  // we divide this so the further away, the faster it moves
-  const speed = Math.max(1, posDiff / 9)
-
-  // if we're close set it to the exact number rather than tweaking it
-  if (posDiff < speed) {
-    currentPos = scrollPos
-    return
+(async () => {
+  // only load the polyfill if ViewTimeline isn't supported
+  if (typeof ViewTimeline === 'undefined') {
+    // needs to be set in a variable so ESBuild doesn't load it even if not needed
+    const importUrl = '/assets/js/scroll-timeline-polyfill.js'
+    await import(importUrl)
   }
 
-  if (currentPos > scrollPos) {
-    currentPos = currentPos - speed
-    return
-  }
+  const app = document.querySelector('.app')
+  const layers = document.querySelectorAll('.b-landscape__layer, .b-landscape__sun')
 
-  currentPos = currentPos + speed
-}
+  // create a placeholder element to track the right timing
+  // see details on why this is needed here: https://codepen.io/bramus/pen/VwXMRrW?editors=0010
+  const placeholder = document.createElement('div')
+  placeholder.setAttribute('style', 'position:absolute;top:100vh;left:0;height:75vh;width:100%;pointer-events:none')
+  app.appendChild(placeholder)
 
-window.requestAnimationFrame(animation)
+  // create our timeline relative to the placeholder element
+  const timeline = new ViewTimeline({
+    subject: placeholder,
+    axis: 'vertical'
+  })
+
+  // animate each layer based on its offset
+  layers.forEach(layer => {
+    const offset = parseFloat(layer.getAttribute('data-offset'))
+    layer.animate(
+      {
+        transform: [
+          'translateY(0)',
+          `translateY(calc(75vh * ${offset}))`
+        ]
+      },
+      {
+        timeline,
+        fill: 'forwards',
+        delay: { phase: "enter", percent: CSS.percent(0) },
+        endDelay: { phase: "enter", percent: CSS.percent(100) }
+      }
+    );
+  });
+})()
