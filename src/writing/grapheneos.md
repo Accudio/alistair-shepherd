@@ -5,8 +5,6 @@ excerpt: "My experience running GrapheneOS on a Google Pixel 6 over the past few
 metaDesc: "My experience running GrapheneOS on a Google Pixel 6 over the past few months as my daily-driver phone OS"
 ---
 
-# GrapheneOS as my daily-driver mobile OS
-
 In November 2022 I dropped my previous phone. Actually 'drop' maybe isn't accurate, it was more of a drop-kick into a stone floor. It was pretty beat-up already honestly, this Xiaomi Mi 9T had been dropped countless times and the back was covered in sellotape to keep the glass in. My *beautiful* drop-kick was a bit too much though, and the screen died completely.
 
 I had already been considering getting a new phone for a bit however, as my trusty 9T certainly had it's problems. I'll get onto some of the software issues later, but also the pop-up selfie camera only popped up about 30% of the time (thanks to a Snowboarding accident). I regularly got strange looks as my phone whirred unhealthily and I shook it upside-down to try to get the camera out.
