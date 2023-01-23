@@ -35,7 +35,7 @@
     "subset-fonts": "rimraf static/fonts/*-subset.woff2 && glyphhanger --US_ASCII --subset=\"static/fonts/*.woff2\" --formats=woff2"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^2.0.0-beta.1",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.2.2",
     "@barba/core": "^2.9.7",

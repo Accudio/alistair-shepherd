@@ -113,35 +113,6 @@ module.exports = function (config) {
   }).use(markdownItAttrs).disable('code');
   config.setLibrary('md', markdownLibrary);
 
-  /**
-   * override BrowserSync Server options
-   */
-  config.setBrowserSyncConfig({
-    ...config.browserSyncConfig,
-    notify: false,
-    open: false,
-    snippetOptions: {
-      rule: {
-        match: /<\/head>/i,
-        fn: function (snippet, match) {
-          return snippet + match
-        },
-      },
-    },
-    // set local server 404 fallback
-    callbacks: {
-      ready: function (err, browserSync) {
-        const content_404 = fs.readFileSync(`${siteConfig.paths.output}/404.html`)
-
-        browserSync.addMiddleware('*', (req, res) => {
-          // Provides the 404 content without redirect.
-          res.write(content_404)
-          res.end()
-        })
-      }
-    }
-  })
-
   /*
    * disable use gitignore for avoiding ignoring of /bundle folder during watch
    */
