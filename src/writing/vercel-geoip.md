@@ -14,7 +14,9 @@ Turns out that [Vercel](https://vercel.com) makes it super easy to set up a simp
 
 If you just want the code you can find the repo at [github.com/Accudio/vercel-geoip](https://github.com/Accudio/vercel-geoip) and demo at [accudio-geoip.vercel.app](https://accudio-geoip.vercel.app/). You can fork that repository and deploy it to your own Vercel account to use yourself!
 
-Read on for a deeper explanation, and let me know if you have any thoughts or issues! You can do [a similar GeoIP API with Netlify](https://edge-functions-examples.netlify.app/example/geolocation), maybe I'll make another post for that in future!
+I have also published a very similar post (almost ideantical to be honest, it's mostly copied) about how to do the [same with Netlify](/writing/netlify-geoip).
+
+Read on for a deeper explanation, and let me know if you have any thoughts or issues!
 
 ## Background
 
@@ -60,14 +62,14 @@ export const config = {
 // We export the function that runs on each request, which receives the `request`
 // parameter with data about the current request. We'll use this later
 export default function (request) {
-  // respond to the request with the context "hello world!"
+  // respond to the request with the content "hello world!"
   return new Response('hello world!')
 }
 ```
 
 To test our function, we can run `npx vercel dev` to run the Vercel development server. This will ask you to link the project to your Vercel account and some details about the project. You can leave those details as default.
 
-Now, if you visit the dev URL in your browser and add `/api` — probably [`localhost:5000/api`](https://localhost:5000/api) you should see "hello world!".
+Now, if you visit the dev URL in your browser and add `/api` — [probably `localhost:5000/api`](https://localhost:5000/api) you should see "hello world!".
 
 ### 3. The Geolocation bit
 
@@ -83,13 +85,13 @@ export const config = {
 };
 
 export default function (request) {
-  // The geolocation helper pulls out the geoIP headers from the
+	// The geolocation helper pulls out the geoIP headers from the
 	const geo = geolocation(request) || {};
-  // The IP helper does the same function for the user's IP address
-  const ip = ipAddress(request) || null
+	// The IP helper does the same function for the user's IP address
+	const ip = ipAddress(request) || null
 
-  // Output the Geolocation data and IP address as a JSON object, and
-  // set the content type to make it easier to handle when requested
+	// Output the Geolocation data and IP address as a JSON object, and
+	// set the content type to make it easier to handle when requested
 	return new Response(
 		JSON.stringify({
 			...geo,
@@ -119,17 +121,15 @@ To allow us to use the API within JavaScript in a browser, we need to tell the b
     {
       "source": "(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
-        { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
+        { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS" }
       ]
     }
   ]
 }
 ```
 
-This is taken from Vercel's ["How can I enable CORS on Vercel?" guide](https://vercel.com/guides/how-to-enable-cors). We don't really need all of these parameters for our simple API, but for the sake of keeping it easy there's no real harm in keeping them.
+This is taken from Vercel's ["How can I enable CORS on Vercel?" guide](https://vercel.com/guides/how-to-enable-cors). Since this is a relatively straightforward API we don't really need a lot of the parameters in that article, so I've simplified it to allowing all origins, and only the GET and OPTIONS methods.
 
 There is one thing to note with the above code however, the `Access-Control-Allow-Origin` header allows all origins to make a request to the API. In most cases that might be okay, but you may want to prevent other sites from using your API, especially if you start hitting Vercel's usage limits.
 
@@ -151,7 +151,7 @@ The final touch is a rewrite so we can hit our API at the root URL `/`, instead 
 
 ### 6. Deploy and test!
 
-We can deploy the API to Vercel with `npx vercel --prod`, or link the project via the Vercel website to a Git repo on GitHub, GitLab or similar. Access the API at the Vercel URL, for example [`accudio-geoip.vercel.app`](https://accudio-geoip.vercel.app) and there we go!
+We can deploy the API to Vercel with `npx vercel --prod`, or link the project via the Vercel website to a Git repo on GitHub, GitLab or similar. Access the API at the Vercel URL, [for example `accudio-geoip.vercel.app`](https://accudio-geoip.vercel.app) and there we go!
 
 This is the result I get when visiting that URL (IP obfuscated for privacy):
 
@@ -167,9 +167,9 @@ This is the result I get when visiting that URL (IP obfuscated for privacy):
 }
 ```
 
-It's definitely not perfect, to start I'm in Edinburgh not Loughborough! City and Country Region should maybe be taken with a pinch of salt, but that's something I run into with GeoIP systems all over the web so it's clearly not just Vercel.
+It's definitely not perfect, to start I'm in Edinburgh, Scotland not Loughborough, England! City and Country Region should maybe be taken with a pinch of salt, but that's something I run into with GeoIP systems all over the web so it's clearly not just Vercel. (interestingly, my [Netlify post](/writing/netlify-geoip) had similar but slightly different results)
 
-For the purposes of country though it's reasonably accurate, and the City and Region may be helpful to set a default that a user can later change.
+For the purposes of country though it's accurate, and the City and Region may be helpful to set a default that a user can later change.
 
 ### 7. Using the API within JavaScript
 
