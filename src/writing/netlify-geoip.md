@@ -14,7 +14,7 @@ Turns out that [Netlify](https://netlify.com) makes it super easy to set up a si
 
 If you just want the code you can find the repo at [github.com/Accudio/netlify-geoip](https://github.com/Accudio/netlify-geoip) and demo at [accudio-geoip.netlify.app](https://accudio-geoip.netlify.app/). You can fork that repository and deploy it to your own Netlify account to use yourself!
 
-I have also published a very similar post (almost ideantical to be honest, it's mostly copied) about how to do the [same with Vercel](/writing/vercel-geoip).
+I have also published a very similar post (almost identical to be honest, it's mostly copied) about how to do the [same with Vercel](/writing/vercel-geoip).
 
 Read on for a deeper explanation, and let me know if you have any thoughts or issues!
 

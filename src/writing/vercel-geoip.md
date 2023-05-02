@@ -14,7 +14,7 @@ Turns out that [Vercel](https://vercel.com) makes it super easy to set up a simp
 
 If you just want the code you can find the repo at [github.com/Accudio/vercel-geoip](https://github.com/Accudio/vercel-geoip) and demo at [accudio-geoip.vercel.app](https://accudio-geoip.vercel.app/). You can fork that repository and deploy it to your own Vercel account to use yourself!
 
-I have also published a very similar post (almost ideantical to be honest, it's mostly copied) about how to do the [same with Netlify](/writing/netlify-geoip).
+I have also published a very similar post (almost identical to be honest, it's mostly copied) about how to do the [same with Netlify](/writing/netlify-geoip).
 
 Read on for a deeper explanation, and let me know if you have any thoughts or issues!
 
