@@ -31,7 +31,7 @@ They pair via Bluetooth, a pretty standard 'hold the button til you hear the bee
 
 Aftershokz claim the battery life is 8 hours but I found it was consistently a lot better than that. For me they last about 10-15 hours of near-constant use, and generally does me 2-3 days before needing a recharge. They recharge very quickly, needing only 30 mins or so from dead to full.
 
-On battery, there are audio warnings about the volume when you turn on/off and as you approach empty. They're not super useful though really, I find "High" lasts a couple hours, "Medium" lasts ~5 hours and "Low" lasts 5+ hours. So I hear "Low" and have no idea if that means 'need to charge tonight' low or 'about to shut down' low. Android, Windows and Mac all report the percentage in increments of 10% pretty accurately though so check that instead.
+On battery, there are audio warnings about the battery level when you turn on/off and as you approach empty. They're not super useful though really, I find "High" lasts a couple hours, "Medium" lasts ~5 hours and "Low" lasts 5+ hours. So I hear "Low" and have no idea if that means 'need to charge tonight' low or 'about to shut down' low. Android, Windows and Mac all report the percentage in increments of 10% pretty accurately though so check that instead.
 
 They go easily over your ears and behind the back of your head, holding themselves pretty well but not tightly. They're very flexible so will likely fit most heads okay. They're super easy for me with fairly short hair, but as a friend discovered they're a bit trickier for longer and curlier hair — you may need to put them between your hair and back of your neck.
 
