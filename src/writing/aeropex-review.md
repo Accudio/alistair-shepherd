@@ -3,6 +3,7 @@ title: Bone conduction earphones revolution — Aftershokz Aeropex review
 date: '2023-07-30'
 excerpt: "The bone conduction earphones from Aftershokz blew my mind and are the best earphones I've ever used! Reviewed 9/10."
 metaDesc: "The bone conduction earphones from Aftershokz blew my mind and are the best earphones I've ever used! Reviewed 9/10."
+audio: '/writing/aeropex-review.m4a'
 ---
 
 It's been a very long time since I've been really excited about some new technology.
