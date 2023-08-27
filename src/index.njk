@@ -2,6 +2,22 @@
 layout: 'raw'
 title: Home
 metaTitle: Alistair Shepherd - Front-end Web Developer
+projects:
+  - title: Lead developer at Series Eight
+    url: https://serieseight.com
+    description: My day job is lead developer at Series Eight, and as part of that I work on a load of websites, processes and tooling. Check out S8 for some examples!
+  - title: Async Alpine — advanced component loading for Alpine.js
+    url: https://async-alpine.dev
+    description: An open-source project I maintain, adding the ability to control when components load in the JS framework Alpine.js. A must-have for high-performance Alpine.js sites!
+  - title: "Creative web — building dynamic websites for work and play"
+    url: https://alistairshepherd.uk/speaking/creative-web/
+    description: A talk looking at how with a little modern CSS and JS you can build cool and exciting effects on the web easier than you may think!
+  - title: Cead Consent
+    url: https://github.com/Accudio/cead-consent
+    description: A simple, lightweight and easy-to-implement Cookie/Tracking consent manager for the web.
+  - title: "Making assets fly and images a breeze with Image CDNs"
+    description: A talk introducing Image CDNs as a tool to enhance performance and developer experiences working with images.
+    url: https://alistairshepherd.uk/speaking/imagecdns/
 ---
 
 {% from "partials/postItem.njk" import postItem %}
@@ -15,52 +31,46 @@ metaTitle: Alistair Shepherd - Front-end Web Developer
           I'm a web developer based in Edinburgh, Scotland, and use the pronouns he/him. I love front-end development&mdash;particularly CSS, HTML, and web performance.
         </p>
         <p>
-          You can find out more about <a href="/work/">my Projects and Work</a>, <a href="/about/">about me</a> or <a href="/cv/">view my CV</a>. I occasionally write about web technologies on my <a href="/writing/">blog</a>.
+          I currently work as Lead Developer at the creative agency Series Eight. You can find out more about <a href="#projects">my Projects and Work</a>, <a href="/about/">about me</a> or <a href="/cv/">view my CV</a>. I occasionally write about web technologies on my <a href="/writing/">blog</a>.
         </p>
         <p>
-          Feel free to <a href="#contact">contact me</a> if you want to find out more info, speak about a project, or have a chat about the web!
+          Feel free to <a href="#contact">contact me</a> for a chat about the web, find out any more info, invite me to speak or just to say hi!
         </p>
       </div>
-      <div class="[ l-side__sidebar ][ b-portrait ]" role="img" aria-label="Illustration of Alistair Shepherd. He has messy brown hair, blue eyes, glasses, a light beard and is wearing a shirt.">
-        {% include 'svg/portrait.svg' %}
+      <div class="[ l-side__sidebar ][ b-portrait ]">
+        <div class="b-portrait__inner">
+          <img
+            src="/raw-images/profile_240.png"
+            srcset="/raw-images/profile_240.png 240w, /raw-images/profile_480.png 480w"
+            sizes="15rem"
+            width="240"
+            height="240"
+            alt="Me grinning at the camera wearing a unzipped jacket in a moor. The image is dithered and toned to match the rest of the site"
+            decoding="async"
+          >
+        </div>
       </div>
     </div>
   </div>
 </article>
 
-<article class="[ b-featWork ][ bg-dark-m1 ]">
+<article class="bg-dark-m1">
   {% divider 'color-dark-m1' %}
   <div class="[ wrap ][ flow ]">
-    <div class="[ b-featWork__inner ][ flow ]">
-      <div class="[ b-featWork__intro ][ flow flow-space-300 ]">
-        <h2>My Work and Projects</h2>
-        <p class="[ b-featWork__summary ][ measure-compact ]">
-          Case studies for a few personal projects I like to show off and a few of my finest freelance websites!
-        </p>
-      </div>
+    <h2 id="projects">Work and projects</h2>
 
-      {% for work in collections.featuredWork %}
-        <a href="{{ work.url }}" aria-label="See {{ work.data.title }}" class="[ b-featWork__item ][ d-b ][ radius ][ img-fit ]">
-          <img
-            src="{% src work.data.thumbnail, 528, 0.5 %}"
-            srcset="{% srcset work.data.thumbnail, null, 0.5 %}"
-            sizes="{% sizes [
-              '(min-width: 62rem) calc((67.34rem / 2) - 1.33rem)',
-              '(min-width: 37rem) calc((100vw - 2.66rem) * .6)',
-              'calc(100vw - 2.66rem)'
-            ] %}"
-            width="528"
-            height="264"
-            alt="Homepage screenshot of {{ work.data.title }}"
-            loading="lazy"
-          >
-        </a>
+    <ol reversed class="[ latest-posts ][ flow flow-space-700 ][ measure-long ]">
+      {% for project in projects %}
+        <li>
+          <h3 class="text-600">
+            <a href="{{ project.url }}">{{ project.title }}</a>
+          </h3>
+          {% if project.description %}
+            <p>{{ project.description }}</p>
+          {% endif %}
+        </li>
       {% endfor %}
-
-    </div>
-    <div class="[ align-center ][ flow-space-700 ]">
-      <a href="/work/" class="b-button">More work</a>
-    </div>
+    </ol>
   </div>
 </article>
 

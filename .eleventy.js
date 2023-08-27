@@ -80,30 +80,6 @@ module.exports = function (config) {
   })
 
   /**
-   * work collections
-   */
-  config.addCollection('work', collection => {
-    return [
-      ...collection
-        .getFilteredByGlob(
-          `./${siteConfig.paths.src}/work/**/*`
-        )
-    ]
-  })
-  config.addCollection('featuredWork', collection => {
-    return [
-      ...collection
-        .getFilteredByGlob(
-          `./${siteConfig.paths.src}/work/**/*`
-        )
-        .filter(work => !!work.data.featured)
-        .sort((a, b) => {
-          return (a.data.featured > b.data.featured) ? 1 : -1
-        })
-    ]
-  })
-
-  /**
    * markdown configuration
    */
   const markdownLibrary = markdownIt({

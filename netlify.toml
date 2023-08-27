@@ -1,17 +1,27 @@
 ########## OLD URLS ##########
 [[redirects]]
+  from = '/work'
+  to = '/#projects'
+  status = 301
+
+[[redirects]]
   from = '/services/*'
-  to = '/work'
+  to = '/#projects'
   status = 301
 
 [[redirects]]
   from = '/portfolio/*'
-  to = '/work'
+  to = '/#projects'
   status = 301
 
 [[redirects]]
   from = '/about/accudio'
   to = '/about'
+  status = 301
+
+[[redirects]]
+  from = '/projects'
+  to = '/#projects'
   status = 301
 
 
@@ -20,11 +30,6 @@
   from = '/images/:image'
   to = 'https://ahqwbmhykq.cloudimg.io/v7/_prod_/:image'
   status = 200
-
-[[redirects]]
-  from = '/projects'
-  to = '/work'
-  status = 301
 
 [[redirects]]
   from = '/contact'

@@ -1,17 +1,15 @@
 .b-portrait {
   flex-basis: 15rem;
 
-  svg {
-    background: get-color('dark-m1');
-    border: get-size('200') solid get-color('light');
-    border-radius: 50%;
-    display: block;
+  &__inner {
+    background-color: var(--c2);
+    border-radius: 100vw;
+    overflow: hidden;
     margin: 0 auto;
-    max-width: 50vw;
-    min-width: 15rem;
+    width: max-content;
+  }
 
-    .houdini-anim & {
-      transition: background 1s, border-color 1s;
-    }
+  img {
+    mix-blend-mode: color-burn;
   }
 }
