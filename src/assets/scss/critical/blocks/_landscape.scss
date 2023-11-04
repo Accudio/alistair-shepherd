@@ -17,7 +17,6 @@ $sun-movement-h: 40%;
     left: 0;
     opacity: 0;
     position: absolute;
-    transform: translateY(var(--scrollPos, 0));
     transition: all 2s;
     transition-property: opacity, visibility;
     visibility: hidden;

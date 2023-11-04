@@ -13,6 +13,7 @@ body {
   color: get-color('base');
   font-size: get-size('500');
   line-height: 1.5;
+  overflow-x: hidden;
 
   .houdini-anim & {
     transition: background 1s;
@@ -91,11 +92,7 @@ h4 {
  * wrappers
  */
 .app {
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  // perspective: 100px;
-  position: relative;
+  min-height: 100vh;
 }
 
 .site-wrap {

@@ -12,16 +12,65 @@
 } %}
 
 <div class="b-landscape" role="img" aria-label="Monotone illustration of a landscape. Trees are in the foreground, a loch and forest is in a valley and in the background a mountain range is visible.">
-  <div class="b-landscape__sun" data-offset="1">
+  <div class="[ b-landscape__sun b-landscape__parallax ]" style="--offset:1">
     <div class="[ b-landscape__sunH ][ absolute w-100 h-100 ]">
       <div class="[ b-landscape__sunV ][ absolute w-100 h-100 ]"></div>
     </div>
   </div>
   {% for i in range(1, 11) -%}
-    <div class="[ b-landscape__layer b-landscape__layer--{{ i }} ][ absolute w-100 h-100 ]" data-offset="{{ offsets[i] }}">
+    <div class="[ b-landscape__layer b-landscape__parallax b-landscape__layer--{{ i }} ][ absolute w-100 h-100 ]" style="--offset:{{ offsets[i] }}">
       <div class="b-landscape__image">
         {% include 'svg/layer_' + i + '.svg' %}
       </div>
     </div>
   {% endfor %}
 </div>
+
+<style>
+  @keyframes scroll-parallax {
+    to {
+      transform: translateY(calc(100vh * var(--offset, 0px)));
+    }
+  }
+  .b-landscape__parallax {
+    animation: scroll-parallax linear both;
+    animation-timeline: scroll(block root);
+    animation-range: 0px 100vh;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .b-landscape__parallax {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+</style>
+<script type="module">
+  if (typeof ScrollTimeline === 'undefined') {
+    import('{{ '/assets/js/scroll-timeline.js' | asset }}')
+
+    const parallaxLayers = [...document.querySelectorAll('.b-landscape__parallax')]
+      .map(el => ({
+        el,
+        offset: parseFloat(el.style.getPropertyValue('--offset'))
+      }))
+
+    rebaseOffsets()
+    let timer = null
+    window.addEventListener('resize', () => {
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        rebaseOffsets()
+      }, 100)
+    })
+
+    function rebaseOffsets() {
+      const multiplier = document.body.offsetHeight / window.innerHeight
+      for (const layer of parallaxLayers) {
+        layer.el.style.setProperty(
+          '--offset',
+          layer.offset * (multiplier - 1)
+        )
+      }
+    }
+  }
+</script>
