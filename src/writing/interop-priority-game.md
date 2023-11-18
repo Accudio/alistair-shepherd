@@ -71,17 +71,17 @@ I feel like issues and bugs with multi-column layout have been a constant throug
 
 It's about time CSS multi-column is sorted so it's reliable enough to use consistently.
 
-### 9. [text-box-trim](https://github.com/web-platform-tests/interop/issues/422)
-
-Text box trim allows trimming the space around text, so you can rely on padding and margins to sit flush with the text glyphs. In some designs you want a really neat alignment between a heading and graphic, currently that's tricky without resorting to fiddling with line-heights or ["magic numbers"](https://css-tricks.com/magic-numbers-in-css/).
-
-In a design-led agency, this is definitely something our designers are looking forward to and would make heading design more flexible and easier.
-
-### 10. [Unit division and multiplication for mixed units of the same type within calc()](https://github.com/web-platform-tests/interop/issues/513)
+### 9. [Unit division and multiplication for mixed units of the same type within calc()](https://github.com/web-platform-tests/interop/issues/513)
 
 Currently in the CSS `calc` function division can only be done by unitless numbers. If we were able to divide by value with a unit it would open the way to strip units and to compare the scale of values with different units.
 
 This isn't one I run into often—hence it's position at 10—but there's been a handful of times it's come up as something that would make CSS SO much easier. There is a cool but nasty hack using `tan(atan2())` but otherwise the workaround are annoying and either involve duplication or JS.
+
+### 10. [text-box-trim](https://github.com/web-platform-tests/interop/issues/422)
+
+Text box trim allows trimming the space around text, so you can rely on padding and margins to sit flush with the text glyphs. In some designs you want a really neat alignment between a heading and graphic, currently that's tricky without resorting to fiddling with line-heights or ["magic numbers"](https://css-tricks.com/magic-numbers-in-css/).
+
+In a design-led agency, this is definitely something our designers are looking forward to and would make heading design more flexible and easier.
 
 ### 11. [CSS style container queries](https://github.com/web-platform-tests/interop/issues/433)
 
