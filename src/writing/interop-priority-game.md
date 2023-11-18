@@ -99,13 +99,13 @@ It's extremeley powerful, a great addition to the language, and I know some peop
 
 This is particularly around inconsistencies with how clipping text works with background-clip. Clipping backgrounds to text is a super neat feature that can produce some really cool looking effects, particularly combined with images. It can be pretty finicky though so it would be great if it were more consistent.
 
-### 14. [text-wrap: balance](https://github.com/web-platform-tests/interop/issues/561)
+### 15. [text-wrap: pretty](https://github.com/web-platform-tests/interop/issues/562)
 
 A way of preventing widows and generally improving readability across lines in paragraphs. Sounds good, and people who care about typography will love it. Definitely handy, I'll use it when it's available, but it's a relatively minor issue to me.
 
-### 15. [text-wrap: pretty](https://github.com/web-platform-tests/interop/issues/562)
+### 14. [text-wrap: balance](https://github.com/web-platform-tests/interop/issues/561)
 
-Finally we have `text-wrap: pretty`, which provides a better layout for short blocks of text considering where to break lines. Just adding it to major headings can easily make them look a little nicer. Like `text-wrap: balance`, it'll be handy and I'll use it but I'm not clamouring for it!
+Finally we have `text-wrap: balance`, which provides a better layout for short blocks of text considering where to break lines. Just adding it to major headings can easily make them look a little nicer. Like `text-wrap: pretty`, it'll be handy and I'll use it but I'm not clamouring for it!
 
 ## Honourable mentions
 
