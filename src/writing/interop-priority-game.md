@@ -1,5 +1,5 @@
 ---
-title: Interop Priority Game 2023
+title: Interop Priority Game 2024
 date: '2023-11-17'
 excerpt: Prioritising the proposals for the Interop Project 2024 as I'd like, prompted by Brian Kardell's "Let's Play a Game"
 metaDesc: Prioritising the proposals for the Interop Project 2024 as I'd like, prompted by Brian Kardell's "Let's Play a Game"
