@@ -6,6 +6,7 @@ metaDesc: "How you can use Vercel to set up your own GeoIP API service with no r
 tags:
 - JavaScript
 - Browsers
+audio: '/writing/vercel-geoip.mp3'
 ---
 
 Need to look up a users' approximate location based on their IP address? Don't want to opt for a third-party GeoIP service or integrate it into your backend?

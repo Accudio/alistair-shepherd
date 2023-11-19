@@ -3,6 +3,7 @@ title: Alternative text for "I'm a Luddite (and So Can You!)"
 excerpt: "Alternative text for the web comic from Tom Humberstone about a history of the Luddites and how you can and should also be a Luddite"
 metaDesc: "Alternative text for the web comic from Tom Humberstone about a history of the Luddites and how you can and should also be a Luddite"
 date: '2023-08-02'
+audio: '/writing/im-a-luddite-alt-text.mp3'
 ---
 
 I recently enjoyed the web comic ["I'm a Luddite (and So Can You!)" by Tom Humberstone](https://thenib.com/im-a-luddite/). It's a fantastic history and summary of the Luddites and how in the modern world you should also be a Luddite.

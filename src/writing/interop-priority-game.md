@@ -7,6 +7,7 @@ tags:
 - CSS
 - Accessibility
 - Browsers
+audio: '/writing/interop-priority-game.mp3'
 ---
 
 The other day [Brian Kardell](https://bkardell.com/) asked about [Interop project](https://github.com/web-platform-tests/interop) prioritisation on his blog and mastodon. As he asks in his blog ["Let's Play a Game"](https://bkardell.com/blog/PriorityGame.html):

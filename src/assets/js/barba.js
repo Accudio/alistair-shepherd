@@ -8,6 +8,7 @@ window.barba.use(prefetch)
 window.barba.init({
   prevent: ({ el }) => {
     if (el.getAttribute('href').endsWith('.xml')) return true
+    if (el.getAttribute('href').endsWith('.mp3')) return true
     return false
   }
 })
