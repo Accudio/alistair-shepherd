@@ -3,7 +3,6 @@ layout: page
 title: Writing
 metaDesc: I don't get the chance to write often, but I do ocassionally write some words about the web!
 ---
-{% from "partials/postItem.njk" import postItem %}
 
 <p>Although I don't get the chance to write often, I do so ocassionally and post it here!</p>
 
@@ -11,7 +10,7 @@ metaDesc: I don't get the chance to write often, but I do ocassionally write som
 {% if collections.posts.length %}
   <ol reversed class="[ latest-posts ][ flow flow-space-700 ]">
     {% for item in postList | reverse %}
-      {{ postItem(item.url, item.data.title, item.date, item.data.excerpt) }}
+      {% include 'partials/postItem.njk' %}
     {% endfor %}
   </ol>
 {% endif %}

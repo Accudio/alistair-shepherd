@@ -20,8 +20,6 @@ projects:
     url: https://alistairshepherd.uk/speaking/imagecdns/
 ---
 
-{% from "partials/postItem.njk" import postItem %}
-
 <article class="pad-top-600">
   <div class="wrap">
     <div class="l-side">
@@ -83,7 +81,8 @@ projects:
 
       <ol reversed class="[ latest-posts ][ flow flow-space-700 ][ measure-long ]">
         {% for item in postList | reverse | limit(3) %}
-          {{ postItem(item.url, item.data.title, item.date, item.data.excerpt, 'h3') }}
+          {% set hLevel = 'h3' %}
+          {% include 'partials/postItem.njk' %}
         {% endfor %}
       </ol>
 

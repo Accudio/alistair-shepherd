@@ -13,7 +13,7 @@
 {% endif %}
 
 <title>{{ pageTitle }}</title>
-<link rel="canonical" href="{{ currentUrl }}"/>
+<link rel="canonical" href="{{ external | default(currentUrl) }}"/>
 
 <link rel="icon" type="image/svg+xml" href="/meta/favicon.svg">
 <link rel="alternate icon" sizes="16x16" href="/meta/favicon.ico">

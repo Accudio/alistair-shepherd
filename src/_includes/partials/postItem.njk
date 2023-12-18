@@ -1,11 +1,17 @@
-{% macro postItem(url, title, date, excerpt, hLevel='h2') %}
-  <li>
-    <{{ hLevel}} class="text-600">
-      <a href="{{ url }}">{{ title }}</a>
-    </{{ hLevel}}>
-    <time datetime="{{ date | htmlDate }}">{{ date | date }}</time>
-    {% if excerpt %}
-      <p>{{ excerpt }}</p>
-    {% endif %}
-  </li>
-{% endmacro %}
+{% set hLevel = hLevel | default('h2') %}
+{% set url = item.data.external | default(item.url) %}
+
+<li>
+  <{{ hLevel }} class="text-600">
+    <a href="{{ url }}">
+      {{ item.data.title }}
+      {% if item.data.external %}
+        {% icon 'external', 'text-500 inline' %}
+      {% endif %}
+    </a>
+  </{{ hLevel }}>
+  <time datetime="{{ item.date | htmlDate }}">{{ item.date | date }}</time>
+  {% if item.data.excerpt %}
+    <p>{{ item.data.excerpt }}</p>
+  {% endif %}
+</li>

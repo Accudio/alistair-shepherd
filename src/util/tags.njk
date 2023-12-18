@@ -8,13 +8,13 @@ permalink: /writing/tag/{{ tag | slug }}/
 eleventyComputed:
   title: Tagged {{ tag }}
 ---
-{% from "partials/postItem.njk" import postItem %}
 
 <h1>#{{ tag }}</h1>
 <small>{{ collections[tag].length }} posts published</small>
 
 <ol reversed class="[ latest-posts ][ flow flow-space-700 ]">
   {% for item in collections[tag] | reverse %}
-    {{ postItem(item.url, item.data.title, item.date, item.data.excerpt) }}
+    {% set hLevel = 'h3' %}
+    {% include 'partials/postItem.njk' %}
   {% endfor %}
 </ol>
