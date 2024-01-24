@@ -12,5 +12,5 @@
 .auto-grid {
   display: grid;
   grid-gap: var(--auto-grid-gap, get-size('500'));
-  grid-template-columns: repeat(auto-fill, minmax(m#{i}n(var(--auto-grid-min-size, 16rem), 100%), 1fr));
+  grid-template-columns: repeat(var(--auto-grid-fit, auto-fill), minmax(m#{i}n(var(--auto-grid-min-size, 16rem), 100%), 1fr));
 }
