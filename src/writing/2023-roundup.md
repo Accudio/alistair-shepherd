@@ -35,7 +35,7 @@ I experimented a bit with "AI" earlier this year and made [Wacky Horoscopes](htt
 
 Near the end of the year I wrote [Ridge Map](https://github.com/Accudio/ridge-map), a node library to generate cool visualisations of elevation data in SVG. I thought it would take a couple hours and it ended up taking me 4 days — it was so much harder than I expected! Check out my "Arts and Crafts" section below for more photos of the results.
 
-<img src="{% src 'ridge-map-everest.png', 1077 %}" srcset="{% srcset 'ridge-map-everest.png' %}" sizes="{% sizes 'full' %}" alt="Ridge map of the Himalayas, centred around Mt Everest" width="1000" height="380" loading="lazy">
+<img class="measure-long rounded" src="{% src 'ridge-map-everest.png', 1077 %}" srcset="{% srcset 'ridge-map-everest.png' %}" sizes="{% sizes 'full' %}" alt="Ridge map of the Himalayas, centred around Mt Everest" width="1000" height="380" loading="lazy">
 
 ## Writing
 
@@ -82,14 +82,14 @@ I'll remember this year for the fact that after about 5 years my design burnout 
 
 It's been good fun to experiment with and make things!
 
-<img src="{% src 'stickers.jpg', 1077 %}" srcset="{% srcset 'stickers.jpg' %}" sizes="{% sizes 'full' %}" alt="Bunch of assorted stickers including development, scottish destinations and silly stickers on a black background" width="2000" height="1417" loading="lazy">
+<img class="measure-long rounded" src="{% src 'stickers.jpg', 1077 %}" srcset="{% srcset 'stickers.jpg' %}" sizes="{% sizes 'full' %}" alt="Bunch of assorted stickers including development, scottish destinations and silly stickers on a black background" width="2000" height="1417" loading="lazy">
 
 What has really inspired me however is using the cutting machine instead as a pen plotter. You buy an adaptor and some nice pens, and you can have the Cameo draw out the SVG you've designed onto paper. This is right up my alley because it makes art more accessible to me — I can design and draw digital art using code or a graphics program and have the machine put it right onto paper at really nice quality!
 
 Contour prints were where I got started with this but I then wrote [Ridge Map](https://github.com/Accudio/ridge-map) in order to generate 3D elevation visualisations to plot. They were my go-to Christmas gift this year, and I even did some of Mars landmarks with watercolour highlights.
 
-<div class="auto-grid" style="--auto-grid-fit:auto-fit">
-  <img class="rounded" src="{% src 'plot-contour.jpg', 528 %}" srcset="{% srcset 'plot-contour.jpg' %}" sizes="{% sizes ['100vw', '(min-width: 37rem) 50vw', '(min-width: 70rem) 33rem'] %}" alt="Pen plot in dark blue in a black frame of the contours of the Cairngorm Mountains" width="2000" height="1400" loading="lazy">
+<div class="auto-grid" style="--auto-grid-fit:auto-fit;--auto-grid-min-size:22rem">
+  <img class="rounded" src="{% src 'plot-contours.jpg', 528 %}" srcset="{% srcset 'plot-contours.jpg' %}" sizes="{% sizes ['100vw', '(min-width: 37rem) 50vw', '(min-width: 70rem) 33rem'] %}" alt="Pen plot in dark blue in a black frame of the contours of the Cairngorm Mountains" width="2000" height="1400" loading="lazy">
   <img class="rounded" src="{% src 'plot-ridge.jpg', 528 %}" srcset="{% srcset 'plot-ridge.jpg' %}" sizes="{% sizes ['100vw', '(min-width: 37rem) 50vw', '(min-width: 70rem) 33rem'] %}" alt="Pen plot in dark blue in a black frame illustrating the ridges of Cairngorm Mountain from the north" width="2000" height="1400" loading="lazy">
   <img class="rounded" src="{% src 'plot-mars.jpg', 528 %}" srcset="{% srcset 'plot-mars.jpg' %}" sizes="{% sizes ['100vw', '(min-width: 37rem) 50vw', '(min-width: 70rem) 33rem'] %}" alt="Four postcards showing ridge maps of Mars landmarks with coloured watercolour backgrounds. The landmarks are Olympus Mons, Valles Marineris, Gale Crater and Jezero Crater" width="2000" height="1400" loading="lazy">
   <img class="rounded" src="{% src 'plot-waves.jpg', 528 %}" srcset="{% srcset 'plot-waves.jpg' %}" sizes="{% sizes ['100vw', '(min-width: 37rem) 50vw', '(min-width: 70rem) 33rem'] %}" alt="Postcard with light blue watercolour background and dark blue waves in a line style" width="2000" height="1400" loading="lazy">
