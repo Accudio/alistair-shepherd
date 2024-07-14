@@ -5,9 +5,9 @@ excerpt: "A nice modern bundling set up that can be used with CMS sites like Wor
 metaDesc: "A nice modern bundling set up that can be used with CMS sites like WordPress without a framework. Uses Parcel and livereload"
 ---
 
-I found a nice build tooling setup that can be integrated into non-framework websites where some part isn't controlled by the build tool. WordPress, Craft, Kirby or other CMS' are a good example. My setup uses Parcel, livereload and only a few node scripts to work. Jump to the details or stick around for the context.
+I found a nice build tooling setup that can be integrated into non-framework websites where some part isn't controlled by the build tool. WordPress, Craft, Kirby or other CMS' are a good example. My setup uses Parcel, livereload and only a few node scripts to work. [Jump to the details](#setup) or [stick around for the context](#context).
 
-## Context
+## Context { #context tabindex="-1" }
 
 Yesterday I started a new project for a family member, a simple WordPress website built with a custom from-scratch theme. One of the first thing to sort out is build tooling to bundle my CSS and JavaScript.
 
@@ -25,19 +25,19 @@ That leads me onto my day yesterday. I wanted to work out finally how I can get 
 
 Turns out this was harder to achieve than I expected. Let's go through the candidates:
 
-Laravel Mix is what I'm used to from work and is what a lot of the PHP community uses. Simple, declarative way of bundling assets based on Webpack. It does have Browsersync out-of-the-box for automatic reloading, but it need to proxy your site to do that and I've found it a bit inconsistent. When using Mix I generally manually reload as it's more reliable.
+[Laravel Mix](https://laravel-mix.com) is what I'm used to from work and is what a lot of the PHP community uses. Simple, declarative way of bundling assets based on Webpack. It does have Browsersync out-of-the-box for automatic reloading, but it need to proxy your site to do that and I've found it a bit inconsistent. When using Mix I generally manually reload as it's more reliable.
 
-Webpack is awful and I hate it. The configuration system is terrible and indecipherable and in my opinion it is always the wrong decision for a build tool.
+[Webpack](https://webpack.js.org) is awful and I hate it. The configuration system is terrible and indecipherable and in my opinion it is always the wrong decision for a build tool.
 
-Vite is the hot new kid on the block. It's very much designed for frameworks or for if it's also handling your index.html. It is possible to make it work with WordPress etc, but I haven't seen a setup that looks great and their documentation is pretty poor if you opt for that route.
+[Vite](https://vitejs.dev) is the hot new kid on the block. It's very much designed for frameworks or for if it's also handling your index.html. It is possible to make it work with WordPress etc, but I haven't seen a setup that looks great and their documentation is pretty poor if you opt for that route.
 
-RollUp looks good and I'd like to try it, but I find it quite difficult to actually get what I want from it. I've played with it a few times and just couldn't find a setup that was as flexible as I wanted. That may just be me not understanding right but that I can't work out how to get a simple CSS/JS bundler set up with it is not a good sign.
+[RollUp](https://rollupjs.org) looks good and I'd like to try it, but I find it quite difficult to actually get what I want from it. I've played with it a few times and just couldn't find a setup that was as flexible as I wanted. That may just be me not understanding right but that I can't work out how to get a simple CSS/JS bundler set up is not a good sign.
 
 A custom system with node scripts and importing packages? It would probably work but there is a lot to deal with that build tools have already been through. Inlining a 600byte SVG into my CSS file is something I want but don't want to have to build myself.
 
-Parcel was what I ended up settling on. It's a little like Vite where it's built for the simple, no config, index.html setup, but I find it's a lot more versatile and easy to use in other circumstances, and it's docs are a lot better for non-standard usecases.
+[Parcel](https://parceljs.org) was what I ended up settling on. It's a little like Vite where it's built for the simple, no config, index.html setup, but I find it's a lot more versatile and easy to use in other circumstances, and it's docs are a lot better for non-standard usecases.
 
-## The set up
+## The set up { #setup tabindex="-1" }
 
 ### Step 0. Installation
 
@@ -59,14 +59,14 @@ Parcel handles compilation of most stuff pretty easily and out of the box using 
 <script type="module" src="./js/main.js"></script>
 ```
 
-You can then run the production build with `parcel build ./src/assets.html --public-url /dist/`. This will bundle and import my `main.scss` and `main.js` files, and output `dist/assets.html` that includes the HTML to those versioned assets, which looks like this:
+You can run the production build with `parcel build ./src/assets.html --public-url /dist/`. This will bundle and import my `main.scss` and `main.js` files, and output `dist/assets.html` that includes the HTML to those versioned assets, which looks like this:
 
 ```html
 <link href="/dist/assets.50a966ac.css" rel="stylesheet">
 <script src="/dist/assets.fd9c92df.js" defer=""></script>
 ```
 
-I can then import that `/dist/assets.html` into the output of my page — for example using PHPs `file_get_contents`. We can also change the path used in the output URLs with the `--public-url` parameter. For my WordPress theme for example I use `--public-url /wp-content/themes/themename/dist`.
+I can import `/dist/assets.html` into the output of my page — for example using PHPs `file_get_contents`. We can change the path used in the output URLs if needed with the `--public-url` parameter — for my WordPress theme I use `--public-url /wp-content/themes/theme/dist`.
 
 Now we have asset bundling with URL hashing that we can import into our templates. The build is also really fast. Nice!
 
@@ -75,16 +75,17 @@ Now we have asset bundling with URL hashing that we can import into our template
 Okay so we've got a build, but it's one-off and doesn't do anything about reloading. Next step is setting Parcel up to reload. Although most guides will push you down Parcel's serve mode to serve your assets here, the way to go is actually using watch mode, with this script:
 
 ```sh
-parcel watch ./src/assets.html --public-url /dist/ --hmr-host localhost --hmr-port 1234
+parcel watch ./src/assets.html --public-url /dist/
+  --hmr-host localhost --hmr-port 1234
 ```
 
 This will run a watcher that compiles the assets and html file whenever CSS or JS files change. It also runs an HMR (Hot Module Reloading) server on `localhost:1234` and injects some code into `main.js` that will check if any assets or the page needs reloaded.
 
-As we're importing `assets.html` into our site, this will pick up the changes between build and dev mode with no extra. Run the dev parcel command, refresh the page and now we have hot CSS replacement and reloading on JS changes.
+As we're importing `assets.html` into our site which Parcel is auto-generating, this will pick up the changes between build and dev mode with no further changes. Run the dev parcel command, refresh the page and now we have hot CSS replacement and reloading on JS changes.
 
 ### Step 3. Livereload for HTML and PHP changes
 
-Whilst Parcel is handling the reloads of CSS and JS nicely, it doesn't do any updates when the HTML or PHP changes. I spent a while going down a rabbit hole of trying to work out if I could piggyback on Parcel's HMR system but found no way of doing that so we're using livereload instead.
+Whilst Parcel is handling the reloads of CSS and JS nicely, it doesn't do any updates when the HTML or PHP changes. I spent a while going down a rabbit hole of trying to work out if I could piggyback on Parcel's HMR system but found no way of doing that so we're using [livereload](https://www.npmjs.com/package/livereload) instead.
 
 Run livereload with this command, which watches HTML and PHP files for changes and triggers a reload. I'm also excluding the dist directory as that would result in a double refresh when Parcel builds `assets.html`. You can add other extensions here like your templating language.
 
@@ -121,14 +122,15 @@ This will only include the livereload snippet if the `NODE_ENV` environment vari
 
 I'm really happy with this dev setup! It ticks all of my boxes from earlier, it's relatively simple and flexible, and brings a really nice modern dev setup to sites like WordPress or other CMS builds.
 
-There are definitely some limitations, beyond the standard ones you have with this kind of setup where you don't get HTML access. The main one I've found is that whilst CSS and JS in the `head` works great it's a bit faffy to have more structure. You can generate more `html` files with assets in so you could have `head.html`, `footer.html`, `about-page.html`, but that does get a little messy and verbose. Images would also require the same treatment.
+There are definitely some limitations, beyond the standard ones when you don't process HTML with your build tool. The main trickiness I've found is that whilst CSS and JS in the `head` works great it's a bit faffy to have more structure. You can generate more html files with alternative assets so you could have `head.html`, `footer.html`, `about-page.html`. That does get a little messy and verbose however, and image processing within the build would also require the same treatment.
 
 However, I don't believe I've seen a good development setup with this kind of website that handles this better. A purely up-front build tool like Laravel Mix has the same problems, and none of the 'fancier' tools seem to have a better solution either.
 
 So yeah, I think this is what I'll be using for my own sites going forward, certainly with CMS', I'll see how it compares against my other methods for 11ty sites in future!
 
+If you're just looking to copy+paste, run the `npm install` command and copy the `assets.pug` from above. This is my `package.json` scripts, with `npm-run-all` for running both Parcel and livereload at the same time:
+
 ```json
-// package.json scripts (npm-run-all for run-p command)
 {
   "scripts": {
     "dev": "run-p dev:*",
@@ -137,12 +139,4 @@ So yeah, I think this is what I'll be using for my own sites going forward, cert
     "build": "parcel build ./src/assets.pug --public-url /dist/"
   }
 }
-```
-
-```pug
-<!-- src/assets.pug -->
-<link href="./css/main.scss" rel="stylesheet" />
-<script type="module" src="./js/main.js"></script>
-if process.env.NODE_ENV !== 'production'
-	<script src="http://localhost:1235/livereload.js?snipver=1"></script>
 ```
