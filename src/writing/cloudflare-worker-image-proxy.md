@@ -35,7 +35,7 @@ First thing is to set up a Worker. You can do this via a command-line but to be 
 4. Assign it to a URL by going to your cloudflare zone/website and to "Workers Routes"
 5. "Add Route", choose the worker you've just created and create a route pattern
    - This needs to include the domain name and uses regex to specify patterns
-   - `www.example.com/images/*` will make the worker serve all requests under the `/images/` path
+   - www.example.com/images/* will make the worker serve all requests under the `/images/` path
 6. "Save" and confirm requests to `/images/whatever` return "Hello world!"
 
 Now we need to add the proxying code. To add this we go back to the worker we created and click "Edit code". This opens an online editor with text field, debugging tools and the "Deploy" button in the top-right.
