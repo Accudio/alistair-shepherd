@@ -25,7 +25,7 @@ Wouldn't it be great if we could use our image CDN, but make it use our primary 
 
 ## How
 
-This code is mostly taken from Wes Bos and Wilson Hou on GitHub, thanks to them for their work.
+This code is mostly taken from [Wes Bos](https://github.com/wesbos/cloudflare-cloudinary-proxy) and [Wilson Hou](https://github.com/wilsonhou/cloudflare-image-proxy) on GitHub, thanks to them for their work.
 
 First thing is to set up a Worker. You can do this via a command-line but to be honest for this I just use the admin.
 
