@@ -1,6 +1,6 @@
 ---
 title: My response to UK CMA's potential remedies for mobile browser competition
-date: '2024-09-24'
+date: '2024-08-24'
 excerpt: "My submission to a the potential remedies proposed by the UK Competition and Market's Authority consultation on Mobile Browser Competition"
 metaDesc: "My submission to a the potential remedies proposed by the UK Competition and Market's Authority consultation on Mobile Browser Competition"
 tags:
