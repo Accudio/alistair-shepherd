@@ -42,6 +42,12 @@ window.barba.hooks.afterEnter(({ trigger }) => {
   // attempt to restore scroll on back/forward
   restoreScroll(trigger)
   currentPath = location.pathname
+
+  if (window.goatcounter) {
+    window.goatcounter.count({
+      path: location.pathname + location.search + location.hash,
+    })
+  }
 })
 
 // save scroll position in sessionstorage
