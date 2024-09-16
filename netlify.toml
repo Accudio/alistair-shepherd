@@ -36,6 +36,11 @@
   to = '/'
   status = 301
 
+[[redirects]]
+  from = '/analytics.js'
+  to = 'https://gc.zgo.at/count.js'
+  status = 200
+
 [[headers]]
   for = '/*' # all files
   [headers.values]
