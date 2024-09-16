@@ -45,7 +45,7 @@
   for = '/*' # all files
   [headers.values]
     Cache-Control = 'public, max-age=3600'
-    Content-Security-Policy = "default-src 'self' 'unsafe-inline'; img-src https:; frame-src https:; object-src 'none';"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline'; img-src https:; frame-src https:; object-src 'none'; connect-src 'self' https://accudio.goatcounter.com/count"
     Permissions-Policy = 'fullscreen=(), geolocation=(), camera=()'
     Referrer-Policy = 'strict-origin-when-cross-origin'
     Strict-Transport-Security = 'max-age=31536000; preload; includeSubDomains'
