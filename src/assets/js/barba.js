@@ -23,7 +23,6 @@ document.dispatchEvent(event)
 // accessibility tweaks
 let firstLoad = true
 let currentPath
-const scrollEl = document.querySelector('.app')
 const page = document.querySelector('#page')
 const liveRegion = document.getElementById('liveregion')
 window.barba.hooks.afterEnter(({ trigger }) => {
@@ -52,7 +51,7 @@ window.barba.hooks.afterEnter(({ trigger }) => {
 
 // save scroll position in sessionstorage
 window.barba.hooks.beforeLeave(() => {
-  sessionStorage.setItem(`scroll-${currentPath}`, scrollEl.scrollTop)
+  sessionStorage.setItem(`scroll-${currentPath}`, document.documentElement.scrollTop)
 })
 
 // update active nav
@@ -72,13 +71,13 @@ window.barba.hooks.afterLeave(() => {
 
 // if this navigation was by back forward, try and restore previous scroll position otherwise scroll to top
 function restoreScroll(trigger) {
+  let scrollPos = 0
   if (trigger === 'back' || trigger === 'forward') {
-    const scrollPos = sessionStorage.getItem(`scroll-${location.pathname}`)
-    if (scrollPos) {
-      scrollEl.scrollTo(0, scrollPos)
-      return
-    }
+    const pageScrollPos = sessionStorage.getItem(`scroll-${location.pathname}`)
+    if (pageScrollPos) scrollPos = pageScrollPos
   }
 
-  scrollEl.scrollTo(0, 0)
+  document.documentElement.style.scrollBehavior = 'auto'
+  document.documentElement.scrollTo(0, scrollPos)
+  document.documentElement.style.scrollBehavior = 'smooth'
 }
