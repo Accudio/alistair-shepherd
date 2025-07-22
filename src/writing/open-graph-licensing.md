@@ -22,6 +22,7 @@ What I need to make clear from the beginning though is I am not a lawyer. Very f
 I've removed anything identifying — including details about the image itself and company, and paraphrasing all communication. I don't want to get into any further trouble by identifying companies — I've already had the displeasure of that experience before.
 
 ## The rough context
+
 I left Twitter in November 2022, moving over to Mastodon as my main source of Social Media. At that point though I enjoyed my digital footprint and wanted to retain a record of my history on Twitter. I used [Tweetback](https://github.com/tweetback/tweetback) to do this, it's an open-source tool written by Zach Leatherman and maintained by some good folk who were in a similar situation to me. You feed it your twitter archive export and it generates a static website showing off your tweets, including some extra functionality like frequency graphs and such. It's a really cool tool for that purpose!
 
 More specifically, it generates listing pages and a page per tweet, with the same URL format as Twitter so you can easily turn one into the other. It acts independently of twitter, downloading the images you've uploaded, and hosting the content directly. Like most social media sites and Twitter itself, when you include an external URL it displays the Open Graph image for that URL.
@@ -31,7 +32,7 @@ More specifically, it generates listing pages and a page per tweet, with the sam
   <p>If you're not familiar, Open Graph is a 'protocol' created by Facebook for websites to provide metadata to 'enrich' the display of links on Facebook. Websites can provide details like a title, author, and image that could be presented alongside the link with a <code>&lt;meta property="og:image" ...&gt;</code> element. Tweetback uses the 11ty <a href="https://www.11ty.dev/docs/services/opengraph/">OpenGraph Image API</a> to fetch these images in a privacy-respecting and optimised way and displays them on tweet pages.</p>
 </details>
 
-I published my Tweetback archive online with robots disallowed so it wouldn't be indexed by search engines, and basically completely forgot about it. I'd reference it every few months maybe and occasionally added new functionality, but as far as I can tell based on traffic info basically no one ever looked.
+I published my Tweetback archive online with a robots value of 'noindex' so it wouldn't be indexed by search engines, and basically completely forgot about it. I'd reference it every few months maybe and occasionally added new functionality, but as far as I can tell based on traffic info basically no one ever looked.
 
 ## The initial email
 
