@@ -9,6 +9,8 @@ $generate-utility-classes: false; // stylelint-disable-line scss/dollar-variable
 // import gorko to generate design tokens and functions/mixins
 @import '../../../node_modules/gorko/gorko';
 
+@import 'main/main.scss';
+
 // layout
 @import 'main/layout/*';
 

@@ -1,0 +1,8 @@
+blockquote:not([class]) {
+  padding-left: 2rem;
+  border-left: .2em solid currentColor;
+
+  > * + * {
+    margin-top: .5em;
+  }
+}
