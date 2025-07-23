@@ -62,11 +62,27 @@ That article included an Open Graph image, a photo of said politician speaking. 
 
 That's the image that the licensor was referring to. The newspaper included it in a protocol designed to allow for the showing and sharing of images alongside their links, and then separately the licensor found my use of said image and demanded a license fee.
 
+### On hosting and "use" { #hosting tabindex="-1" }
+
+One detail I missed from the initial version of this post was the hosting situation, which was a big omission! It was in an earlier draft but I must have cut it and not realised. I don't know how much of an impact where the image is hosted legally, but it certainly makes for a different perception and understanding as many people in my mentions questioned it.
+
+I did not download and re-host any open graph images, including this one. Tweetback uses the [11ty OpenGraph Service](https://www.11ty.dev/docs/services/opengraph/), which is a third-party service run by the wonderful folk at 11ty. It accepts a URL and optional width and format, and will request the open graph image for that URL, cache it, and convert it to the specified width and format.
+
+So just to make that very clear, I did not host the image myself and instead relied on a third-party service that requested it for me. That works in a similar way to other social media sites who use open graph — you wouldn't want every client requesting it direct from the server, that's a nightmare in terms of traffic and presents privacy issues too. So instead you have a server that caches it for several days.
+
+That said, my research (more on that in a mo) suggests it may not matter from a legal standpoint. Copyright legislation doesn't make any stipulations about hosting — it's about "use" of an image and that's what the email I received focused on also. This makes sense, if they were addressing hosting then they would have gone to 11ty and not to me. As you'll see below, I asked a follow-up question about hosting, to which they suggested it was the "use" of the image on my site that was the infringement. That would be the same had I hotlinked directly to the newspaper.
+
+There are also countless copyright infringement cases where people have 'hotlinked' images hosted on another site, which is functionally equivalent to linking directly to the paper's copy of the image pulled from open graph. So that precedent makes me dubious that linking directly to the OG URL would have been legally different.
+
+Whether that difference would change the actions of the licensor is a different question entirely however!
+
 ## Immediately actions and research
 
 I'd been told if I paid the fee within 7 days, I would get a 10% discount so I had a week to decide if I was going to pay up or not. Waiting wasn't a good option, the price was high enough that the 10% off was significant enough to me if I decided I needed to pay.
 
 So I researched copyright law, tried to find any historic precedent, and asked for help on social media. Thank you so much to everyone on Mastodon and Bluesky who lent me your thoughts or pointed me in helpful directions!
+
+I also confirmed the copyright holder was who they claimed to be and that they genuinely held the license to the image. Regardless of how "good faith" this was, they definitely had the rights to the image!
 
 The key thing I kept coming back to was that it's not like I 'took' this image, it was provided by a newspaper that had presumably properly licensed it and intentionally declared in their markup that this image could be used alongside that link. It's not like there is another use of the open graph protocol, that is it's purpose. But if there's a case around open graph then that's with the newspaper, not with the licensor, which would complicate things.
 
@@ -76,9 +92,9 @@ In the UK were this to go to court I understand it would be a small claims court
 
 Based on the reading I had done, advice I was given from people in similar situations and my explanation of how open graph worked, I had a short further conversation with the the licensor. In summary:
 
-> Alistair: explains open graph, how the site is not public and how I would not have purchased the license had I knew so potential losses are little to none.
+> Alistair: explains open graph, how I wasn't hosting the image myself, how the site is not public and how I would not have purchased the license had I knew so potential losses are little to none.
 >
-> Licensor: it's our copyright and we choose to impose a license fee for use. You used, therefore you owe a fee. Feel free to raise the open graph discussion with the website you sourced the image.
+> Licensor: it's our copyright and we choose to impose a license fee for use. You used it on your site, therefore you owe a fee. We don't care about hosting, we see the image on your site so you need a license. Feel free to raise the open graph discussion with the website you sourced the image.
 >
 > Alistair: I've found your subsidiary licenses the exact image for £20, I'd happily pay that. That's the price I would have paid if I had intended to license it.
 >
@@ -157,3 +173,9 @@ Finally, I insincerely apologise for the clickbait-y title and accompanying open
 What's that? You're one of the delightful folk who subscribe via RSS and didn't see the open graph image? Well I wouldn't want to deprive you of the 5 valuable minutes I spent putting this together so here you go, as a little treat:
 
 <img class="measure-long rounded" src="{% src 'image-licensing-og.png', 820 %}" srcset="{% srcset 'image-licensing-og.png' %}" sizes="{% sizes [ '(min-width: 52rem) 800px', 'calc(100vw - 2.66rem)' ] %}" alt="A YouTube-style clickbait thumbnail image. The title (in Lobster uwu) is 'They want *how much* for an Open Graph image?!!'. I'm looking alarmed with my mouth wide and my hands outstretched beside my head. The background is piles of british banknotes, and there's a blurred out money label at the bottom." width="2000" height="1125" loading="lazy">
+
+## Update 23/07/25
+
+Based on questions I got via social media yesterday evening, [I've added a section above about how the image was hosted](#hosting) and asserting that I researched the company in question.
+
+The hosting particularly was a big omission, I meant to include it but I must have accidentally removed it when editing or copying it onto my website. Oops!
