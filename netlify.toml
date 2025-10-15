@@ -27,11 +27,6 @@
 
 ########## SITE FUNCTIONALITY ##########
 [[redirects]]
-  from = '/images/:image'
-  to = 'https://ahqwbmhykq.cloudimg.io/v7/_prod_/:image'
-  status = 200
-
-[[redirects]]
   from = '/contact'
   to = '/'
   status = 301

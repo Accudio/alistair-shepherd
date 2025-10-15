@@ -62,31 +62,25 @@ function getSizes(sizes) {
  * @param {boolean, number} ratio
  */
 function formatUrl(file, width, ratio) {
-  const params = {
-    org_if_sml: 1
-  }
+  let params = [
+    'quality=high'
+  ]
 
   // if width
-  if (width) {
-    params.w = width
-  }
+  if (width) params.push(`width=${width}`)
 
   // if aspect ratio has been set, add the height based on width
   if (ratio && width) {
-    params.h = width * ratio
+    params.push(`height=${width * ratio}`)
   }
 
-  const paramStr = Object.keys(params).map(function(key) {
-    return key + '=' + params[key]
-  }).join('&')
-
-  // if this is production, use Netlify proxying for
+  // if this is production, use Cloudflare proxying
   if (isNetlify) {
-    return `/images/${file}?${paramStr}`
+    return `/images/${file}?${params.join(',')}`
   }
 
-  // in dev, use cloudimage with surge dev url
-  return `https://ahqwbmhykq.cloudimg.io/v7/_dev_/${file}?${paramStr}`
+  // in dev, just use raw images
+  return `/raw-images/${file}`
 }
 
 /* eslint-disable key-spacing */
