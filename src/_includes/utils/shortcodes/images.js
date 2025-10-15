@@ -62,9 +62,7 @@ function getSizes(sizes) {
  * @param {boolean, number} ratio
  */
 function formatUrl(file, width, ratio) {
-  let params = [
-    'quality=high'
-  ]
+  let params = []
 
   // if width
   if (width) params.push(`width=${width}`)
