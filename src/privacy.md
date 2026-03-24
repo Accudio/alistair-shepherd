@@ -5,7 +5,7 @@ metaTitle: Privacy - Alistair Shepherd
 
 This is a simple personal site, and I don't want to have to deal with data protection! I care a lot about privacy myself, and have a high standard of privacy. This website is hopefully an extension of that, with little in the ways of third-parties or privacy risks.
 
-That said, a few things need mentioned! If you have any questions or concerns about privacy on this website, [email me](alistair@accudio.com) at alistair@accudio.com.
+That said, a few things need mentioned! If you have any questions or concerns about privacy on this website, [email me](mailto:alistair@accudio.com) at alistair@accudio.com.
 
 ## Analytics
 
@@ -24,9 +24,9 @@ No individual page views are stored, only aggregate statistics.
 
 I use the Goatcounter public instance, hosted by Hetzner Online GmbH in Finland and Germany, and operated by Martin Tournoij. You can find more about the privacy of that instance and the database architecture at [Goatcounter's privacy policy](https://www.goatcounter.com/help/privacy).
 
-If you disable analytics by clicking the following button, or alternatively by enabling [Do Not Track](https://www.eff.org/issues/do-not-track) or the [Global Privacy Control](https://globalprivacycontrol.org) in your browser.
+You can disable analytics by clicking the button below, or alternatively by enabling [Do Not Track](https://www.eff.org/issues/do-not-track) or the [Global Privacy Control](https://globalprivacycontrol.org) in your browser.
 
-<button onclick="window.location.hash = '#toggle-goatcounter'; window.location.reload()">
+<button class="b-button" onclick="window.location.hash = '#toggle-goatcounter'; window.location.reload()">
   Toggle analytics
 </button>
 
