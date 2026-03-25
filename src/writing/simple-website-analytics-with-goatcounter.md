@@ -47,7 +47,7 @@ It collects the bare minimum of data (and allows you to customise that), is ligh
 
 It is also really not a pretty interface! 😅
 
-<img class="measure-long rounded" src="{% src 'goatcounter-dashboard.png', 1077 %}" srcset="{% srcset 'goatcounter-dashboard.png' %}" sizes="{% sizes 'full' %}" alt="Goatcounter dashboard, showing a primitive but functional interface with date controls, and a list of pages on this site with visitor graphs" width="2674" height="1584" loading="lazy">
+<img class="rounded" src="{% src 'goatcounter-dashboard.png', 1077 %}" srcset="{% srcset 'goatcounter-dashboard.png' %}" sizes="{% sizes 'full' %}" alt="Goatcounter dashboard, showing a primitive but functional interface with date controls, and a list of pages on this site with visitor graphs" width="2674" height="1584" loading="lazy">
 
 ## Setting up and using
 
@@ -65,7 +65,7 @@ In terms of using Goatcounter it's pretty straightforward. In the Dashboard inte
 - Countries
 - Screen sizes
 
-<img class="measure-long rounded" src="{% src 'goatcounter-details.png', 1077 %}" srcset="{% srcset 'goatcounter-details.png' %}" sizes="{% sizes 'full' %}" alt="Goatcounter dashboard, with graphs representing top referrers, browsers, operating systems, countries and screen sizes" width="2674" height="1584" loading="lazy">
+<img class="rounded" src="{% src 'goatcounter-details.png', 1077 %}" srcset="{% srcset 'goatcounter-details.png' %}" sizes="{% sizes 'full' %}" alt="Goatcounter dashboard, with graphs representing top referrers, browsers, operating systems, countries and screen sizes" width="2674" height="1584" loading="lazy">
 
 The interface isn't pretty but it's very functional and actually does the job really well. I've considered doing a custom theme for clients as I think they'd shy away from Goatcounter purely due to the interface design, but not quite yet.
 
