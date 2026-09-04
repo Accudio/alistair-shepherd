@@ -1,6 +1,6 @@
 ---
 title: Edinburgh Festivals 2026
-date: '2026-0904'
+date: '2026-09-04'
 excerpt: "I had a mega year in 2026 at the Edinburgh festivals Fringe and Book! These are my reviews and thoughts on all I saw"
 metaDesc: "I had a mega year in 2026 at the Edinburgh festivals Fringe and Book! These are my reviews and thoughts on all I saw"
 ---
