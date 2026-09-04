@@ -7,7 +7,7 @@ metaDesc: "I had a mega year in 2026 at the Edinburgh festivals Fringe and Book!
 
 This year I saw 26 shows at the Edinburgh festivals, mostly Fringe but a couple of talks from the Book festival also. I've had years where I've done quite a lot of shows but not since the start of Covid, and never whilst I've also been working full-time. It was very full-on but absolutely fantastic and I'm going to try and do similar in future years!
 
-I've got a few tips for future me and for you if you come to a future Fringe (if you do hit me up for a drink), and I've included short (Bluesky length) reviews for most of the shows I saw. I know we're past the Fringe now but many shows go to other festivals, show on tour or in theatres (particularly London and New York), or will be back again next year so check them out!
+I've got a few tips for future me and for you if you come to a future Fringe (if you do hit me up for a drink), and I've included short (Bluesky length) reviews for all the shows I saw. I know we're past the Fringe now but many shows go to other festivals, show on tour or in theatres (particularly London and New York), or will be back again next year so check them out!
 
 ## My fringe tips
 
@@ -99,6 +99,24 @@ Really good physical comedy theatre! The acting is excellent, and story silly bu
 Very fun performance with wonderful acting. There were dozens of different characters all played perfectly by three actors, very impressive. The story was surprising and great fun. Same folk as "Down to Chance".
 
 [Maybe You Like It](https://www.maybeyoulikeitprods.com) — [Down to Chance on edfringe.com](https://www.edfringe.com/tickets/whats-on/2026WHATEVE)
+
+### Mike Wozniak: The Bench — ⭐⭐⭐⭐
+
+A masterclass in comedic storytelling. Mike tells a winding story about a small village crime, with hilarious side tracks, audience participation that actually works, and wrapped up so nicely. Clearly some in the audience were less convinced but I loved it.
+
+[Mike Wozniak](https://mrmikewozniak.com) — [Mike Wozniak on edfringe.com](https://www.edfringe.com/tickets/whats-on/mike-wozniak-the-bench)
+
+### 📘 The Front List: Cory Doctorow and Jimmy Wales — ⭐⭐⭐⭐
+
+The author of 'Enshittification' and the founder of Wikipedia talk about the web, it's effect on us and society, and the technocapitalist companies that seem to be at the center. Overall really interesting! I wish there were more positive takeaways though, the description promised "Can the internet ever be good again?" and the closest we got was "hopefully legislators do better".
+
+[Cory Doctorow](https://craphound.com) — [Jimmy Wales](https://jimmywales.com) — [The Front List: Cory Doctorow and Jimmy Wales on edbookfest.co.uk](https://www.edbookfest.co.uk/on-demand/the-front-list-cory-doctorow-and-jimmy-wales)
+
+### 📘 The Front List: Tom Holland — ⭐⭐⭐⭐
+
+Historian Tom Holland talks about himself and the classical roman writer Suetonius. Very enjoyable, I like how Tom communicates and I find his thoughts on the classics, history, and what they mean for us today interesting.
+
+[Tom Holland](https://www.tom-holland.org) — [The Front List: Tom Holland on edbookfest.co.uk](https://www.edbookfest.co.uk/on-demand/the-front-list-tom-holland)
 
 ### Lost in Translation (Jurassic Park) — ⭐⭐⭐⭐
 
