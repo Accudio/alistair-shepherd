@@ -42,7 +42,7 @@ Absolutely stunning show, this was a perfect example of how you can be incredibl
 
 ### Pale Waves — ⭐⭐⭐⭐⭐
 
-One of my favourite bands did a small-venue gig for one day and it was *excellent*. Pale Waves are one of the best modern indie pop-rock bands around and bloody hell this was a fantastic night.
+One of my favourite bands did a small-venue gig for one day and it was **excellent**. Pale Waves are one of the best modern indie pop-rock bands around and bloody hell this was a fantastic night.
 
 [Pale Waves](https://palewaves.co.uk) — [Pale Waves on edfringe.com](https://www.edfringe.com/tickets/whats-on/pale-waves)
 
@@ -56,12 +56,11 @@ This blew my fucking mind. I thought I wouldn't like it but instead I was laughi
 
 Wonderful 'play that goes wrong' style structured improv show, where the audience gradually replaces the cast as they're unable to perform. Very fun and respectful to the audience participating!
 
-[On edfringe.com](https://www.edfringe.com/tickets/whats-on/2026EARNEST)
-[Performer's website](https://sayitagainsorry.com)
+[Say it Again, Sorry?](https://sayitagainsorry.com) — [Earnest on edfringe.com](https://www.edfringe.com/tickets/whats-on/2026EARNEST)
 
 ### Down to Chance — ⭐⭐⭐⭐⭐
 
-Fantastic two-person theatre that conveys so many distinct characters and a really beautiful story and makes it seem so easy. This is my second time seeing it and remains one of my all time fave Fringe shows. Same folk as "Whatever Happened To That Guy?".
+Fantastic two-person theatre that conveys so many distinct characters and a really beautiful story and makes it seem so easy. This is my second time seeing it and remains one of my all time fave Fringe shows. Same folk as "Whatever Happened To That Guy?" further down.
 
 [Maybe You Like It](https://www.maybeyoulikeitprods.com) — [Down to Chance on edfringe.com](https://www.edfringe.com/tickets/whats-on/2026DOWNTOC)
 
@@ -79,7 +78,7 @@ Delightful poetry that balances perfectly between serious & thought-provoking, a
 
 ### The Bob Ross Effect — ⭐⭐⭐⭐⭐
 
-Omg this was DELIGHTFUL. A beautiful hour of creativity, Bob Ross appreciation, sharing joy with those around us, and art. This show spoke to me deeper than any other and I love it so much for that
+Omg this was **delightful**. A beautiful hour of creativity, Bob Ross appreciation, sharing joy with those around us, and art. This show spoke to me deeper than any other and I love it so much for that
 
 [Sarah-Louise Young](https://www.thebobrosseffect.co.uk) — [The Bob Ross Effect on edfringe.com](https://www.edfringe.com/tickets/whats-on/the-bob-ross-effect)
 
@@ -110,7 +109,7 @@ Ruin a script with repeated translation and perform it live. It's a winning form
 ### Police Cops in Space — ⭐⭐⭐⭐
 
 What the fuck. My god this was mad. Stupid as fuck physical comedy and innuendo, like the other Police Cops but on harder drugs.
-My god it was funny though. Ridiculously stupid, but funny.
+It was incredibly funny though. Ridiculously stupid, but funny.
 
 [Police Cops](https://www.policecops.co.uk) — [Police Cops on edfringe.com](https://www.edfringe.com/tickets/whats-on/police-cops-in-space)
 
@@ -158,13 +157,13 @@ I love the concept but sadly this was a bit of a miss. Ended up being essentiall
 
 ### Diana: The Untold and Untrue Story — ⭐⭐
 
-Womp womp. I wanted to enjoy this with all the hype but it kinda just sucked. There were fun bits but it was just too over the top (but not in a good way) for me to enjoy it. It didn't flow and felt like it dragged so much. It was the first night?
+Womp womp. I wanted to enjoy this with all the hype but it kinda just sucked. There were fun bits but it was just too over the top (but not in a good way) for me to enjoy it. It didn't flow and felt like it dragged so much. It *was* the first night?
 
 [Awkward Productions](https://linktr.ee/awkwardprods) — [Diana the Untold and Untrue Story on edfringe.com](https://www.edfringe.com/tickets/whats-on/diana-the-untold-and-untrue-story)
 
 ### 5 Mistakes That Changed History — ⭐⭐
 
-I like the idea but it was pretty weak history communication in my opinion, with bad jokes and references rammed in clumsily. Unfortunate, as this should totally be for me but it just wasn't very good.
+I like the idea but it was pretty weak history communication in my opinion, with bad jokes and references rammed in clumsily. Unfortunate, as this should totally be for me but it just wasn't that good.
 
 [Mistakes That Changed History](https://www.historymistakes.com) — [5 Mistakes That Changed History on edfringe.com](https://www.edfringe.com/tickets/whats-on/5-mistakes-that-changed-history)
 
