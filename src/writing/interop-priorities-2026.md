@@ -77,7 +77,7 @@ I often end up inlining SVGs into my markup in order to use `currentColor` and c
 
 With this proposal I could write `<img src="example.svg#:~:param(--color,blue)">` and it solves all of my SVG colour-related woes. Wonderful!
 
-### 9. [Out-of-order streaming with <template for>](https://github.com/web-platform-tests/interop/issues/1366)
+### 9. [Out-of-order streaming with `<template for>`](https://github.com/web-platform-tests/interop/issues/1366)
 
 [Barry Pollard](https://www.tunetheweb.com) gave an **excellent** talk that included this at Fronteers conference which has me really excited about the possibilities for improving and refining web performance.
 
@@ -91,7 +91,7 @@ Provides a way of layouts being less shite when the visual order on the page dif
 
 Hopefully makes doing cool stuff with `order` less dangerous (and devs less crap at caring about logical order)! It's not perfect, but could have potentially a big impact on making accessible grids easier.
 
-### 11. [`ariaNotify()`](https://github.com/web-platform-tests/interop/issues/1387)
+### 11. [`ariaNotify()` function](https://github.com/web-platform-tests/interop/issues/1387)
 
 When you're getting into delivering a really good accessible experience, you may need to reach for live regions to announce a page change. These are annoying, requiring injecting content into a pre-existing element with `aria-live` and cleaning it up later. It would be nice to have an easy JS method that lets you make an announcement in a simple way when needed. Lucky us! Not essential, but a nice tool to simplify developing accessibly.
 
